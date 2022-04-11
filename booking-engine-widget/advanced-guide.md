@@ -54,7 +54,7 @@ Payment card storage is used to safely collect and store information about a cus
 
 Payment gateway is used to securely handle customer payments. A configuration is done once, when the property is set up. Official Mews Distributor client can use it with minimal setup. Currently Distributor supports these payment gateways:
 
-* [Mews Merchant](https://www.mews.com/products/merchant) 
+* [Mews Payments](https://www.mews.com/en/products/payments)
 
 Using payment gateway is not mandatory, as reservations can be created without providing a payment card information.
 

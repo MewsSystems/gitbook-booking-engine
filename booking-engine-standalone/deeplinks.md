@@ -60,19 +60,19 @@ Available steps differ based on if you use single or multi-enterprise Distributo
 
 ## Examples
 
-## Open with specific start date, voucher code and language
+### Open with specific start date, voucher code and language
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
 ```
 
-## Open with preselected room and currency on rate selection step
+### Open with preselected room and currency on rate selection step
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
 ```
 
-## Opens multi-enterprise Distributor with preselected city hotel selection step
+### Opens multi-enterprise Distributor with preselected city hotel selection step
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd

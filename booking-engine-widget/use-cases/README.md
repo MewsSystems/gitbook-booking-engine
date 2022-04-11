@@ -1,4 +1,4 @@
-# Distributor Widget use cases
+# Use cases
 
 This section describes, how to use the Distributor Widget in some well-known scenarios:
 
@@ -7,9 +7,4 @@ This section describes, how to use the Distributor Widget in some well-known sce
 * [Use your own Date inputs](./use-own-date-inputs.md)
 * [Use multiple enterprises and set preselected city/location](./use-multi-enterprise-set-preselected-location.md)
 
-## Prerequisites
-
-{% hint style="info" %}
-Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code of the use cases can be hard to understand or the behavior of the code can differ.
-{% endhint %}
-
+> Note: Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code of the use cases can be hard to understand or the behavior of the code can differ.

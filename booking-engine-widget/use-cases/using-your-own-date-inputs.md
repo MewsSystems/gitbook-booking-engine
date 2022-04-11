@@ -1,4 +1,4 @@
-# Use your own Date inputs
+# Using your own Date inputs
 
 This guide will show you how to have a form with date inputs which will open Distributor with given dates after users submit it.
 

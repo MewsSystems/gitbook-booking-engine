@@ -1,8 +1,8 @@
-# Distributor widget
+# Booking Engine Widget
 
-Distributor JavaScript widget allows guests to book directly from the website of your property without being redirected elsewhere.
+Booking Engine JavaScript Widget allows guests to book directly from the website of your property without being redirected elsewhere.
 
-It's a more advanced way of integrating Distributor into your website.
+It's a more advanced way of integrating Booking Engine into your website.
 
 This section describes how to use it.
 
