@@ -1,25 +1,25 @@
 # Getting started
 
-{% hint style="info" %}
-In order to embed the booking engine into your webpage, your site must be securely served over HTTPS.
-
-Any booking engine widget that is implemented on an insecure HTTP site will be redirected to the [standalone booking engine](../booking engine-standalone/README.md).
-{% endhint %}
-
-> In order to embed the booking engine into your webpage, your site must be securely served over HTTPS.
-> 
-> Any booking engine widget that is implemented on an insecure HTTP site will be redirected to the [standalone booking engine](../booking engine-standalone/README.md).
-
-By using booking engine Widget your users can book directly from your website.
+By using the Booking Engine Widget your users can book directly from your website.
 
 At a high level, the steps to start using booking engine Widget are:
-* [Install booking engine loader script](./getting-started.md#install-booking engine-loader-script).
-* [Initialize booking engine Widget](./getting-started.md#initialize-booking engine-widget) through a global `Mews.booking engine` object that the loader script exposes.
-* [Setup opening of booking engine Widget overlay](./getting-started.md#setup-overlay-opening).
-* Optional: Use callback function to [control booking engine Widget](./getting-started.md#optional-control-booking engine-widget).
-* Optional: Know the difference between [single and multi-enterprise booking engine](./getting-started.md#multi-enterprise-booking engine) and set it up.
 
-## Install booking engine loader script
+1. [Install Booking Engine loader script](#step-1-install-booking-engine-loader-script)
+2. [Initialize Booking Engine Widget](#step-2-initialize-booking-engine-widget)
+3. [Set up overlay opening](#step-3-set-up-overlay-opening)
+4. [All done!](#step-4-all-done)
+
+In addition, you also have the following options:
+
+* [Use callback function to control Widget](#use-callback-function-to-control-widget)
+* [Set up as multi-enterprise](#set-up-as-multi-enterprise)
+
+> ### Security note
+> In order to embed the booking engine into your webpage, your site must be securely served over HTTPS.
+> Any booking engine widget that is implemented on an insecure HTTP site will be redirected to the [standalone booking engine](../booking-engine-standalone/README.md).
+
+
+## Step 1: Install Booking Engine loader script
 
 To use booking engine Widget, you need to install booking engine loader script with a code snippet provided in the [Installation](./getting-started.md#installation) section.
 
@@ -52,7 +52,7 @@ Place the following `<script>` code snippet as is in the `<head>` of your web pa
 <script src="https://api.mews.com/booking engine/booking engine.min.js"></script>
 ```
 
-👎 Examples of **incorrect** tags - DO NOT DO THIS:
+❎ **Incorrect** - DO NOT DO THIS:
 ```html
 <script src="https://www.your_domain.tld/wp-content/cache/min/1/booking engine/booking engine.min.js?ver=1628071961"></script>
 <script async src="https://api.mews.com/booking engine/booking engine.min.js"></script>
@@ -61,14 +61,12 @@ Place the following `<script>` code snippet as is in the `<head>` of your web pa
 <iframe src="https://api.mews.com/booking engine/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
 ```
 
-👍 **Correct** tag:
+✅ **Correct**:
 ```html
 <script src="https://api.mews.com/booking engine/booking engine.min.js"></script>
 ```
 
-{% hint style="warning" %}
-Please double-check that you've added the script as instructed and followed all the [requirements](./getting-started.md#requirements). If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working.
-{% endhint %}
+> Warning: Please double-check that you've added the script as instructed and followed all the [requirements](./getting-started.md#requirements). If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working.
 
 #### Content Security Policy
 
@@ -81,15 +79,13 @@ https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
 
 The last, datatrans, URL is for [PCI Proxy](https://www.pci-proxy.com/) which is the secure, PCI-DSS complaint solution that is used by our Merchant to process payment cards.
 
-## Initialize booking engine Widget
+
+## Step 2: Initialize Booking Engine Widget
 
 After the website has loaded, and the booking engine loader script prepared the global `Mews.booking engine` object, you can initialize booking engine Widget by calling global `Mews.booking engine` with some arguments:
 
-{% hint style="info" %}
-**Important:** Make sure you initialize booking engine Widget by calling `Mews.booking engine` **only after** the website is loaded, otherwise the initialization will fail or not complete fully. 
-
-The easiest way to achieve this is to place the initialization code inside a `script` tag just before the closing `</body>` tag. But you can use a different approach, if you want.
-{% endhint %}
+> Note: **Important:** Make sure you initialize booking engine Widget by calling `Mews.booking engine` **only after** the website is loaded, otherwise the initialization will fail or not complete fully. 
+> The easiest way to achieve this is to place the initialization code inside a `script` tag just before the closing `</body>` tag. But you can use a different approach, if you want.
 
 In the following snippet, **replace the placeholder** `Your booking engine configuration id` with a **real booking engine configuration id** from the correct [environment](../booking engine-api-v1/environments.md). Here's more info about [where to get the configuration id](../faq.md#where-to-get-configuration-id).
 
@@ -107,11 +103,10 @@ In the following snippet, **replace the placeholder** `Your booking engine confi
 
 This call creates an isolated (iframe based) overlay on your website and loads booking engine into it.
 
-{% hint style="warning" %}
-The overlay and booking engine is not visible by default. You're going to solve this in the next section.
-{% endhint %}
+> Warning: The overlay and booking engine is not visible by default. You're going to solve this in the next section.
 
-## Setup overlay opening
+
+## Step 3: Set up overlay opening
 
 To display the booking engine overlay, you should bind its opening to some action (e.g. clicking on a button).
 
@@ -128,21 +123,22 @@ Knowing that, you can for example add the following HTML button with class `book
 
 It's just an example, the automatic binding can attach click event listener to any HTML element.
 
-{% hint style="info" %}
-Closing of booking engine is provided in the overlay by default, no configuration needed from your side.
-{% endhint %}
+> Note: Closing of booking engine is provided in the overlay by default, no configuration needed from your side.
 
-## Done!
 
-This is all you need for the basic setup of Mews booking engine.
+## Step 4: All done!
 
-### What you've done:
+This is all you need for the basic setup of Mews booking engine. What you've done:
+
 - On page with this setup, loader script will prepare `Mews.booking engine`.
 - After the page loads, your code will call `Mews.booking engine`. This will initialize booking engine Widget, create (for now) hidden overlay and bind opening actions to selected HTML elements, like buttons.
 - When users click these HTML elements, booking engine Widget overlay will open, and they can book through it.
 - They can close it anytime and see your page again.
 
-## Optional: Control booking engine Widget
+
+## Use callback function to control Widget
+
+> This step is optional
 
 If you want to have a more customized setup, or you want to call some API functions on a booking engine instance to control it, you can provide a callback function as the second argument to the initialization call. 
 
@@ -170,11 +166,12 @@ Very common example of this is [using a custom start and end date selectors that
 </script>
 ```
 
-{% hint style="info" %}
-To see a list of all available API calls, please consult [Widget API reference](./reference.md#api-reference).
-{% endhint %}
+> Note: To see a list of all available API calls, please consult [Widget API reference](./reference.md#api-reference).
 
-### Multi-enterprise booking engine
+
+## Set up as multi-enterprise
+
+> This step is optional
 
 booking engine can run in two basic modes - for a single enterprise or for multiple. The mode is chosen automatically during initialization, based on the count of configuration ids you have provided in the options. Whenever two or more hotels are loaded, the booking engine will start in the multi-enterprise mode. That means that it will add one more step to the booking flow - hotel selection. To add more hotels, simply pass their configuration ids into the`configurationIds`array option (here's [how you can get the configuration ids](../faq.md#where-to-get-configuration-id)):
 

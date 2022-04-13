@@ -1,13 +1,13 @@
 # Introduction
 
-Welcome to the online guide for the __Mews Booking Engine__, we're here to guide you through the process of integrating direct bookings into __Mews Operations__.
-This will enable your guests to directly create reservations in your properties.
+Welcome to the online guide for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website to enable guests to create reservations
+in your properties using __Mews Operations__.
 
 You can do this in one of three ways:
 
-* [Booking Engine Standalone](booking-engine-standalone/README.md) - through a redirect to a standalone booking page hosted directly by Mews
-* [Booking Engine Widget](booking-engine-widget/README.md) - as a JavaScript Widget which can be embedded into your own website
-* [Booking Engine API](booking-engine-api/README.md) - or you can create your own custom booking engine with the help of the Booking Engine API
+* [Booking Engine Standalone](booking-engine-standalone/README.md)<br>Redirect to a standalone booking page hosted by Mews
+* [Booking Engine Widget](booking-engine-widget/README.md)<br>Embed a JavaScript widget into your own website
+* [Booking Engine API](booking-engine-api/README.md)<br>Create your own custom booking engine using the Booking Engine API
 
 If you encounter any issue, have a question or any other request, please contact [support@mews.com](mailto:support@mews.com).
 
@@ -31,6 +31,7 @@ Note that this option is only available to customers with an Enterprise subscrip
 > ### Terminology
 > You may see reference to the term *Distributor*, either in the Guide or in URLs, this is the old name for the *Mews Booking Engine* before it was re-branded.
 > So if you see *Distributor*, this is synonymous with *Mews Booking Engine*.
+> For a full description of all the terms used in the Guide, see the [Mews Glossary for Open API users](https://help.mews.com/s/article/Mews-Glossary-for-Open-API-users?language=en_US).
 
 > ### Changes to this Guide
 > * For the history of changes to the Guide, see the Changelogs for each section:

@@ -8,3 +8,7 @@
 
 * Stopped supporting `mewsDistributorOpened` deeplink parameter.
 * Moved introduction guide to [Getting started](./getting-started.md).
+
+| Next |
+| :-- |
+| [Changelog 2020](changelog2020.md) |
