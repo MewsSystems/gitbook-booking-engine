@@ -2,9 +2,8 @@
 
 ## Options reference
 
-> **Note:**
->
-> Direct configuration of Distributor through the options has been deprecated and it will be disabled in future. Prefer to use Distributor Configuration in Commander. The only supported now are`configurationIds`and`openElements`.
+> **Note:** Direct configuration of Distributor through the options has been deprecated and it will be disabled in future.
+> Prefer to use Distributor Configuration in Commander. The only supported now are`configurationIds`and`openElements`.
 
 | Name | Type | Default value | Description |
 | :--- | :--- | :--- | :--- |
@@ -36,29 +35,29 @@ Mews.Distributor({
 
 Beware that API is slightly different in the\_Single\_and the\_Chain\_modes. The list of all API calls follows:
 
-### Common API calls <a id="common-api-calls"></a>
+### Common API calls
 
-#### open\(\) <a id="open"></a>
+#### open\(\)
 
 Opens Distributor in its overlay.
 
-#### close\(\) <a id="close"></a>
+#### close\(\)
 
 Closes Distributor and its overlay. Even though Distributor is closed, it still responds to API calls.
 
-#### setLanguageCode\(languageCode\) <a id="setlanguagecodelanguagecode"></a>
+#### setLanguageCode\(languageCode\)
 
 * `languageCode` Type: `string` - The languageCode to be set, in format `language-countryCode`, i.e`en-US`
 
 Sets language of the Distributor’s localization. Language code should be in format`language-countryCode`, i.e.`en-US`as a variant of [IETF tag](https://en.wikipedia.org/wiki/IETF_language_tag). If a`languageCode`is not a in valid format, nothing happens.
 
-#### setCurrencyCode\(currencyCode\) <a id="setcurrencycode"></a>
+#### setCurrencyCode\(currencyCode\)
 
 * `currencyCode` Type: `string` - The currencyCode to be set, in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format, i.e`EUR`
 
 Sets currency of the Distributor’s localization. Currency code should be in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. If a`currencyCode` is not a in valid format, nothing happens.
 
-#### setStartDate\(date\) <a id="setstartdatedate"></a>
+#### setStartDate\(date\)
 
 * `date` Type: `Date` - The start date to set
 
@@ -78,7 +77,7 @@ distributor.setStartDate(new Date(2019, 0, 18))
 distributor.setStartDate("2019-01-18")
 ```
 
-#### setEndDate\(date\) <a id="setenddatedate"></a>
+#### setEndDate\(date\)
 
 * `date` Type: `Date` - The end date to set
 
@@ -98,7 +97,7 @@ distributor.setEndDate(new Date(2019, 11, 18))
 distributor.setEndDate("2019-12-18")
 ```
 
-#### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
+#### setVoucherCode\(code\)
 
 * `code` Type: `string` - The voucher code to set
 
@@ -124,25 +123,25 @@ Sets all [TrackingConsents](integrations.md#trackingconsents) to false.
 
 Sets all [TrackingConsents](integrations.md#trackingconsents) to true.
 
-### Only Single mode API calls <a id="only-single-mode-api-calls"></a>
+### Only Single mode API calls
 
-#### showRooms\(\) <a id="showrooms"></a>
+#### showRooms\(\)
 
 Sets Distributor to the`Rooms`step.
 
-#### showRates\(roomId\) <a id="showratesroomid"></a>
+#### showRates\(roomId\)
 
 * `roomId` Type: `string` - an ID of a room to be selected
 
 Sets Distributor to the third step \(`Rates`\) as if you selected a room on the second screen.
 
-### Only Chain mode API calls <a id="only-chain-mode-api-calls"></a>
+### Only Chain mode API calls
 
-#### showHotels\(\) <a id="showhotels"></a>
+#### showHotels\(\)
 
 Sets Distributor to the`Hotels`step.
 
-#### showRooms\(hotelId\) <a id="showroomshotelid"></a>
+#### showRooms\(hotelId\)
 
 * `hotelId` Type: `string` - an ID of a hotel which rooms you want to display
 

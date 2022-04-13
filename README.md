@@ -1,32 +1,14 @@
 # Introduction
 
 Welcome to the online guide for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website to enable guests to create reservations
-in your properties using __Mews Operations__.
-
-You can do this in one of three ways:
+in your properties using __Mews Operations__. You can do this in one of three ways:
 
 * [Booking Engine Standalone](booking-engine-standalone/README.md)<br>Redirect to a standalone booking page hosted by Mews
 * [Booking Engine Widget](booking-engine-widget/README.md)<br>Embed a JavaScript widget into your own website
 * [Booking Engine API](booking-engine-api/README.md)<br>Create your own custom booking engine using the Booking Engine API
 
-If you encounter any issue, have a question or any other request, please contact [support@mews.com](mailto:support@mews.com).
-
-## What should I use?
-
-### Standalone
-
-If you’re not sure which integration method to use, go with the standalone option. It’s the simplest way to connect your website with the booking engine and enable your guests to make direct bookings.
-We will provide you with a link to a page where your Booking Engine instance is located. For further information, see [Booking Engine Standalone](booking-engine-standalone/README.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
-
-### Widget
-
-If you're a developer, you might be interested in a more advanced way to integrate the Booking Engine into your website. For a more seamless experience, the Booking Engine JavaScript Widget allows guests to book directly from the website of your property without being redirected elsewhere.
-For more information, see [Booking Engine Widget](booking-engine-widget/README.md).
-
-### API
-
-If you would like to implement your own custom booking engine that connects directly with __Mews Operations__, have a look at the [Booking Engine API](booking-engine-api/README.md).
-Note that this option is only available to customers with an Enterprise subscription. Should you be on a different subscription and are interested in this function, please contact [customersuccess@mews.com](mailto:customersuccess@mews.com).
+Not sure which option is right for you? See [Ways to integrate](guidelines/README.md).
+If you need further assistance, or have any questions or special requests, please contact [support@mews.com](mailto:support@mews.com).
 
 > ### Terminology
 > You may see reference to the term *Distributor*, either in the Guide or in URLs, this is the old name for the *Mews Booking Engine* before it was re-branded.

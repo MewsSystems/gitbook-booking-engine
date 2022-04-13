@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+	* [Ways to integrate](guidelines/README.md)
 * [Booking Engine Standalone](booking-engine-standalone/README.md)
   * [Getting started](booking-engine-standalone/getting-started.md)
   * [Deeplinks](booking-engine-standalone/deeplinks.md)
@@ -14,7 +15,7 @@
     * [Prerequisites](booking-engine-widget/use-cases/prerequisites.md)
     * [Testing in Demo environment](booking-engine-widget/use-cases/testing-in-demo-environment.md)
     * [Using your own Date inputs](booking-engine-widget/use-cases/using-your-own-date-inputs.md)
-    * [Multiple enterprises and preselected locations](booking-engine-widget/use-cases/multi-enterprises-and-preselected-locations.md)
+    * [Multiple enterprises and preselected locations](booking-engine-widget/use-cases/multi-enterprises.md)
   * [Advanced guide](booking-engine-widget/advanced-guide.md)
   * [Reference](booking-engine-widget/reference.md)
   * [Integrations](booking-engine-widget/integrations.md)

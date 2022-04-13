@@ -1,8 +1,7 @@
 # Getting started
 
-By using the Booking Engine Widget your users can book directly from your website.
-
-At a high level, the steps to start using booking engine Widget are:
+By using the Booking Engine Widget, your users can book directly from your website.
+At a high level, the steps to start using the Booking Engine Widget are:
 
 1. [Install Booking Engine loader script](#step-1-install-booking-engine-loader-script)
 2. [Initialize Booking Engine Widget](#step-2-initialize-booking-engine-widget)
@@ -16,13 +15,12 @@ In addition, you also have the following options:
 
 > ### Security note
 > In order to embed the booking engine into your webpage, your site must be securely served over HTTPS.
-> Any booking engine widget that is implemented on an insecure HTTP site will be redirected to the [standalone booking engine](../booking-engine-standalone/README.md).
+> Any Booking Engine Widget that is implemented on an insecure HTTP site will be redirected to the [Booking Engine Standalone](../booking-engine-standalone/README.md).
 
 
 ## Step 1: Install Booking Engine loader script
 
-To use booking engine Widget, you need to install booking engine loader script with a code snippet provided in the [Installation](./getting-started.md#installation) section.
-
+To use the Booking Engine Widget, you need to install the booking engine loader script with a code snippet provided in the [Installation](./getting-started.md#installation) section.
 The script will asynchronously prepare global `Mews.booking engine` object which you're going to use in further steps to initialize booking engine Widget.
 
 ### Requirements
@@ -84,8 +82,8 @@ The last, datatrans, URL is for [PCI Proxy](https://www.pci-proxy.com/) which is
 
 After the website has loaded, and the booking engine loader script prepared the global `Mews.booking engine` object, you can initialize booking engine Widget by calling global `Mews.booking engine` with some arguments:
 
-> Note: **Important:** Make sure you initialize booking engine Widget by calling `Mews.booking engine` **only after** the website is loaded, otherwise the initialization will fail or not complete fully. 
-> The easiest way to achieve this is to place the initialization code inside a `script` tag just before the closing `</body>` tag. But you can use a different approach, if you want.
+> **Important!** Make sure you initialize the Booking Engine Widget by calling `Mews.booking engine` **only after** the website is loaded, otherwise the initialization will fail or not fully complete. 
+> The easiest way to achieve this is to place the initialization code inside a `script` tag just before the closing `</body>` tag, but you can use a different approach if you want.
 
 In the following snippet, **replace the placeholder** `Your booking engine configuration id` with a **real booking engine configuration id** from the correct [environment](../booking engine-api-v1/environments.md). Here's more info about [where to get the configuration id](../faq.md#where-to-get-configuration-id).
 

@@ -4,9 +4,7 @@ This guide will show you how to open the Booking Engine with multiple enterprise
 
 ## Prerequisites
 
-{% hint style="info" %}
-Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code of the use cases can be hard to understand or the behavior of the code can differ.
-{% endhint %}
+> Note: Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code of the use cases can be hard to understand or the behavior of the code can differ.
 
 ## Code
 

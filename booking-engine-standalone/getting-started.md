@@ -6,14 +6,14 @@ The URL of the Booking Engine Standalone page has the following format:
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 ```
 
-The `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` part should be replaced with your Booking Engine configuration id.
-See [Where to get configuration id](../faq.md#where-to-get-configuration-id) for details of where to find it.
+The `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` part should be replaced with your Booking Engine Configuration ID.
+For details of how to obtain your Booking Engine Configuration ID, see the [FAQ](FAQ.md#where-can-i-get-configuration-id).
 
-> Note:️ Make sure you are using Booking Engine configuration id, not enterprise id or other id.
+> Note:️ Make sure you are using Booking Engine Configuration ID, not Enterprise ID or some other ID.
 
-## Multi-enterprise Booking Engine
+## Multi-enterprise
 
-If you want to use a Booking Engine with multiple enterprises, you can place several Booking Engine configurations ids together, separated by a semicolon \(the theme will be pulled from the id of the first configuration in the URL\).
+If you want to use a Booking Engine with multiple enterprises, you can place several Booking Engine Configurations IDs together, separated by a semicolon \(note the _theme_ will be pulled from the ID of the first configuration in the URL\).
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj
@@ -21,4 +21,4 @@ https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-g
 
 ## Customization
 
-You can use [Deeplinks](deeplinks.md) to customize Booking Engine Standalone behavior. 
+You can customize the behaviour of the Booking Engine Standalone by using [Deeplinks](deeplinks.md). 

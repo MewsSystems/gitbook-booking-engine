@@ -1,8 +1,7 @@
 # Deeplinks
 
-With deeplinks you can create URLs which, when used, open Distributor standalone in some predefined setup. For example with a specific currency or dates. 
-
-You can deeplink into a standalone Distributor from other websites by passing [supported parameters](./deeplinks.md#supported-parameters) in a URL query. For example like this:
+With deeplinks you can create URLs which open Booking Engine Standalone in some pre-defined setup, for example with a specific currency or specific dates. 
+You do this by simply adding [supported parameters](#supported-parameters) to the URL in the form of a URL query. For example:
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
@@ -10,7 +9,7 @@ https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=E
 
 ## Supported parameters 
 
-Parameters can be combined and some have no visible effect unless they are used in combination (e.g. `mewsHotel`).
+Parameters can be combined; some have no effect unless they are used in combination, e.g. `mewsHotel`.
 
 ### Parameters supported in single and multi-enterprise mode
 
@@ -39,9 +38,7 @@ In addition, Distributor in multi-enterprise mode also supports:
 
 With parameter `mewsRoute` you can open Distributor on a specific step.
 
-{% hint style="warning" %}
-Available steps differ based on if you use single or multi-enterprise Distributor. Some steps also require additional parameters to be set, otherwise mewsRoute parameter will not work correctly. See following [table](./deeplinks.md#mewsroute-parameter-in-single-enterprise-mode) for details.
-{% endhint %}
+> Note: Available steps differ based on if you use single or multi-enterprise Distributor. Some steps also require additional parameters to be set, otherwise mewsRoute parameter will not work correctly. See following [table](./deeplinks.md#mewsroute-parameter-in-single-enterprise-mode) for details.
 
 #### mewsRoute parameter in single-enterprise mode
 

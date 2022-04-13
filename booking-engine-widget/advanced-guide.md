@@ -58,5 +58,5 @@ Payment gateway is used to securely handle customer payments. A configuration is
 
 Using payment gateway is not mandatory, as reservations can be created without providing a payment card information.
 
-**Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info.
+> **Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info.
 

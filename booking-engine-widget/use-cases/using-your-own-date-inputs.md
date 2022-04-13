@@ -2,12 +2,9 @@
 
 This guide will show you how to have a form with date inputs which will open Distributor with given dates after users submit it.
 
-
 ## Prerequisites
 
-{% hint style="info" %}
-Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
-{% endhint %}
+> Note: Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
 
 ## Code
 
