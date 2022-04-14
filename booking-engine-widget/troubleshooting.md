@@ -1,8 +1,11 @@
-# Troubleshooting - Distributor Widget
+# Troubleshooting
 
-## Distributor shows an error "api.mews.com refused to connect"
+## Booking Engine shows an error "api.mews.com refused to connect"
 
-Browser says it can't open the page because of security or there's a console error mentioning api.mews.com and X-Frame-Options.
+### The fault
+
+The browser says it can't open the page because of security, or there's a console error mentioning `api.mews.com` and `X-Frame-Options`.
+For example:
 
 ![api.mews.com refused error Google Chrome](../.gitbook/assets/api-mews-com-refused-connect-chrome.png)
 ![api.mews.com refused error Mozilla Firefox](../.gitbook/assets/api-mews-com-refused-connect-firefox.png)
@@ -10,23 +13,26 @@ Browser says it can't open the page because of security or there's a console err
 - `[Error] Refused to display 'https://api.mews.com/distributor' in a frame because it set 'X-Frame-Options' to 'sameorigin'.`
 - `The loading of "https://api.mews.com/distributor" in a frame is denied by "X-Frame-Options" directive set to "sameorigin".`
 
-Distributor is not working because Distributor is not installed correctly on your page. Installing Distributor in any other way than as guides describe is not supported and can cause errors such as "api.mews.com refused to connect".
+### Explanation
 
-You can try to confirm Distributor is not installed correctly by inspecting the DOM of the page:
-- Open the page with Distributor and make it show the error.
+The Booking Engine is not working because it is not installed correctly on your page.
+Installing the Booking Engine in any other way than as described in this Guide is not supported and can cause errors such as "api.mews.com refused to connect".
+
+You can try to confirm the Booking Engine is not installed correctly by inspecting the DOM of the page, as follows:
+
+- Open the page with the Booking Engine and make it show the error.
 - Open your browser developer tools with DOM/elements inspector.
-- In the inspector look for any tags like `<iframe src="https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee">`.
+- In the inspector, look for any tags like `<iframe src="https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee">`.
 
 There shouldn't be any iframe tag with a `src` attribute pointing to `api.mews.com` domain.
-
-If you find something like that, the problem could be in the way the Distributor is installed. And even if you didn't find anything like that, it's better to check if Distributor is installed correctly.
+If you find something like that, the problem could be in the way the Booking Engine is installed. And even if you didn't find anything like that, it's better to check if the Booking Engine is installed correctly.
 
 ### How to fix it
 
-[Decide if you want to use/are using Distributor Standalone or Distributor Widget](../README.md).
+* Decide if you want to use Booking Engine Standalone or Booking Engine Widget (see [Ways to integrate](../FAQ/ways-to-integrate.md))
 
-Go through relevant installation guide and make sure your page and code is doing everything correctly:
-- [Distributor Standalone Getting started guide](../distributor-standalone/getting-started.md)
-- [Distributor Widget Getting started guide](./getting-started.md)
+* Go through the relevant installation guide and make sure your page and code is doing everything correctly:
+	* [Booking Engine Standalone Getting started guide](../booking-engine-standalone/getting-started.md)
+	* [Booking Engine Widget Getting started guide](getting-started.md)
 
-If you are using [Distributor Widget](./README.md), pay special attention to [the requirements section of the Distributor Widget Getting started guide](./getting-started.md#requirements). It has a list of things to do and common mistakes in don't sections during the installation of Distributor.
+If you are using the Booking Engine Widget, pay special attention to the [Requirements](getting-started.md#requirements) section of the Booking Engine Widget Getting started guide, it has a list of things to do and a list of common mistakes that can occur during installation.

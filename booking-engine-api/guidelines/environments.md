@@ -1,6 +1,6 @@
 # Environments
 
-## Staging/Testing environment
+## Demo environment
 
 This environment is meant to be used during implementation of the client applications. We have prepared one hotel where you can fetch availability and create reservation. You can use the following information to access it:
 

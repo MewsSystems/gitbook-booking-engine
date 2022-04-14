@@ -1,8 +1,7 @@
 # Use cases
 
-This section describes, how to use the Booking Engine API in order to implement well-known scenarios.
-The following types scenarios can be achieved:
+This section describes how to use the Booking Engine API to implement some well-known scenarios.
 
-* [On session payments](./on-session-payments.md)
-* [How to support payment cards in booking engine application](./how-to-support-payment-cards-in-booking-engine-application.md)
-* [On session payment card authorization](./on-session-payment-card-authorization.md)
+* [On session payments](on-session-payments.md)
+* [Payment card authorization](payment-card-authorization.md)
+* [Supporting payment cards](supporting-payment-cards.md)

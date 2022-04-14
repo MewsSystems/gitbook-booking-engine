@@ -1,4 +1,4 @@
-# On session payment card authorization
+# Payment card authorization
 
 Whenever a user creates a reservation there is an option to let the user insert a payment card which will be stored in Mews.
 You can read more about how to support payment cards in booking engine application in our [use case](./how-to-support-payment-cards-in-booking-engine-application.md).

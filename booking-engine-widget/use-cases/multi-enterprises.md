@@ -1,39 +1,37 @@
-# Multiple enterprises and preselected locations
+# Multiple enterprises and pre-selected locations
 
-This guide will show you how to open the Booking Engine with multiple enterprises and set preselected city/location.
+This guide will show you how to open the Booking Engine with multiple enterprises and set a pre-selected city or location.
 
-## Prerequisites
+> **Important:** Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
 
-> Note: Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code of the use cases can be hard to understand or the behavior of the code can differ.
+## Sample code
 
-## Code
+Below is some sample HTML and Javascript code to demonstrate the functionality. Numbered notes beneath the code snippet relate to the numbered comments within the code.
 
-Comments with numbers have more details below the code. [This guide is written for production environment](./use-multi-enterprise-set-preselected-location.md#4.-this-guide-is-written-for-production-environment).
+The sample uses an example scenario of three hotels, with two of them in the same London location:
 
-Code uses an example scenario with 3 hotels, with 2 of them from the same London location:
-
-* One in Paris.
-* One in London.
-* Another one in London.
+* One in Paris
+* One in London
+* Another one in London
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <!-- 1. Install Booking Engine loader script as close to the opening <head/> tag as possible -->
+        <!-- 1. Install booking engine loader script as close to the opening <head/> tag as possible -->
         <script src="https://api.mews.com/distributor/distributor.min.js"></script>
         <title>My page</title>
     </head>
     <body>
-        <!-- 2. Add buttons for opening Booking Engine with specific location preselected -->
+        <!-- 2. Add buttons for opening the Booking Engine with specific location pre-selected -->
         <button disabled type="button" id="london-button">Loading...</button>
         <button disabled type="button" id="paris-button">Loading...</button>
 
         <script>
             // 3. Initialize Booking Engine Widget just before the closing </body> tag.
             Mews.Distributor(
-                // 3.1 Set configuration ids of your Booking Engine.
+                // 3.1 Set Configuration IDs of your Booking Engine.
                 {
                     configurationIds: [
                         'Configuration id of first London hotel',
@@ -58,48 +56,42 @@ Code uses an example scenario with 3 hotels, with 2 of them from the same London
                         buttonElement.disabled = false;
                     };
 
-                    // 3.2 Prepare the city ids.
+                    // 3.2 Prepare the City IDs.
                     const londonCityId = 'Your London city id';
                     const parisCityId = 'Your Paris city id';
 
                     initializeButton('london-button', londonCityId, 'London hotels');
                     initializeButton('paris-button', parisCityId, 'Paris hotel');
                 }
-                // 4. This guide is written for production environment.
+                // 4. Note - this guide is written for the Production environment.
             );
         </script>
     </body>
 </html>
 ```
 
-### 1. Install Booking Engine loader script
+### 1. Install booking engine loader script
 
-For more details see [getting started section for installing Booking Engine loader script](../getting-started.md#install-booking-engine-loader-script).
+For more details, see [Install booking engine loader script](../getting-started.md#step-1-install-booking-engine-loader-script).
 
-### 2. Add buttons for opening Booking Engine with specific city preselected
+### 2. Add buttons for opening the Booking Engine with specific city pre-selected
 
 Buttons are disabled on page load, so users can't click the buttons until the Booking Engine Widget is ready to be used. We enable it later when it's ready.
 
 ### 3. Initialize Booking Engine Widget
 
-#### 3.1 Set configuration ids of your Booking Engine
+For more details, see [Initialize Booking Engine Widget](../getting-started.md#step-2-initialize-booking-engine-widget).
+If you are not sure where to find the Configuration ID, see the [FAQ](../../FAQ/README.md#where-can-i-get-configuration-id).
 
-If you are not sure where to find the configuration ids, see [where to get configuration id](../../faq.md#where-to-get-configuration-id) for details.
+Even though it's called 'location' in the User Interface, the API needs a City ID.
+If you are not sure where to find the City ID, see the [FAQ](../../FAQ/README.md#where-can-i-get-city-id) for details.
+If you have several hotels from the same location, the then the City ID is the same in all of them.
 
-#### 3.2 Prepare the city ids
+### 4. This guide is written for the Production environment
 
-Even though it's called location in the UI, the api needs a city id.
-
-If you are not sure where to find the city id, see [where to get city id](../../faq.md#where-to-get-city-id) for details.
-
-If you have several hotels from the same city/location, the city id is the same in all of them. So use the first one you'll find.
-
-### 4. This guide is written for production environment
-
-If you want to test this code in different environment, please refer to our guide for [testing in demo/staging/testing environment](./testing-in-staging-environment.md).
+If you want to test this code in a different environment, please refer to our guide for [Testing in the Demo environment](testing-in-demo-environment.md).
 
 ## Conclusion
 
-In this article, you've learned how to use multi-enterprise Booking Engine and how to set the preselected city/location.
-
-Booking Engine Widget API supports more than preselecting city/location and opening it. See the other [Booking Engine Widget API options](../reference.md) to find other options you could use. You can also check out some [other use cases](./README.md).
+In this guide, you've learned how to use a multi-enterprise Booking Engine and how to set a pre-selected city/location.
+The Booking Engine Widget API supports more than just pr-selecting city or location - see the full [Booking Engine Widget API Reference](../reference.md) to find other options you could use.

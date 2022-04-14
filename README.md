@@ -7,7 +7,7 @@ in your properties using __Mews Operations__. You can do this in one of three wa
 * [Booking Engine Widget](booking-engine-widget/README.md)<br>Embed a JavaScript widget into your own website
 * [Booking Engine API](booking-engine-api/README.md)<br>Create your own custom booking engine using the Booking Engine API
 
-Not sure which option is right for you? See [Ways to integrate](guidelines/README.md).
+Not sure which option is right for you? See [Ways to integrate](FAQ/ways-to-integrate.md).
 If you need further assistance, or have any questions or special requests, please contact [support@mews.com](mailto:support@mews.com).
 
 > ### Terminology
@@ -20,5 +20,5 @@ If you need further assistance, or have any questions or special requests, pleas
 > 	* [Changelog \(Standalone\)](booking-engine-standalone/changelog/README.md)
 > 	* [Changelog \(Widget\)](booking-engine-widget/changelog/README.md)
 > 	* [Changelog \(API\)](booking-engine-api/changelog/README.md)
-> * For important information on deprecations in the API, see [Deprecations](booking-engine-api/deprecations/README.md)
+> * ⚠️ For important information on deprecations in the API, see [Deprecations](booking-engine-api/deprecations/README.md)
 > * To track changes and updates to any part of the Guide, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-booking-engine-guide/tree/master)

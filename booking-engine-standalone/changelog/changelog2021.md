@@ -7,7 +7,7 @@
 ## 3rd August 2021
 
 * Stopped supporting `mewsDistributorOpened` deeplink parameter.
-* Moved introduction guide to [Getting started](./getting-started.md).
+* Moved introduction guide to [Getting started](../getting-started.md).
 
 | Next |
 | :-- |

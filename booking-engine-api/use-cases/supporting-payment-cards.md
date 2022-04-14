@@ -1,4 +1,4 @@
-# How to support payment cards in booking engine application
+# Supporting payment cards
 
 When creating a reservation it is possible to attach a payment card to the reservation.
 
