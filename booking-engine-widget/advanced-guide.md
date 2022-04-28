@@ -1,14 +1,14 @@
-# Advanced Guide
+# Advanced guide
 
 ## Full example
 
-> **Note:**
->
-> Direct configuration of Distributor through the options has been deprecated and it will be disabled in future. Prefer to use Distributor Configuration in Commander. The only supported now are`configurationIds`and`openElements`.
+Here you can see a full example with all possible options used, with their default values.
+To get further information about the options and Javascript API calls, see the [Reference](reference.md).
 
-Example with all possible options and their default values follows. To get further information about the options and an API call, see the [reference](reference.md).
+> **Note:** Direct configuration of the booking engine through the options has been deprecated and will be disabled in future.
+> Instead use Booking Engine Configuration in **Mews Operations**. The only supported options now are `configurationIds` and `openElements`.
 
-**Important: This is just an example, do not copy this directly to your website!**
+> **Important:** This is just an example, do not copy this directly to your website!
 
 ```javascript
 <script>
@@ -40,23 +40,25 @@ function(distributor) {
 </script>
 ```
 
-#### Note  <a id="note-1"></a>
+> **Note:** Make sure you have just one `<script>` tag containing the call to `Mews.Distributor` on your page.
 
-See that you have just one`<script>`tag containing`Mews.Distributor`call on your page.
+### Payment card storage
 
-### Payment card storages
-
-Payment card storage is used to safely collect and store information about a customer's payment card. Currently Distributor supports these payment card storages:
+Payment card storage is used to safely collect and store information about a customer's payment card. Currently the Mews Booking Engine supports these payment card storage options:
 
 * [PCI Proxy](https://www.pci-proxy.com)
 
 ### Payment gateways
 
-Payment gateway is used to securely handle customer payments. A configuration is done once, when the property is set up. Official Mews Distributor client can use it with minimal setup. Currently Distributor supports these payment gateways:
+Payment gateways are used to securely handle customer payments. Configuration is done once, when the property is set up, and with the Mews Booking Engine this can be done with minimal setup.
+Mews Booking Engine currently supports these payment gateways:
 
 * [Mews Payments](https://www.mews.com/en/products/payments)
 
-Using payment gateway is not mandatory, as reservations can be created without providing a payment card information.
+Using a payment gateway is not mandatory, because reservations can be created without providing payment card information.
 
-> **Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info.
-
+> **Important:** The PCI Security Standard requires you to use an **SSL Certificate** on your website to be allowed to collect any payment information.
+> For information on Mews PCI compliance, including current certification, please follow the links below.
+>
+> * [Mews PCI compliance](https://mews.force.com/s/article/pci-compliance?language=en_US)
+> * [Mews PCI certificate](https://www.mews.com/en/platform-documentation)

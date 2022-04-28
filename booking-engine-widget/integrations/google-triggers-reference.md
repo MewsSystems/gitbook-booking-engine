@@ -1,17 +1,14 @@
-# Integrations
+# Google Triggers Reference
 
-## Google Tag Manager - Triggers Reference
-
-> ### Notice of usage
-> Google Tag Manager is a 3rd party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens with them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with Distributor. If you need a more complex setup, it is up to you to configure and test it.
+> **Notice of usage:** Google Tag Manager is a 3rd party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens with them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with Distributor. If you need a more complex setup, it is up to you to configure and test it.
 
 All events data is passed to Tag Manager through _dataLayer_. To use it in your tags, set up _Variable_ with proper name as a variable of the data layer like this:
 
 ![variable](../.gitbook/assets/variable.png)
 
-**All prices currently presented via the data layer are gross \(including taxes and fees\).**
+> **Note:** All prices currently presented via the data layer are gross \(including taxes and fees\)
 
-#### Data layer variables in events
+### Data layer variables in events
 
 Each event is fired with a standard set of data:
 
@@ -29,7 +26,7 @@ If a hotel is selected, information about it is also added to the event. \(Note:
 
 Some events expose additional data layer variables. They are described separately for each event.
 
-#### TrackingConsents
+### TrackingConsents
 
 | | Property | Type | Purpose |
 | :--- | :--- | :--- | :--- |
@@ -38,11 +35,11 @@ Some events expose additional data layer variables. They are described separatel
 | necessary | boolean | required | Necessary functionality. |
 | performance | boolean | required | Performance, e.g. collecting information about how user uses a website, data are anonymized. |
 
-#### distributorLoaded   <a id="distributorloaded"></a>
+### distributorLoaded   <a id="distributorloaded"></a>
 
 The Distributor application was initialized \(triggers once per session even with a Merchant redirect\).
 
-#### distributorConfigurationSet   <a id="distributorconfigurationset"></a>
+### distributorConfigurationSet   <a id="distributorconfigurationset"></a>
 
 Initial values were configured. When there is no custom value, it propagates the default one.
 
@@ -54,47 +51,47 @@ Initial values were configured. When there is no custom value, it propagates the
 | currencyCode | Currency code in ISO format, i.e`EUR` |
 | promoCode | Value of the promo code, i.e.`promo`. |
 
-#### distributorOpened   <a id="distributoropened"></a>
+### distributorOpened   <a id="distributoropened"></a>
 
 Distributor was opened.
 
-#### distributorClosed   <a id="distributorclosed"></a>
+### distributorClosed   <a id="distributorclosed"></a>
 
 Distributor was closed.
 
-#### distributorTrackingConsentsSet
+### distributorTrackingConsentsSet
 
 [TrackingConsents](integrations.md#trackingconsents) were set.
 
-#### distributorStepDates   <a id="distributorstepdates"></a>
+### distributorStepDates   <a id="distributorstepdates"></a>
 
 A Dates step was displayed.
 
-#### distributorStepHotels   <a id="distributorstephotels"></a>
+### distributorStepHotels   <a id="distributorstephotels"></a>
 
 A Hotels step was displayed.
 
-#### distributorStepRooms   <a id="distributorsteprooms"></a>
+### distributorStepRooms   <a id="distributorsteprooms"></a>
 
 A Rooms step was displayed.
 
-#### distributorStepRates   <a id="distributorsteprates"></a>
+### distributorStepRates   <a id="distributorsteprates"></a>
 
 A Rates step was displayed.
 
-#### distributorStepSummary   <a id="distributorstepsummary"></a>
+### distributorStepSummary   <a id="distributorstepsummary"></a>
 
 A Summary step was displayed.
 
-#### distributorStepCheckout   <a id="distributorstepcheckout"></a>
+### distributorStepCheckout   <a id="distributorstepcheckout"></a>
 
 A Checkout step was displayed.
 
-#### distributorStepConfirmation   <a id="distributorstepconfirmation"></a>
+### distributorStepConfirmation   <a id="distributorstepconfirmation"></a>
 
 A confirmation page was displayed.
 
-#### distributorLanguageCodeChanged   <a id="distributorlanguagecodechanged"></a>
+### distributorLanguageCodeChanged   <a id="distributorlanguagecodechanged"></a>
 
 A language code was changed.
 
@@ -102,7 +99,7 @@ A language code was changed.
 | :--- | :--- |
 | languageCode | Language code of the selected language, i.e.`en-US`. |
 
-#### distributorCurrencyCodeChanged   <a id="distributorstartdateselected"></a>
+### distributorCurrencyCodeChanged   <a id="distributorstartdateselected"></a>
 
 A currency code was changed.
 
@@ -110,7 +107,7 @@ A currency code was changed.
 | :--- | :--- |
 | currencyCode | Currency code of the selected currency, i.e.`USD`. |
 
-#### distributorStartDateSelected   <a id="distributorstartdateselected"></a>
+### distributorStartDateSelected   <a id="distributorstartdateselected"></a>
 
 A start date of the reservation was selected.
 
@@ -118,7 +115,7 @@ A start date of the reservation was selected.
 | :--- | :--- |
 | startDate | Selected start date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-20`. |
 
-#### distributorEndDateSelected   <a id="distributorenddateselected"></a>
+### distributorEndDateSelected   <a id="distributorenddateselected"></a>
 
 An end date of the reservation was selected.
 
@@ -126,7 +123,7 @@ An end date of the reservation was selected.
 | :--- | :--- |
 | endDate | Selected end date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-22`. |
 
-#### distributorPromoCodeSelected   <a id="distributorpromocodeselected"></a>
+### distributorPromoCodeSelected   <a id="distributorpromocodeselected"></a>
 
 A promo code was set.
 
@@ -134,7 +131,7 @@ A promo code was set.
 | :--- | :--- |
 | promoCode | Value of the inserted promo code as a string, i.e.`promo`. It is not validated. |
 
-#### distributorAvailabilityLoaded   <a id="distributoravailabilityloaded"></a>
+### distributorAvailabilityLoaded   <a id="distributoravailabilityloaded"></a>
 
 Availability of hotel was loaded.
 
@@ -152,19 +149,19 @@ Each item in the`availableRooms`array contains following data:
 | lowestPrice | Price of the room in hotel's default rate currency |
 | price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object. |
 
-#### distributorAlternativeDatesOffered   <a id="distributoralternativedatesoffered"></a>
+### distributorAlternativeDatesOffered   <a id="distributoralternativedatesoffered"></a>
 
 Alternative dates were displayed.
 
-#### distributorOfferedDatesSelected   <a id="distributoroffereddatesselected"></a>
+### distributorOfferedDatesSelected   <a id="distributoroffereddatesselected"></a>
 
 Alternative dates when there is no availability selected.
 
-#### distributorCategoryGalleryOpened   <a id="distributorcategorygalleryopened"></a>
+### distributorCategoryGalleryOpened   <a id="distributorcategorygalleryopened"></a>
 
 Category gallery was opened.
 
-#### distributorRoomSelected   <a id="distributorroomselected"></a>
+### distributorRoomSelected   <a id="distributorroomselected"></a>
 
 A room \(or other space type\) was selected.
 
@@ -174,7 +171,7 @@ A room \(or other space type\) was selected.
 | roomName | Name of the selected room in the hotel’s default language. |
 | spaceType | Name of the selected room’s space type, one of`Room`,`Bed`or`Dorm`. |
 
-#### distributorSpaceTypeCountChanged   <a id="distributorspacetypecountchanged"></a>
+### distributorSpaceTypeCountChanged   <a id="distributorspacetypecountchanged"></a>
 
 A number of the selected “rooms” in the order was changed.
 
@@ -182,7 +179,7 @@ A number of the selected “rooms” in the order was changed.
 | :--- | :--- |
 | count | Number of the selected space types. |
 
-#### distributorRoomOccupancyChanged   <a id="distributorroomoccupancychanged"></a>
+### distributorRoomOccupancyChanged   <a id="distributorroomoccupancychanged"></a>
 
 An occupation \(adults and children counts\) was changed for the one room \(or similar\) space type.
 
@@ -192,7 +189,7 @@ An occupation \(adults and children counts\) was changed for the one room \(or s
 | adultCount | Number of the selected adults. |
 | childCount | Number of the selected children. |
 
-#### distributorProductAdded   <a id="distributorproductadded"></a>
+### distributorProductAdded   <a id="distributorproductadded"></a>
 
 A product was added to the order.
 
@@ -201,7 +198,7 @@ A product was added to the order.
 | productId | Unique identifier of the added product. |
 | productName | Name of the product in the hotel’s default language. |
 
-#### distributorProductRemoved   <a id="distributorproductremoved"></a>
+### distributorProductRemoved   <a id="distributorproductremoved"></a>
 
 A product was removed from the order.
 
@@ -210,7 +207,7 @@ A product was removed from the order.
 | productId | Unique identifier of the removed product. |
 | productName | Name of product in the hotel’s default language. |
 
-#### distributorRoomAdded   <a id="distributorroomadded"></a>
+### distributorRoomAdded   <a id="distributorroomadded"></a>
 
 A room/multiple rooms were added to the order.
 
@@ -226,7 +223,7 @@ A room/multiple rooms were added to the order.
 | reservations.adultCount | Number of selected adults |
 | reservations.childCount | Number of selected children |
 
-#### distributorRoomCountChanged   <a id="distributorroomcountchanged"></a>
+### distributorRoomCountChanged   <a id="distributorroomcountchanged"></a>
 
 The quantity of rooms in the order was increased or decreased
 
@@ -237,7 +234,7 @@ The quantity of rooms in the order was increased or decreased
 | rateId | Unique identifier of selected rate |
 | countChange | Change of quantity \(e.g. 1, -1\) |
 
-#### distributorBookingPrepared   <a id="distributorbookingprepared"></a>
+### distributorBookingPrepared   <a id="distributorbookingprepared"></a>
 
 A booking is prepared and user needs to enter their details. This event triggers when user reaches Checkout step.
 
@@ -245,7 +242,7 @@ A booking is prepared and user needs to enter their details. This event triggers
 | :--- | :--- |
 | totalCost | current total cost of the reservation group, in the hotel’s default currency |
 
-#### distributorBookingFinished   <a id="distributorbookingfinished"></a>
+### distributorBookingFinished   <a id="distributorbookingfinished"></a>
 
 A booking was made. This event triggers once every reservation group is made.
 
@@ -255,7 +252,7 @@ A booking was made. This event triggers once every reservation group is made.
 | totalCost | total cost of the reservation group, in the hotel’s default currency |
 | currencyCode | hotel’s default currency code in ISO format |
 
-#### distributorReservationCreated   <a id="distributorreservationcreated"></a>
+### distributorReservationCreated   <a id="distributorreservationcreated"></a>
 
 A reservation was created. This event triggers when each reservation is made in the reservation group.
 

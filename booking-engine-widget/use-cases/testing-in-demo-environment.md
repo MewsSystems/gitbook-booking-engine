@@ -19,4 +19,4 @@ Mews.Distributor(
 
 > **Important:** Make sure you use `Configuration IDs` from the correct environment, otherwise they will not be used - see [Why doesn't the Booking Engine use the Configuration IDs I've provided?](../../FAQ/README.md#why-doesnt-the-booking-engine-use-the-configuration-ids-ive-provided).
 
-After making this change, the Booking Engine Widget will start using data from the [Demo environment](../../booking-engine-api/guidelines/environments.md) instead of from the Production environment.
+After making this change, the Booking Engine Widget will start using data from the [Demo environment](../../booking-engine-api/guidelines/environments.md#demo-environment) instead of from the [Production environment](../../booking-engine-api/guidelines/environments.md#production-environment).

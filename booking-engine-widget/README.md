@@ -7,6 +7,6 @@ It's a more advanced way of integrating the Mews Booking Engine into your websit
 * [Use cases](use-cases/README.md)
 * [Advanced Guide](advanced-guide.md)
 * [Reference](reference.md)
-* [Integrations](integrations.md)
+* [Integrations](integrations/README.md)
 * [Troubleshooting](troubleshooting.md)
 * [Changelog](changelog/README.md)

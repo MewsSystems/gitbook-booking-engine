@@ -30,13 +30,13 @@ Below is some sample HTML and Javascript code to demonstrate the functionality. 
         <script>
             // 3. Initialize Booking Engine Widget just before the closing </body> tag.
             Mews.Distributor(
-                // Set Configuration ID of your Booking Engine.
+                // Set Configuration ID of your booking engine.
                 {
-                    configurationIds: ['Your Booking Engine Configuration ID'],
+                    configurationIds: ['Your booking engine Configuration ID'],
                 },
                 // Add callback which will enable Submit button and open the Booking Engine Widget upon button click.
                 function (api) {
-                    // Listen on submit and when user submits, open Booking Engine with given dates.
+                    // Listen on submit and when user submits, open booking engine with given dates.
                     const listenOnSubmit = () => {
                         // Find the form in DOM and listen on submit.
                         const form = document.getElementById('date-form');
@@ -98,4 +98,4 @@ If you want to test this code in a different environment, please refer to our gu
 
 In this guide, you've learned how to add a simple form with date inputs to your page and connect its submit button to the Booking Engine Widget.
 So when users select their dates and submit the form, the Booking Engine Widget will open with those dates already selected.
-The Booking Engine Widget API supports more than just setting dates - see the full [Booking Engine Widget API Reference](../reference.md) to find other options you could use.
+The Booking Engine Widget Javascript API supports more than just setting dates - see the full [Javascript API Reference](../reference.md) to find other options you could use.

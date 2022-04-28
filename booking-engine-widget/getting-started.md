@@ -13,7 +13,7 @@ In addition, you also have the following options:
 * [Use callback function to control Widget](#use-callback-function-to-control-widget)
 * [Set up as multi-enterprise](#set-up-as-multi-enterprise)
 
-> **Security note:**
+> **Warning:**
 > In order to embed the booking engine into your webpage, your site must be securely served over HTTPS.
 > Any Booking Engine Widget that is implemented on an insecure HTTP site will be redirected to the [Booking Engine Standalone](../booking-engine-standalone/README.md).
 
@@ -21,7 +21,7 @@ In addition, you also have the following options:
 ## Step 1: Install booking engine loader script
 
 To use the Booking Engine Widget, you need to install the booking engine loader script with a code snippet provided in the [Installation](#installation) section below.
-The script will asynchronously prepare global object `Mews.booking engine` which you're going to use in further steps to initialize the Booking Engine Widget.
+The script will asynchronously prepare global object `Mews.Distributor` which you're going to use in further steps to initialize the Booking Engine Widget.
 
 ### Requirements
 
@@ -30,7 +30,7 @@ Use the code snippet \'as is\' and as described, doing otherwise may cause unexp
 * Do **not** place the code snippet anywhere else than in the `<head>`
 * Do **not** modify the code snippet in any way and do not attach the `async` attribute
 * Do **not** use the code snippet inside an `iframe`
-* Do **not** add the [Booking Engine Standalone](../booking-engine-standalone/README.md) URL (e.g. `https://api.mews.com/bookingengine/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the `iframe`
+* Do **not** add the [Booking Engine Standalone](../booking-engine-standalone/README.md) URL (e.g. `https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the `iframe`
 * Do **not** pack the contents of the script files that the code snippet references into your own JavaScript bundle
 * Do **not** use a booking engine script cached by your server, use the one from this Guide
 
@@ -42,22 +42,18 @@ The script file size is kept as minimal as possible (approx 11 kB gzipped) to al
 
 Place the following `<script>` code snippet in the `<head>` of your web page's HTML, preferably as close to the opening `<head>` tag as possible.
 
+✅ **Correct**:
 ```html
-<script src="https://api.mews.com/bookingengine/bookingengine.min.js"></script>
+<script src="https://api.mews.com/distributor/distributor.min.js"></script>
 ```
 
 ❎ **Incorrect** - DO NOT DO THIS:
 ```html
-<script src="https://www.your_domain.tld/wp-content/cache/min/1/bookingengine/bookingengine.min.js?ver=1628071961"></script>
-<script async src="https://api.mews.com/bookingengine/bookingengine.min.js"></script>
-<script src="https://apps.mews.com/bookingengine/prerelease/production/3.924.4/bookingengine.js"></script>
-<iframe src="https://api.mews.com/bookingengine/bookingengine.min.js"></iframe>
-<iframe src="https://api.mews.com/bookingengine/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
-```
-
-✅ **Correct**:
-```html
-<script src="https://api.mews.com/bookingengine/bookingengine.min.js"></script>
+<script src="https://www.your_domain.tld/wp-content/cache/min/1/distributor/distributor.min.js?ver=1628071961"></script>
+<script async src="https://api.mews.com/distributor/distributor.min.js"></script>
+<script src="https://apps.mews.com/distributor/prerelease/production/3.924.4/distributor.js"></script>
+<iframe src="https://api.mews.com/distributor/distributor.min.js"></iframe>
+<iframe src="https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
 ```
 
 > **Warning:** Please double-check that you've added the script as instructed and followed all the requirements above. If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working.
@@ -76,43 +72,43 @@ The last URL (pay.datatrans.com) is for [PCI Proxy](https://www.pci-proxy.com/),
 
 ## Step 2: Initialize Booking Engine Widget
 
-After the website has loaded, and the booking engine loader script has prepared the global `Mews.bookingengine` object, you can initialize the Booking Engine Widget by calling global `Mews.bookingengine` with some arguments.
+After the website has loaded, and the booking engine loader script has prepared the global `Mews.Distributor` object, you can initialize the Booking Engine Widget by calling global `Mews.Distributor` with some arguments.
 
-> **Important:** Make sure you initialize the Booking Engine Widget by calling `Mews.bookingengine` only **after** the website is loaded, otherwise the initialization will fail or will not fully complete. 
+> **Important:** Make sure you initialize the Booking Engine Widget by calling `Mews.Distributor` only **after** the website is loaded, otherwise the initialization will fail or will not fully complete. 
 > The easiest way to achieve this is to place the initialization code inside a `<script>` tag just before the closing `</body>` tag, but you can use a different approach if you want.
 
-In the following snippet, replace the placeholder `Your booking engine configuration id` with a real Mews Booking Engine Configuration ID from the correct [environment](../booking-engine-api/guidelines/environments.md).
-For details of how to obtain your Booking Engine Configuration ID, see the [FAQ](../FAQ/README.md#where-can-i-get-configuration-id).
+In the following snippet, replace the placeholder `Your booking engine Configuration ID` with a real Mews Booking Engine Configuration ID from the correct [environment](../booking-engine-api/guidelines/environments.md).
+For details of how to obtain your booking engine Configuration ID, see the [FAQ](../FAQ/README.md#where-can-i-get-configuration-id).
 
 ```html
-<!-- booking engine's initialization call, it creates new instance of booking engine. Use your booking engine configuration id. -->
+<!-- booking engine's initialization call, it creates a new instance of the booking engine. Use your booking engine Configuration ID. -->
 <script>
-    Mews.bookingengine({
+    Mews.Distributor({
         configurationIds: [
-            'Your booking engine configuration id',
+            'Your booking engine Configuration ID',
         ],
-        openElements: '.bookingengine-open',
+        openElements: '.distributor-open',
     });
 </script>
 ```
 
 This call creates an isolated (iframe based) overlay on your website and loads the booking engine into it.
 
-> **Warning:** The overlay and booking engine is not visible by default - we're going to solve this in the next section.
+> Note: The overlay and booking engine is not visible by default - we're going to solve this in the next section.
 
 
 ## Step 3: Set up overlay opening
 
 To display the booking engine overlay, you should bind its opening to some action, e.g. clicking on a button.
-The booking engine can set this binding automatically for you, if you provide the second option `openElements` to `Mews.bookingengine` and prepare the HTML elements which will be binded.
+The booking engine can set this binding automatically for you, if you provide the second option `openElements` to `Mews.Distributor` and prepare the HTML elements which will be binded.
 You can find more information about `openElements` in the [Options Reference](reference.md#options-reference).
 
 The binding is delegated, so the elements and selectors don't need to exist during load of the website, but you still need to add the HTML elements yourself.
-Knowing that, you can for example add the following HTML button with class `bookingengine-open` (the class name we've used in the initialization code from the previous section), and it  will open the Booking Engine Widget overlay upon a click:
+Knowing that, you can for example add the following HTML button with class `distributor-open` (the class name we've used in the initialization code from the previous section), and it  will open the Booking Engine Widget overlay upon a click:
 
 ```html
-<!-- Example of button for opening the booking engine when openElements is set to '.bookingengine-open' -->
-<button class="bookingengine-open">Book Now</button>
+<!-- Example of button for opening the booking engine when openElements is set to '.distributor-open' -->
+<button class="distributor-open">Book Now</button>
 ```
 
 This is just an example, the automatic binding can attach a click event listener to any HTML element.
@@ -123,8 +119,8 @@ This is just an example, the automatic binding can attach a click event listener
 
 This is all you need for the basic setup of the Mews Booking Engine. Here's a summary of what you've done:
 
-- On the web page with this setup, the loader script will prepare `Mews.bookingengine`
-- After the web page loads, your code will call `Mews.bookingengine` - this will initialize the Booking Engine Widget, create an overlay (hidden for now) and bind opening actions to selected HTML elements such as buttons
+- On the web page with this setup, the loader script will prepare `Mews.Distributor`
+- After the web page loads, your code will call `Mews.Distributor` - this will initialize the Booking Engine Widget, create an overlay (hidden for now) and bind opening actions to selected HTML elements such as buttons
 - When users click these HTML elements, the Booking Engine Widget overlay will open, and they can book through it
 - Users can close the overlay at any time and see your web page again
 
@@ -132,7 +128,7 @@ This is all you need for the basic setup of the Mews Booking Engine. Here's a su
 
 > This step is optional
 
-If you want to have a more customized setup, or you want to call some API functions on a booking engine instance to control it, you can provide a callback function as the second argument to the initialization call. 
+If you want to have a more customized setup, or you want to call some Javascript API functions on a booking engine instance to control it, you can provide a callback function as the second argument to the initialization call. 
 
 This callback is later called asynchronously with an argument - booking engine instance. By calling methods on this instance you can control the booking engine.
 
@@ -141,12 +137,12 @@ A very common example of this is using custom start and end date selectors that 
 ```html
 <!-- Example of setting custom dates, useful if you have e.g. your own calendars on your website -->
 <script>
-    Mews.bookingengine(
+    Mews.Distributor(
         {
             configurationIds: [
-                'Your booking engine configuration id'
+                'Your booking engine Configuration ID'
             ],
-            openElements: '.bookingengine-open',
+            openElements: '.distributor-open',
         },
         function (api) {
             // you can call API functions on a booking engine instance here
@@ -158,21 +154,21 @@ A very common example of this is using custom start and end date selectors that 
 </script>
 ```
 
-> Note: To see a list of all available API calls, please consult the Booking Engine Widget [API reference](./reference.md#api-reference).
+> Note: To see a list of all available Javascript API functions, please consult the Booking Engine Widget [Javascript API reference](./reference.md#javascript-api-reference).
 
 
 ## Set up as multi-enterprise
 
 > This step is optional
 
-The Booking Engine can run in two basic modes - single enterprise or multiple enterprise. The mode is chosen automatically during initialization, based on the count of configuration ids you have provided in the options.
-Whenever two or more hotels are loaded, the Booking Engine will start in the multi-enterprise mode. That means that it will add one more step to the booking flow - hotel selection.
+The booking engine can run in two basic modes - single enterprise or multiple enterprise. The mode is chosen automatically during initialization, based on the count of configuration ids you have provided in the options.
+Whenever two or more hotels are loaded, the booking engine will start in the multi-enterprise mode. That means that it will add one more step to the booking flow - hotel selection.
 To add more hotels, simply pass their Configuration IDs into the`configurationIds` array option, as follows.
-For details of how to obtain Booking Engine Configuration ID, see the [FAQ](../FAQ/README.md#where-can-i-get-configuration-id).
+For details of how to obtain booking engine Configuration ID, see the [FAQ](../FAQ/README.md#where-can-i-get-configuration-id).
 
 ```html
 <script>
-    Mews.bookingengine({
+    Mews.Distributor({
         configurationIds: [
             'First configuration id',
             'Second configuration id',

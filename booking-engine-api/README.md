@@ -1,6 +1,7 @@
 # Booking Engine API
 
-The __Mews Booking Engine API__ allows external applications \(usually 'booking widgets'\) to get information about offered rooms and products for a given hotel, to check availability of those rooms, and finally to create new reservations.
+The __Mews Booking Engine API__ is a web API that allows external applications such as booking widgets to interact programmatically with Mews to get information about offered rooms and spaces for a given property, to check availability of those rooms and spaces, and to create reservations.
+Use this option if you want to create your own custom booking engine.
 
 * [Guidelines](guidelines/README.md)
 * [Use cases](use-cases/README.md)
