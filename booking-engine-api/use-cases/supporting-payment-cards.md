@@ -1,13 +1,11 @@
 # Supporting payment cards
 
 When creating a reservation it is possible to attach a payment card to the reservation.
-
 As part of creating your own custom booking engine you may want to have a form within your client application where customers
-can enter their payment card data and send this data to Distributor API for further use. Payment card data can then
-be used by Mews for charging the customer.
+can enter their payment card data and send this data to the Booking Engine API for further use.
+Payment card data can then be used by Mews for charging the customer.
 
-To do that some Distributor API endpoints support or require [credit card data](../operations.md#credit-card-data)
-in the request.
+To do that, some Booking Engine API endpoints support or require [credit card data](../operations.md#credit-card-data) in the request.
 
 ### Where to get `CreditCardData` values
 

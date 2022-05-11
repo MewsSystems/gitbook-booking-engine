@@ -258,17 +258,17 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 #### Payment card storage type
 
-* PciProxy
+* `PciProxy`
 
 #### Credit card type
 
-* MasterCard
-* Visa
-* Amex
-* Discover
-* DinersClub
-* Jcb
-* Maestro
+* `MasterCard`
+* `Visa`
+* `Amex`
+* `Discover`
+* `DinersClub`
+* `Jcb`
+* `Maestro`
 * ...
 
 #### Product

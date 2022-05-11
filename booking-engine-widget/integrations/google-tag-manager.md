@@ -45,7 +45,7 @@ The Trigger should be a regex grouping of all the events you want to track \(to 
 ### Google Ecommerce
 
 You can track transactions with the Google Universal Analytics tag using the `Transaction` track type on the `distributorBookingFinished` event.
-All the data needed for tracking is set in the Tag Manager’s _dataLayer_ and will be passed automatically.
+All the data needed for tracking is set in the Tag Manager’s _data layer_ and will be passed automatically.
 
 Each reservation is sent as _Product_ with quantity set to 1; the name of the reserved category is sent as _Product name_; the name of the hotel is sent as _Product category_.
 
@@ -128,8 +128,8 @@ If you have everything set up correctly and you still cannot see events tracked,
 
 Distributor includes our Mews Google Tag Manager container \(id`GTM-M7JV35D`\) to keep statistics in our own Google Analytics. We use that data for a global Distributor performance measuring, to have an idea about performance in hotels that don’t use Analytics and for the ability to build our own statistics on top of the Analytics API in Commander.
 
-Having multiple installations is perfectly fine, if you keep common data layer name for all of them, which we do. Please, see the official documentation: [https://developers.google.com/tag-manager/devguide\#multiple-containers](https://developers.google.com/tag-manager/devguide#multiple-containers)
+Having multiple installations is perfectly fine, if you keep a common data layer name for all of them, which we do. Please, see the official documentation: [https://developers.google.com/tag-manager/devguide\#multiple-containers](https://developers.google.com/tag-manager/devguide#multiple-containers)
 
 | Next |
 | :-- |
-| [Triggers Reference](google-triggers-reference.md) |
+| [Google Triggers Reference](google-triggers-reference.md) |

@@ -17,7 +17,7 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentCardIds` | array of string | required | Unique identifiers of the [payment card](./operations.md#payment-card)s. |
+| `PaymentCardIds` | array of string | required | Unique identifiers of the [payment cards](./operations.md#payment-card). |
 
 ### Response
 
@@ -34,7 +34,7 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentCards` | array of [Payment card](./operations.md#payment-card)s | required | The payment cards. |
+| `PaymentCards` | array of [Payment cards](./operations.md#payment-card) | required | The payment cards. |
 
 #### Payment card
 

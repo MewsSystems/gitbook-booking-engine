@@ -27,8 +27,6 @@
   * [Guidelines](booking-engine-api/guidelines/README.md)
 	  * [Environments](booking-engine-api/guidelines/environments.md)
 	  * [Authorization](booking-engine-api/guidelines/authorization.md)
-	  * [Requests](booking-engine-api/guidelines/requests.md)
-	  * [Responses](booking-engine-api/guidelines/responses.md)
 	  * [Images](booking-engine-api/guidelines/images.md)
   * [Use cases](booking-engine-api/use-cases/README.md)
     * [On session payments](booking-engine-api/use-cases/on-session-payments.md)

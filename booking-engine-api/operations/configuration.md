@@ -2,7 +2,7 @@
 
 ## Get configuration
 
-Preferred initial call used to obtain all static data about distributor configuration for the client.
+Get all configuration data for the specified booking engine instances, including location, supported room and space categories, products, tax environment, and so on.
 
 ### Request
 
@@ -21,9 +21,18 @@ Preferred initial call used to obtain all static data about distributor configur
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Identification of the API client, as described in [Authorization](../guidelines/authorization.md). |
 | `PrimaryId` | string | required | Unique identifier of a primary [configuration](./operations.md#configuration). |
-| `Ids` | array of string | required | Unique identifiers of [configuration](./operations.md#configuration)s. |
+| `Ids` | array of string | required | Set of unique identifiers of [configuration](./operations.md#configuration)s. |
+
+
+
+
+
+
+| `Client` | string | required | Identification of the API client, as described in [Authorization](../guidelines/authorization.md). |
+| `PrimaryId` | string | required | Unique identifier of a primary [configuration](./operations.md#configuration). |
+| `Ids` | array of string | required | Set of unique identifiers of [configuration](./operations.md#configuration)s. |
 
 ### Response
 
