@@ -8,7 +8,7 @@ To get further information about the options and Javascript API calls, see the [
 > **Note:** Direct configuration of the booking engine through the options has been deprecated and will be disabled in future.
 > Instead use Booking Engine Configuration in **Mews Operations**. The only supported options now are `configurationIds` and `openElements`.
 
-> **Important:** This is just an example, do not copy this directly to your website!
+**Important:** This is just an example, do not copy this directly to your website!
 
 ```javascript
 <script>
@@ -42,13 +42,13 @@ function(distributor) {
 
 > **Note:** Make sure you have just one `<script>` tag containing the call to `Mews.Distributor` on your page.
 
-### Payment card storage
+## Payment card storage
 
 Payment card storage is used to safely collect and store information about a customer's payment card. Currently the Mews Booking Engine supports these payment card storage options:
 
 * [PCI Proxy](https://www.pci-proxy.com)
 
-### Payment gateways
+## Payment gateways
 
 Payment gateways are used to securely handle customer payments. Configuration is done once, when the property is set up, and with the Mews Booking Engine this can be done with minimal setup.
 Mews Booking Engine currently supports these payment gateways:

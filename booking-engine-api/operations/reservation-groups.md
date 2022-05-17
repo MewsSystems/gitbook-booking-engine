@@ -2,6 +2,8 @@
 
 ## Create reservation group
 
+Create a group of one or more reservations, i.e. make a reservation.
+
 ### Request
 
 `[ApiBaseUrl]/api/distributor/v1/reservationGroups/create`
@@ -56,13 +58,13 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
-| `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
+| `Client` | string | required | Client application name, as described in [Authorization](../guidelines/authorization.md). |
+| `ConfigurationId` | string | required | Unique identifier of the Booking Engine configuration used. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
-| `Customer` | [Customer](./operations.md#customer) | required | Information about customer who creates the order. |
-| `Booker` | [Booker](./operations.md#booker) | optional | Information about booker. |
-| `Reservations` | array of [Reservation data](./operations.md#reservation-data) | required | Parameters of reservations to be ordered. |
-| `CreditCardData` | [Credit card data](./operations.md#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
+| `Customer` | [Customer](#customer) | required | Information about the customer or guest. |
+| `Booker` | [Booker](#booker) | optional | Information about the person making the booking. |
+| `Reservations` | array of [Reservation data](#reservation-data) | required | Reservation parameters, such as dates and quantities of persons. |
+| `CreditCardData` | [Credit card data](#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
 
 #### Customer
 
@@ -78,7 +80,7 @@
 | `PostalCode` | string | optional | Postal code of the address. |
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
-| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booker is present, this should be `false` or `null` because customer is not subscribing - the Booker is. |
+| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When `Booker` is present, this should be `false` or `null` because the customer is not subscribing, the booker is. See [Send marketing emails](#send-marketing-emails). |
 
 #### Booker
 
@@ -88,16 +90,28 @@
 | `FirstName` | string | required | First name of the booker. |
 | `LastName` | string | required | Last name of the booker. |
 | `Telephone` | string | optional | Telephone number of the booker. |
-| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmails` in [customer](./operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
+| `SendMarketingEmails` | boolean | optional | See [Send marketing emails](#send-marketing-emails). |
+
+#### Send marketing emails
+
+The boolean flag `SendMarketingEmails` indicates if the user has opted in to receive marketing communication or not.
+The API accepts the following values:
+
+* `true` - subscription is created
+* `false` - subscription is disabled
+* `null` - subscription remains untouched
+
+When `Booker` is present in the request, we assume that the booker is booking on behalf of the customer, but their opt-in to marketing communication is for them as user and not for the customer.
+Therefore, the `SendMarketingEmails` property for the booker should be set according to the user's choice, while the `SendMarketingEmails` property for the customer should be set to `false` or `null`.
 
 #### Reservation data
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `RoomCategoryId` | string | required | Identifier of the requested room category. |
-| `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
-| `EndUtc` | string | required | End date of the reservation \(departure date\). |
-| `VoucherCode` | string | optional | A voucher code, set to be paired with reservation for later retrieval only. Actual voucher rate used is determined by setting a proper `RateId`. |
+| `RoomCategoryId` | string | required | Identifier of the requested room or space category. |
+| `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
+| `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
+| `VoucherCode` | string | optional | A voucher code, to be paired with reservation for later retrieval only. The actual voucher rate used is determined by setting a proper `RateId`. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
@@ -108,8 +122,8 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details in our [use case](./use-cases/how-to-support-payment-cards-in-booking-engine-application.md). |
-| `Expiration` | string | required | Expiration date of payment card in format `YYYY-MM`. |
+| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. For more details, see our [Supporting payment cards](../use-cases/supporting-payment-cards.md) use case. |
+| `Expiration` | string | required | Expiration date of payment card, in format `YYYY-MM`. |
 | `HolderName` | string | required | Name of the card holder. |
 
 ### Response
@@ -153,11 +167,11 @@
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the created reservation group. |
-| `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
-| `Reservations` | array of [Reservation](./operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of [payment request](./operations.md#payment-request) that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
-| `PaymentCardId` | string | optional | Unique identifier of [payment card](./operations.md#payment-card) that can be used to complete [on session payment card authorization](./use-cases/on-session-payment-card-authorization.md). |
-| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the whole group. |
+| `CustomerId` | string | required | Unique identifier of the reservation group customer. |
+| `Reservations` | array of [Reservation](#reservation) | required | Details of the reservations in the group. |
+| `PaymentRequestId` | string | optional | Unique identifier of the [Payment request](#payment-request) that can be used to complete [on session payment](../use-cases/on-session-payments.md). |
+| `PaymentCardId` | string | optional | Unique identifier of the [Payment card](payment-cards.md#payment-card) that can be used to complete [on session payment card authorization](../use-cases/payment-card-authorization.md). |
+| `TotalAmount` | [Amount](hotels.md#multi-currency-amount) | required | Total amount of the whole group. |
 
 #### Reservation
 
@@ -165,25 +179,27 @@
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Identifier of the reservation. |
 | `Number` | string | required | Confirmation number of the reservation. |
-| `RoomCategoryId` | string | required | Identifier of the requested room category. |
-| `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
-| `EndUtc` | string | required | End date of the reservation \(departure date\). |
+| `RoomCategoryId` | string | required | Identifier of the requested room or space category. |
+| `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
+| `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
 | `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
-| `Amount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the reservation. |
+| `Amount` | [Amount](hotels.md#multi-currency-amount) | required | Total amount of the reservation. |
 
 ### Error response
 
-In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top the standard ones:
+In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top of the standard ones:
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `ExceedingReservationIndexes` | array of number | optional | Indexes of reservations from the request that are not available anymore. |
 
 ## Get reservation group
+
+Fetch details of the given reservation group.
 
 ### Request
 
@@ -203,18 +219,17 @@ In case of an error caused by insufficient availability \(which might have decre
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Client application name, as described in [Authorization](../guidelines/authorization.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
-| `Extent` | [Reservation group extent](./operations.md#reservation-group-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
+| `Extent` | [Reservation group extent](#reservation-group-extent) | optional | Extent of data to be returned. e.g. it is possible to specify that together with the reservation group, payment requests and payments will be returned. |
 
 #### Reservation group extent
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentRequests` | boolean | optional | Whether the response should contain [payment requests](./operations.md#payment-request) related to the reservation group. |
-| `Payments` | boolean | optional | Whether the response should contain [payment](./operations.md#payment) attempts related to the [payment requests](./operations.md#payment-request) for reservation group. |
-
+| `PaymentRequests` | boolean | optional | Whether the response should contain [Payment requests](#payment-request) related to the reservation group. |
+| `Payments` | boolean | optional | Whether the response should contain [Payment](#payment) attempts related to the [Payment requests](#payment-request) for reservation group. |
 
 ### Response
 
@@ -285,11 +300,11 @@ In case of an error caused by insufficient availability \(which might have decre
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
-| `Reservations` | array of [Reservation](./operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
-| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the whole group. |
-| `PaymentRequests` | array of [Payment request](./operations.md#payment-request) | optional | Contains payment requests related to the reservation group. |
-| `Payments` | array of [Payment](./operations.md#payment) | optional | Contains Payments related to the payment requests. |
+| `Reservations` | array of [Reservation](#reservation) | required | Details of the created reservations in the group. |
+| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](../use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](payment-cards.md#multi-currency-amount) | required | Total amount of the whole group. |
+| `PaymentRequests` | array of [Payment request](#payment-request) | optional | Contains payment requests related to the reservation group. |
+| `Payments` | array of [Payment](#payment) | optional | Contains Payments related to the payment requests. |
 
 #### Payment request
 
@@ -297,7 +312,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the payment request. |
 | `ReservationGroupId` | string | required | Identifier of the related reservation group. |
-| `State` | string [Payment request state](./operations.md#payment-request-state) | required | State of the payment request. |
+| `State` | string [Payment request state](#payment-request-state) | required | State of the payment request. |
 
 #### Payment request state
 
@@ -311,12 +326,12 @@ In case of an error caused by insufficient availability \(which might have decre
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the payment. |
-| `Amount` | [Amount](./operations.md#amount) | required | Amount in a currency which was used to create [payment request](./operations.md#payment-request) - usually default currency of the enterprise. |
-| `ChargeAmount` | [Amount](./operations.md#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
+| `Amount` | [Amount](#amount) | required | Amount in a currency which was used to create the [Payment request](#payment-request) - usually the default currency of the enterprise. |
+| `ChargeAmount` | [Amount](#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
 | `CreatedUtc` | string | required | Date and time of the payment creation in UTC timezone in ISO 8601 format. |
 | `EnterpriseId` | string | required | Identifier of the enterprise receiving the payment. |
 | `PaymentRequestId` | string | required | Identifier of the payment request. |
-| `State` | string [Payment state](./operations.md#payment-state) | required | State of the payment attempt. |
+| `State` | string [Payment state](#payment-state) | required | State of the payment attempt. |
 
 #### Amount
 
@@ -325,7 +340,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | `Currency` | string | required | ISO 4217 code of the currency. |
 | `GrossValue` | number | required | Gross value of the amount. (Net + sum of `TaxValues`) |
 | `NetValue` | number | required | Net value of the amount. |
-| `TaxValues` | array of [Tax value](./operations.md#tax-value)s | required | Tax values of the amount. |
+| `TaxValues` | array of [Tax values](hotels.md#tax-value) | required | Tax values of the amount. |
 
 #### Payment state
 

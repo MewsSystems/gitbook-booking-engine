@@ -36,18 +36,18 @@ Use the code snippet \'as is\' and as described, doing otherwise may cause unexp
 
 The script file size is kept as minimal as possible (approx 11 kB gzipped) to allow quick web page initialization. Also, serving the script from our CDN servers ensures seamless releases of new features, bug fixes and improvements.
 
-* If you have a Content Security Policy (CSP) set up on your website, you need to enable the domains the booking engine uses - see [Content Security Policy](#content-security-policy) under [Installation](#installation) below
+* If you have a Content Security Policy (CSP) set up on your website, you need to enable the domains that the booking engine uses - see [Content Security Policy](#content-security-policy) under [Installation](#installation) below
 
 ### Installation
 
 Place the following `<script>` code snippet in the `<head>` of your web page's HTML, preferably as close to the opening `<head>` tag as possible.
 
-✅ **Correct**:
+**Correct**:
 ```html
 <script src="https://api.mews.com/distributor/distributor.min.js"></script>
 ```
 
-❎ **Incorrect** - DO NOT DO THIS:
+**Incorrect** - DO NOT DO THIS:
 ```html
 <script src="https://www.your_domain.tld/wp-content/cache/min/1/distributor/distributor.min.js?ver=1628071961"></script>
 <script async src="https://api.mews.com/distributor/distributor.min.js"></script>
@@ -74,7 +74,7 @@ The last URL (pay.datatrans.com) is for [PCI Proxy](https://www.pci-proxy.com/),
 
 After the website has loaded, and the booking engine loader script has prepared the global `Mews.Distributor` object, you can initialize the Booking Engine Widget by calling global `Mews.Distributor` with some arguments.
 
-> **Important:** Make sure you initialize the Booking Engine Widget by calling `Mews.Distributor` only **after** the website is loaded, otherwise the initialization will fail or will not fully complete. 
+> **Warning:** Make sure you initialize the Booking Engine Widget by calling `Mews.Distributor` only _after_ the website is loaded, otherwise the initialization will fail or will not fully complete. 
 > The easiest way to achieve this is to place the initialization code inside a `<script>` tag just before the closing `</body>` tag, but you can use a different approach if you want.
 
 In the following snippet, replace the placeholder `Your booking engine Configuration ID` with a real Mews Booking Engine Configuration ID from the correct [environment](../booking-engine-api/guidelines/environments.md).

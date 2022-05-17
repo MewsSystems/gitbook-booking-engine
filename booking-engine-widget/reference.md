@@ -61,13 +61,13 @@ The API functions supported are listed below. Some functions are common to both 
 * `date` Type: `Date` Description: The start date to set
 * Sets the start date for a new availability query, the currently loaded availability list is not affected. If `date` is not a valid `Date` object or its value isn’t allowed as a start date, nothing happens. Note: `monthIndex` starts runs from `0` for January to `11` for December ([click here for more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#Individual_date_and_time_component_values)).
 
-> ✅ **Correct** - for 18 January 2019:
+> **Correct** - for 18 January 2019:
 >
 > ```javascript
 > distributor.setStartDate(new Date(2019, 0, 18))
 > ```
 >
-> ❎ **Incorrect** - DO NOT DO THIS:
+> **Incorrect** - DO NOT DO THIS:
 >
 > ```javascript
 > distributor.setStartDate("2019-01-18")
@@ -78,13 +78,13 @@ The API functions supported are listed below. Some functions are common to both 
 * `date` Type: `Date` Description: The end date to set
 * Sets the end date for a new availability query, the currently loaded availability list is not affected. If `date` is not a valid `Date` object, nothing happens. Note: `monthIndex` starts runs from `0` for January to `11` for December ([click here for more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#Individual_date_and_time_component_values)).
 
-> ✅ **Correct** - for 18 December 2019:
+> **Correct** - for 18 December 2019:
 >
 > ```javascript
 > distributor.setEndDate(new Date(2019, 11, 18))
 > ```
 >
-> ❎ **Incorrect** - DO NOT DO THIS:
+> **Incorrect** - DO NOT DO THIS:
 > 
 > ```javascript
 > distributor.setEndDate("2019-12-18")

@@ -2,7 +2,7 @@
 
 This section will show you how to use an HTML form to capture dates from the user, then submit those dates when opening the Booking Engine Widget.
 
-> **Important:** Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
+> **Important:** Make sure you fulfill all the required [Prerequisites](prerequisites.md). Without doing so, the code of the use cases can be hard to understand or the behavior of the code can differ from what you expect.
 
 ## Sample code
 
@@ -51,7 +51,7 @@ Below is some sample HTML and Javascript code to demonstrate the functionality. 
 
                             const startDate = new Date(startYears, startMonths - 1, startDays);
                             const endDate = new Date(endYears, endMonths - 1, endDays);
-                            // Use Distributor Widget API to set the dates in Distributor Widget and open it.
+                            // Use the Booking Engine Widget Javascript API to set the dates in the widget and open it.
                             api.setStartDate(startDate);
                             api.setEndDate(endDate);
                             api.open();
@@ -60,7 +60,7 @@ Below is some sample HTML and Javascript code to demonstrate the functionality. 
 
                     listenOnSubmit();
 
-                    // Enable the submit button, because Distributor Widget is ready to be used.
+                    // Enable the submit button, because the Booking Engine Widget is ready to be used.
                     const enableSubmit = () => {
                         const submitButton = document.getElementById('dates-submit');
                         submitButton.value = 'Submit';

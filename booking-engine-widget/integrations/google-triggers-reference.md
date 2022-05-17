@@ -1,6 +1,6 @@
 # Google Triggers Reference
 
-> **Notice of usage:** Google Tag Manager is a 3rd party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens to them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with the Mews Booking Engine. If you need a more complex setup, it is up to you to configure and test it.
+> **Notice of usage:** Google Tag Manager is a third party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens to them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with the Mews Booking Engine. If you need a more complex setup, it is up to you to configure and test it.
 
 All events data is passed to Tag Manager through _Data Layer_. To use it in your tags, set up _Variable_ with a proper name as a variable of the data layer, like this:
 

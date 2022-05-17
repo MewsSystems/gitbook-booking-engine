@@ -1,5 +1,7 @@
 # Guidelines
 
+This section provides guidelines and general information on how to use the __Mews Booking Engine API__. For information about individual endpoints or operations, see [API Operations](../operations/README.md).
+
 ## Usage
 
 The __Mews Booking Engine API__ is a public API with client name authorization. It is designed to be consumed directly by front-end clients. It is unsuitable for continuous polling by a single server due to the built in anti-scraping protection and such requests can fail. For server to server communication, please refer to the [Mews Connector API](https://mews-systems.gitbook.io/connector-api/).
@@ -41,7 +43,7 @@ Both of these values must be defined together, otherwise default values for the 
 ## Responses
 
 The API responds with `Content-Type` set to `application/json` and JSON content. In case of success, the HTTP status code is 200 and the content contains results according to the particular operation.
-In case of error, there are multiple HTTP status codes for different types of errors:
+In case of error, different HTTP status codes are used for different types of error:
 
 * **400 Bad Request**
   * Error caused by the client application, e.g. in case of a malformed request or invalid identifier of a resource. In most cases, such an error signifies an error in the client application, i.e. the consumer of the API.

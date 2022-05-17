@@ -20,8 +20,8 @@ This section describes all operations supported by the API, organised by theme.
 
 | <div style="width:200px">Operation or Endpoint</div> | Description |
 | :-- | :-- |
-| [Get payment cards](payment-cards.md#get-payment-cards) | ??? |
-| [Authorize payment card](payment-cards.md#authorize-payment-card) | ??? |
+| [Get payment cards](payment-cards.md#get-payment-cards) | Fetch details about the listed payment cards, in particular the Authorization state. |
+| [Authorize payment card](payment-cards.md#authorize-payment-card) | Request authorization of the given payment card. |
 
 ## Reservations
 

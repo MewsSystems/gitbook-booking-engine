@@ -2,13 +2,13 @@
 
 This guide will show you how to open the booking engine with multiple enterprises and set a pre-selected city or location.
 
-> **Important:** Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
+> **Important:** Make sure you fulfill all the required [Prerequisites](prerequisites.md). Without doing so, the code of the use cases can be hard to understand or the behavior of the code can differ from what you expect.
 
 ## Sample code
 
 Below is some sample HTML and Javascript code to demonstrate the functionality. Numbered notes beneath the code snippet relate to the numbered comments within the code.
 
-The sample uses an example scenario of three hotels, with two of them in the same London location:
+The sample uses an example scenario of three hotels, with two of them in the same city location:
 
 * One hotel in Paris
 * One hotel in London

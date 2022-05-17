@@ -2,6 +2,8 @@
 
 ## Get payment cards
 
+Fetch details about the listed payment cards, in particular the Authorization state.
+
 ### Request
 
 `[ApiBaseUrl]/api/distributor/v1/paymentCards/getAll`
@@ -17,7 +19,7 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentCardIds` | array of string | required | Unique identifiers of the [payment cards](./operations.md#payment-card). |
+| `PaymentCardIds` | array of string | required | Unique identifiers of the [Payment cards](#payment-card). |
 
 ### Response
 
@@ -34,23 +36,25 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentCards` | array of [Payment cards](./operations.md#payment-card) | required | The payment cards. |
+| `PaymentCards` | array of [Payment cards](#payment-card) | required | The payment cards. |
 
 #### Payment card
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the payment card. |
-| `AuthorizationState` | string [Authorization state](./operations.md#authorization-state) | required | State of the payment attempt. |
+| `AuthorizationState` | string [Authorization state](#authorization-state) | required | Authorization state of the card. |
 
 #### Authorization state
 
 - `Authorized` - Finite state. The payment card has been authorized.
 - `Authorizable` - Non-finite state. The payment card can be authorized.
-- `Unauthorizable` - Finite state. The payment card can't be authorized.
+- `Unauthorizable` - Finite state. The payment card cannot be authorized.
 
 
 ## Authorize payment card
+
+Request authorization of the given payment card.
 
 ### Request
 
@@ -75,9 +79,9 @@
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `EnterpriseId` | string | required | Unique identifier of the enterprise which does have access to the payment card. |
+| `EnterpriseId` | string | required | Unique identifier of the enterprise which has access to the payment card. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card. |
-| `BrowserInfo` | [Browser info](./operations.md#browser-info) | required | Information about the users browser. |
+| `BrowserInfo` | [Browser info](#browser-info) | required | Information about the user's browser. |
 
 #### Browser info
 
@@ -88,7 +92,7 @@
 | `ColorDepth` | number | required | Integer value of the [user screen color depth](https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth). |
 | `UserAgent` | string | required | Value of the browser [user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent). |
 | `Language` | string | required | Value of the browser [language](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language). |
-| `JavaEnabled` | boolean | required | Value of the browser information whether [Java is enabled](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/javaEnabled). This will be always `false`. |
+| `JavaEnabled` | boolean | required | Value of the browser information on whether [Java is enabled](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/javaEnabled). This will always be `false`. |
 | `TimeZoneOffset` | number | required | Integer value of the user [timezone offset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset). |
 
 ### Response
@@ -105,9 +109,9 @@
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the payment card authorization attempt. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card being authorized. |
-| `State` | string [Payment card authorization state](./operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
+| `State` | string [Authorization request state](#authorization-request-state) | required | State of the card authorization attempt. |
 
-#### Payment card authorization state
+#### Authorization request state
 
 - `Authorized` - Finite state. The payment card authorization has been successfully completed.
 - `Requested` - Non-finite state. The payment card authorization is requested from the user.

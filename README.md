@@ -1,7 +1,7 @@
 # Introduction
 
-Welcome to the online guide for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website to enable guests to create reservations
-in your properties using __Mews Operations__. You can do this in one of three ways:
+Welcome to the online documentation for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website, so your guests can create reservations in your properties directly in __Mews Operations__.
+You can do this in one of three ways:
 
 * [Booking Engine Standalone](booking-engine-standalone/README.md)<br>Redirect to a standalone booking page hosted by Mews
 * [Booking Engine Widget](booking-engine-widget/README.md)<br>Embed a JavaScript widget into your own website
@@ -11,14 +11,11 @@ Not sure which option is right for you? See [Ways to integrate](FAQ/ways-to-inte
 If you need further assistance, or have any questions or special requests, please contact [support@mews.com](mailto:support@mews.com).
 
 > ### Terminology
-> You may see reference to the term *Distributor*, either in the Guide or in URLs, this is the old name for the *Mews Booking Engine* before it was re-branded.
+> You may see reference to the term *Distributor*, either in the Guide, in URLs or in code snippets, this is the old name for the *Mews Booking Engine* before it was re-branded.
 > So if you see *Distributor*, this is synonymous with *Mews Booking Engine*.
 > For a full description of all the terms used in the Guide, see the [Mews Glossary for Open API users](https://help.mews.com/s/article/Mews-Glossary-for-Open-API-users?language=en_US).
 
 > ### Changes to this Guide
-> * For the history of changes to the Guide, see the Changelogs for each section:
-> 	* [Changelog \(Standalone\)](booking-engine-standalone/changelog/README.md)
-> 	* [Changelog \(Widget\)](booking-engine-widget/changelog/README.md)
-> 	* [Changelog \(API\)](booking-engine-api/changelog/README.md)
-> * ⚠️ For important information on deprecations in the API, see [Deprecations](booking-engine-api/deprecations/README.md)
+> * For the history of changes to the Guide, see the [Changelog](changelog/README.md)
+> * For important information on deprecations in the API, see [Deprecations](booking-engine-api/deprecations/README.md)
 > * To track changes and updates to any part of the Guide, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-booking-engine-guide/tree/master)
