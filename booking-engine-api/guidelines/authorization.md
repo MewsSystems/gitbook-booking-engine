@@ -6,7 +6,7 @@ The Client application needs to be pre-registered with Mews Support at `support@
 
 * `Client`  - the name of the client that will be used for every API request
 * `Email` -  an email contact for the client's tech/dev department; this email will be used by our developers in order to notify you about any breaking changes in the API
-* `Environments` - we offer two [environments](./environments.md), `Production` and `Demo`, where `Demo` should be used during API implementation. **Note:** the two environments have separate client lists, so make sure you are registered in `Production` before you move your implementation to the Production environment.
+* `Environments` - we offer two [Environments](./environments.md), `Production` and `Demo`, where `Demo` should be used during API implementation. **Note:** the two environments have separate client lists, so make sure you are registered in `Production` before you move your implementation to the Production environment.
 
 > **Sample Client name**
 > 

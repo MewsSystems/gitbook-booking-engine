@@ -2,7 +2,7 @@
 
 ## Get reservations pricing
 
-Gives a pricing information for the given configuration.
+Get a price quotation for a specific hotel, date interval, room category and person count.
 
 ### Request
 
@@ -30,13 +30,13 @@ Gives a pricing information for the given configuration.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
-| `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
-| `EndUtc` | string | required | End date of the reservation \(departure date\). |
+| `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
+| `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
-| `Occupancies` | array of [Occupancy](./operations.md#occupancy) | required | Occupancies of the reservations. |
+| `Occupancies` | array of [Occupancy](#occupancy) | required | Occupancy numbers for the reservations. |
 | `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
 
 #### Occupancy
@@ -74,4 +74,4 @@ Gives a pricing information for the given configuration.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `OccupancyPrices` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Pricing information. |
+| `OccupancyPrices` | array of [Room occupancy availability](hotels.md#room-occupancy-availability) | required | Pricing information. |

@@ -54,7 +54,7 @@ Fetch details about the listed payment cards, in particular the Authorization st
 
 ## Authorize payment card
 
-Request authorization of the given payment card.
+Request authorization of the specified payment card.
 
 ### Request
 

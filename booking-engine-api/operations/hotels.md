@@ -2,7 +2,7 @@
 
 ## Get hotels
 
-Alternative initial call used to obtain all static data about hotel relevant for the client.
+Get hotels data for a single specified hotel. This operation can be called initially to fetch data which may be important during the booking workflow.
 
 ### Request
 
@@ -17,8 +17,8 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
-| `HotelId` | string | required | Unique identifier of hotel. |
+| `Client` | string | required | Identification of the client, as described in [Authorization](../guidelines/authorization.md). |
+| `HotelId` | string | required | Unique identifier of the hotel. |
 
 ### Response
 
@@ -191,20 +191,20 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Countries` | array of [Country](./operations.md#country) | required | Countries supported by hotel. |
-| `Currencies` | array of [Currency](./operations.md#currency) | required | Currencies accepted by hotel. |
+| `Countries` | array of [Country](#country) | required | Countries supported by the hotel. |
+| `Currencies` | array of [Currency](#currency) | required | Currencies accepted by the hotel. |
 | `DefaultCurrencyCode` | string | required | Code of hotel’s default currency. |
 | `DefaultLanguageCode` | string | required | Code of hotel’s default language. |
 | `DefaultRateCurrencyCode` | string | required | Code of currency of hotel’s default rate. |
 | `IanaTimezoneIdentifier` | string | required | Iana identifier of hotel’s time zone |
 | `ImageId` | string | optional | Unique identifier of hotel’s logo image. |
 | `IntroImageId` | string | optional | Unique identifier of hotel’s intro image \(usable as background image\). |
-| `Languages` | array of [Language](./operations.md#language) | required | Languages supported by the hotel. |
-| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the hotel. |
-| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the hotel. |
-| `PaymentGateway` | one of [Payment gateway](./operations.md#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
-| `Products` | array of [Product](./operations.md#product) | required | All products orderable with rooms. |
-| `RoomCategories` | array of [Room category](./operations.md#room-category) | required | All room categories offered by hotel. |
+| `Languages` | array of [Language](#language) | required | Languages supported by the hotel. |
+| `Name` | [Localized text](#localized-text) | required | Name of the hotel. |
+| `Description` | [Localized text](#localized-text) | required | Description of the hotel. |
+| `PaymentGateway` | one of [Payment gateway](#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
+| `Products` | array of [Product](#product) | required | All products orderable with rooms. |
+| `RoomCategories` | array of [Room category](#room-category) | required | All room categories offered by hotel. |
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
 | `ImageBaseUrl` | string | required | Base URL of images. |
 
@@ -231,7 +231,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | :-- | :-- | :-- | :-- |
 | `Code` | string | required | Language code. |
 | `Name` | string | required | Name of the language. |
-| `DefaultCulture` | [Culture](./operations.md#culture) | required | Specifics of a default culture for the language. |
+| `DefaultCulture` | [Culture](#culture) | required | Specifics of a default culture for the language. |
 
 #### Culture
 
@@ -246,13 +246,14 @@ A localized text is an object of the property values localized into languages su
 
 #### Payment gateway
 
-If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
+If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific API call and the gateway’s library to encode credit card data.
+The main purpose of a payment gateway is to securely obtain the credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with a note about missing credit card.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentCardStorageType` | string [Payment card storage type](./operations.md#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
+| `PaymentCardStorageType` | string [Payment card storage type](#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | array of [Credit card type](./operations.md#credit-card-type) | required | Supported payment cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | array of [Credit card type](#credit-card-type) | required | Supported payment cards, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
 | `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO 4217 format. |
 
@@ -277,33 +278,33 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the product. |
 | `CategoryId` | string | optional | Unique identifier of the product category. |
-| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the product localized into all supported languages. |
-| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the product localized into all supported languages. |
+| `Name` | [Localized text](#localized-text) | required | Name of the product localized into all supported languages. |
+| `Description` | [Localized text](#localized-text) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `Pricing` | [Pricing coproduct](./operations.md#pricing-coproduct) | required | Object defining the pricing method and price values. |
-| `ChargingMode` | string [Product charging mode](./operations.md#product-charging-mode) | required | Charging mode of the product. |
-| `PostingMode` | string [Product posting mode](./operations.md#product-posting-mode) | required | Posting mode of the product. |
+| `Pricing` | [Pricing coproduct](#pricing-coproduct) | required | Object defining the pricing method and price values. |
+| `ChargingMode` | string [Product charging mode](#product-charging-mode) | required | Charging mode of the product. |
+| `PostingMode` | string [Product posting mode](#product-posting-mode) | required | Posting mode of the product. |
 
 #### Pricing coproduct
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Discriminator` | string [Pricing data discriminator](./operations.md#pricing-discriminator) | required | Determines type of value. |
-| `Value` | [Multi-currency amount](./operations.md#multi-currency-amount) / [Relative price data value](./operations.md#relative-price-data-value) | required | Structure of object depends on the [Pricing data discriminator](./operations.md#pricing-discriminator) |
+| `Discriminator` | string [Pricing data discriminator](#pricing-discriminator) | required | Determines type of value. |
+| `Value` | [Multi-currency amount](#multi-currency-amount) / [Relative price data value](#relative-price-data-value) | required | Structure of object depends on the [Pricing data discriminator](#pricing-discriminator) |
 
 #### Pricing data discriminator
 
-* `Absolute` - Data specific to absolutely priced product are represented by [Multi-currency amount](./operations.md#multi-currency-amount).
-* `Relative` - Data specific to relatively priced product are represented by [Relative price data value](./operations.md#relative-price-data-value).
+* `Absolute` - Data specific to absolutely priced product are represented by [Multi-currency amount](#multi-currency-amount).
+* `Relative` - Data specific to relatively priced product are represented by [Relative price data value](#relative-price-data-value).
 
 #### Relative price data value
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `ProductIds` | array of string | required | Unique identifiers of [product](./operations.md#product)s used to calculate the price of the relatively priced product. |
+| `ProductIds` | array of string | required | Unique identifiers of [Products](#product) used to calculate the price of the relatively priced product. |
 | `Multiplier` | number | required | Percentage of the relative price. |
-| `Target` | [Relative price target](./operations.md#relative-price-target) | required | Target defining whether the price of a product should be calculated by multiplying gross value, tax value or net value of dependant products. |
+| `Target` | [Relative price target](#relative-price-target) | required | Target defining whether the price of a product should be calculated by multiplying gross value, tax value or net value of dependant products. |
 | `TaxRateCodes` | array of string | required | Tax rate codes that should be applied to the price in order to calculate the taxes of the product. |
 
 #### Relative price target
@@ -348,7 +349,7 @@ An object where name corresponds to ISO code and value represents a structure th
 | :-- | :-- | :-- |
 | `GrossValue` | Number | Net price + taxes |
 | `NetValue` | Number | Amount without taxes |
-| `TaxValues` | Collection of [Tax value](./operations.md#tax-value)s | Tax values for the net value amount |
+| `TaxValues` | Collection of [Tax values](#tax-value) | Tax values for the net value amount |
 
 #### Tax value
 
@@ -362,21 +363,11 @@ An object where name corresponds to ISO code and value represents a structure th
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the room category. |
-| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the room category localized into all supported languages. |
-| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the room category localized into all supported languages. |
+| `Name` | [Localized text](#localized-text) | required | Name of the room category localized into all supported languages. |
+| `Description` | [Localized text](#localized-text) | required | Description of the room category localized into all supported languages. |
 | `NormalBedCount` | number | required | Number of normal beds in the room category. |
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | [Space type](#space-type) | required | Type of the room category. |
-
-
-#### Category image assignment 
-
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `Id` | string | required | Unique identifier of the room category. |
-| `CategoryId` | string | required | Unique identifier of the [Room category](./operations.md#room-category) for which the image is attached. |
-| `ImageId` | string | required | Unique identifier of the image that can be used in the [URL to get the image file](./images.md). |
-| `Ordering` | number | required | Ordinal number of the image that can be used to display the images in order defined in the administration. |
 
 #### Space type
 
@@ -387,7 +378,9 @@ An object where name corresponds to ISO code and value represents a structure th
 
 ## Get availability
 
-Gives availabilities and pricings for given date interval with product prices included for each room category. Categorized by applicable rates and person counts from 1 to full room. If room category is not available, it is left out from response.
+Get availability and pricing options for the specified hotel for the specified date interval.
+Further optional parameters can be supplied, such as room categories and voucher codes.
+The availability and pricing is returned for each applicable combination of occupancy and rate, for each available room category.
 
 ### Request
 
@@ -415,7 +408,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
@@ -423,7 +416,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `ProductIds` | array of string | optional | Unique identifiers of products which should be included into pricing calculations. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
-| `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support given values, nearest applicable are found. |
+| `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found. |
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 
@@ -495,18 +488,18 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `RateGroups` | array of [Rate group](./operations.md#rate-group) | required | Information about all available rate groups. |
-| `Rates` | array of [Rate](./operations.md#rate) | required | Information about all available rates. |
-| `RoomCategoryAvailabilites` | array of [Room category availability](./operations.md#room-category-availability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
+| `RateGroups` | array of [Rate group](#rate-group) | required | Information about all available rate groups. |
+| `Rates` | array of [Rate](#rate) | required | Information about all available rates. |
+| `RoomCategoryAvailabilites` | array of [Room category availability](#room-category-availability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
 
 #### Rate group
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `SettlementType` | string [Settlement type](./operations.md#settlement-type) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
-| `SettlementAction` | string [Settlement action](./operations.md#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
-| `SettlementTrigger` | string [Settlement trigger](./operations.md#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
+| `SettlementType` | string [Settlement type](#settlement-type) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string [Settlement action](#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string [Settlement trigger](#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
 | `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
 | `SettlementMaximumTimeUnits` | number | optional | Maximum number of time units that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
@@ -534,8 +527,8 @@ Gives availabilities and pricings for given date interval with product prices in
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the rate localized into all supported languages. |
-| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the rate localized into all supported languages. |
+| `Name` | [Localized text](#localized-text) | required | Name of the rate localized into all supported languages. |
+| `Description` | [Localized text](#localized-text) | required | Description of the rate localized into all supported languages. |
 | `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode` |
 
 #### Room category availability
@@ -543,7 +536,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `RoomCategoryId` | string | required | Unique identifier of the room category. |
-| `RoomOccupancyAvailabilities` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Availabilities of rooms in the category by the room occupancy. |
+| `RoomOccupancyAvailabilities` | array of [Room occupancy availability](#room-occupancy-availability) | required | Availabilities of rooms in the category by the room occupancy. |
 | `AvailableRoomCount` | number | required | Number of available rooms from the room category. |
 
 #### Room occupancy availability
@@ -552,24 +545,26 @@ Gives availabilities and pricings for given date interval with product prices in
 | :-- | :-- | :-- | :-- |
 | `AdultCount` | number | required | Number of adults for the associated pricing. |
 | `ChildCount` | number | required | Number of childs for the associated pricing. |
-| `Pricing` | array of [Pricing](./operations.md#pricing) | required | Pricing information. |
+| `Pricing` | array of [Pricing](#pricing) | required | Pricing information. |
 
 #### Pricing
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `RateId` | string | required | Unique identifier of a rate. |
-| `Price` | [Room price](./operations.md#room-price) | required | Price of the room. |
-| `MaxPrice` | [Room price](./operations.md#room-price) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
+| `Price` | [Room price](#room-price) | required | Price of the room. |
+| `MaxPrice` | [Room price](#room-price) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
 
 #### Room price
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `TotalAmount` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerTimeUnit` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Average amount per time unit. |
+| `TotalAmount` | [Multi-currency amount](#multi-currency-amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerTimeUnit` | [Multi-currency amount](#multi-currency-amount) | required | Average amount per time unit. |
 
 ## Get payment configuration
+
+Fetch payment configuration parameters for the specified hotel.
 
 ### Request
 
@@ -584,7 +579,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response
@@ -615,19 +610,19 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `PaymentGateway` | [Payment gateway](./operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
-| `SurchargeConfiguration` | [Surcharge configuration](./operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
+| `PaymentGateway` | [Payment gateway](#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [Surcharge configuration](#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
 
 #### Surcharge configuration
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
-| `SurchargeFees` | [Surcharge fees](./operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
+| `SurchargeFees` | [Surcharge fees](#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
 
 #### Surcharge fees
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Key` | string [Credit card type](./operations.md#credit-card-type) | required | Credit card type. |
+| `Key` | string [Credit card type](#credit-card-type) | required | Credit card type. |
 | `Value` | number | required | Amount of the surcharge fee itself. |

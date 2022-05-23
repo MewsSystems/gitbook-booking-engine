@@ -199,7 +199,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 ## Get reservation group
 
-Fetch details of the given reservation group.
+Fetch details of the specified reservation group.
 
 ### Request
 

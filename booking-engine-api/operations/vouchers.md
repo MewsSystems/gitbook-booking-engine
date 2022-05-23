@@ -2,7 +2,7 @@
 
 ## Validate voucher
 
-Can be used to determine whether a voucher code is valid.
+Determine if the specified voucher code is valid or not.
 
 ### Request
 
@@ -18,9 +18,9 @@ Can be used to determine whether a voucher code is valid.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
-| `VoucherCode` | string | required | Voucher code enabling special rate offerings. Case sensitive. |
+| `VoucherCode` | string | required | Voucher code enabling special rate offerings (case sensitive). |
 
 ### Response
 

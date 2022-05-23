@@ -19,6 +19,8 @@
   * [Troubleshooting](booking-engine-widget/troubleshooting.md)
 * [Booking Engine API](booking-engine-api/README.md)
   * [Guidelines](booking-engine-api/guidelines/README.md)
+	  * [Requests](booking-engine-api/guidelines/requests.md)
+	  * [Responses](booking-engine-api/guidelines/responses.md)
 	  * [Environments](booking-engine-api/guidelines/environments.md)
 	  * [Authorization](booking-engine-api/guidelines/authorization.md)
 	  * [Images](booking-engine-api/guidelines/images.md)

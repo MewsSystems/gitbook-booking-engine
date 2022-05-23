@@ -2,19 +2,19 @@
 
 ## 26th November 2020
 
-* API: Changed of [API Client Authorization](./authorization.md). Where the client needs to be registered.
+* API: Changed of [API Client Authorization](../booking-engine-api/guidelines/authorization.md). Where the client needs to be registered.
 
 ## 20th November 2020
 
-* API: Made `ConfigurationId` parameter in [Create reservation group](./operations.md#create-reservation-group) endpoint required.
-* API: Added `ConfigurationId` parameter to [Get availability](./operations.md#get-availability) endpoint.
+* API: Made `ConfigurationId` parameter in [Create reservation group](../booking-engine-api/operations/reservation-groups.md#create-reservation-group) endpoint required.
+* API: Added `ConfigurationId` parameter to [Get availability](../booking-engine-api/operations/hotels.md#get-availability) endpoint.
 * API: Previous variant of sending `HotelId` without `ConfigurationId` to these endpoints was deprecated.
-* Standalone: Stopped support for hotel/enterprise ids in URL and in the configuration of a javascript client.
-* Standalone: Configuration ids are now the only supported way to setup Distributor.
+* General: Stopped support for hotel/enterprise ids in URL and in the configuration of a javascript client.
+* General: Configuration ids are now the only supported way to setup Distributor.
 
 ## 28th August 2020
 
-* API: Added `CurrencyCode` parameter to [Get availability](./operations.md#get-availability) endpoint.
+* API: Added `CurrencyCode` parameter to [Get availability](../booking-engine-api/operations/hotels.md#get-availability) endpoint.
 
 ## 22nd June 2020
 
@@ -28,7 +28,7 @@
 
 ## 18th June 2020
 
-* API: Removed `AlwaysIncluded` field from [Product](./operations.md#product) \([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)\). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
+* API: Removed `AlwaysIncluded` field from [Product](../booking-engine-api/operations/hotels.md#product) \([PR37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)\). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
 
 ## 22nd April 2020
 
