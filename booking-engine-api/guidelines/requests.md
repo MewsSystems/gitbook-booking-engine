@@ -31,3 +31,14 @@ The API accepts only `HTTP POST` requests with `Content-Type` set to `applicatio
 * All API operations require `Client` to be present in the request.
 * All API operations optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce the language and culture of the operation, which affects for example the names of entities, descriptions or error messages.
 Both of these values must be defined together, otherwise default values for the enterprise are used.
+
+## Request limits
+
+Mews implements API request limits in order to protect our systems against an excessive volume of calls which could compromise the service for all its users.
+The particular limits are dependent on circumstances.
+Regardless, your system should be prepared to receive a `429 Too Many Requests` response in cases where you hit such a limit - see [Responses](responses.md).
+
+If you receive this error response, your system can re-try after an interval time, however some care is needed in choosing the interval time.
+In case of a 429 error, we include the `Retry-After` http header in the response to indicate how long you should wait before making a re-try attempt.
+Alternatively, you could implement something like an exponential backoff strategy, i.e. using a progressively longer wait between re-tries for consecutive error responses. Pausing for a fixed amount of time is never recommended.
+If you are receiving `429 Too Many Requests` errors, then we would also recommend examining your implementation to see if it is possible to make design changes to reduce the load on our API and prevent the errors being generated in the first place.

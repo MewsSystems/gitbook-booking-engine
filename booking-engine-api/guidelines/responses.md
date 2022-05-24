@@ -9,6 +9,8 @@ In case of error, different HTTP status codes are used for different types of er
   * Error caused by usage of an invalid access token.
 * **403 Forbidden**
   * Server error that should be reported to the end user of the client application. This happens, for example, when the server-side validation fails or when a business-logic check is violated.
+* **429 Too Many Requests**
+  * Error indicating that the user has sent too many requests in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request. For more information, see [Request limits](requests.md#request-limits).
 * **500 Internal Server Error**
   * Unexpectced error of the server. In most cases, such an error signifies an error on the Mews side. This will be logged and we will be notified immediately when such an error occurs.
   If anything like this happens, please contact Mews directly or raise an issue on GitHub.
