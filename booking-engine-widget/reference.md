@@ -53,7 +53,7 @@ The API functions supported are listed below. Some functions are common to both 
 
 #### setCurrencyCode\(currencyCode\)
 
-* `currencyCode` Type: `string` Description: The currency code to be set, in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format, e.g. `EUR`
+* `currencyCode` Type: `string` Description: The currency code to be set, in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format, e.g. `EUR`. [Supported currency codes](../booking-engine-api/guidelines/supported-currency-codes.md)
 * Sets the currency of the booking engine’s localization. The currency code should be in [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) format. If `currencyCode` is not in the valid format, nothing happens.
 
 #### setStartDate\(date\)

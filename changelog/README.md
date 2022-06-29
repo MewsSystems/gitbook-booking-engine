@@ -1,5 +1,9 @@
 # Changelog
 
+## 1st July 2022
+
+* Added  [Supported currency codes](../booking-engine-api/guidelines/supported-currency-codes.md) documentation
+
 ## 7th June 2022
 
 * Launch of __Mews Booking Engine Guide__ at new URL [https://mews-systems.gitbook.io/booking-engine-guide/](https://mews-systems.gitbook.io/booking-engine-guide/), based on the old Distributor Guide
