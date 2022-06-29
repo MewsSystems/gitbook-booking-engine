@@ -7,12 +7,6 @@ This section describes all operations supported by the API, organised by theme.
 | <div style="width:200px">Operation or Endpoint</div> | Description |
 | :-- | :-- |
 | [Get availability](hotels.md#get-availability) | Get availability and pricing options for the specified hotel for the specified date interval |
-
-
-## Availability blocks
-
-| <div style="width:200px">Operation or Endpoint</div> | Description |
-| :-- | :-- |
 | [Get availability blocks](availability-blocks.md#get-availability-blocks) | Get details for the given availability block for the given hotel |
 
 ## Configuration
