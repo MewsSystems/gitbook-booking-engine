@@ -2,7 +2,7 @@
 
 ## Get Availability blocks
 
-Get availability block details for specified booking engine instance, that modifies your availability of space categories, and rates.
+Get details for the given availability block for the given hotel.
 This operation can be called initially to fetch data which may be important during the booking workflow.
 Availability block can restrict your booking engine's calendar to specific interval defined by `StartUtc` and `EndUtc` in the response, it also gives you `RateId` that should be used.
 
@@ -24,7 +24,7 @@ Availability block can restrict your booking engine's calendar to specific inter
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the API client, as described in [Authorization](../guidelines/authorization.md). |
 | `EnterpriseId` | string | required | Unique identifier of the hotel (enterprise). |
-| `AvailabilityBlockIds` | array of string | required | Set of unique identifier of availabilityBlockId usually provided in query parameter on private link to your booking engine. |
+| `AvailabilityBlockIds` | array of string | required | Set of unique identifiers of the Availability Blocks for which you want to get the details. |
 
 ### Response
 
@@ -51,16 +51,3 @@ Availability block can restrict your booking engine's calendar to specific inter
 | `RateId` | string | required | Unique identifier of [Rate](hotels.md#rate) which is intended for this availability block |
 | `StartUtc` | string | required | Availability block start date \(validity start date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Availability block end date \(validity expiration date\) in ISO 8601 format. |
-
-## How to obtain availabilityBlockId
-In Mews Operations you generate availability block in desired property. From the user interface you get `availabilityBlockId` that can be used with some of yours booking engine configurations.
-
-## How to work with availability blocks
-- In your application, after you receive details about your availability block via [Get Availability blocks](availability-blocks.md#get-availability-blocks) you need to check if current date is between `StartUtc` and `EndUtc` interval. Otherwise, you can display, that availability block already expired.
-- Then in your custom Booking Engine, you must provide `availabilityBlockId` into all endpoints, that accepts it.
-- Filter [Rates](hotels.md#rate) with received availability block `rateId`. Only this Rate should available and bookable for this booking engine session.
-
-### Endpoints accepting `availabilityBlockId`:
-- [Get availability](hotels.md#get-availability)
-- [Get reservations pricing](reservations.md#get-reservations-pricing)
-- [Create reservation group](reservation-groups.md#create-reservation-group)
