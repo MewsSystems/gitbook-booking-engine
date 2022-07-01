@@ -24,7 +24,8 @@ Get a price quotation for a specific hotel, date interval, room category and per
     ],
     "ProductIds": [
         "d0e88da5-ae64-411c-b773-60ed68954f64"
-    ]
+    ],
+    "AvailabilityBlockId": "5mgbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -38,6 +39,7 @@ Get a price quotation for a specific hotel, date interval, room category and per
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
 | `Occupancies` | array of [Occupancy](#occupancy) | required | Occupancy numbers for the reservations. |
 | `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
+| `AvailabilityBlockId` | string | optional | Unique identifier of availability block if present. Provide always when you have it.  |
 
 #### Occupancy
 

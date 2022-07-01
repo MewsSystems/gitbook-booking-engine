@@ -290,8 +290,8 @@ The main purpose of a payment gateway is to securely obtain the credit card of t
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Discriminator` | string [Pricing data discriminator](#pricing-discriminator) | required | Determines type of value. |
-| `Value` | [Multi-currency amount](#multi-currency-amount) / [Relative price data value](#relative-price-data-value) | required | Structure of object depends on the [Pricing data discriminator](#pricing-discriminator) |
+| `Discriminator` | string [Pricing data discriminator](#pricing-data-discriminator) | required | Determines type of value. |
+| `Value` | [Multi-currency amount](#multi-currency-amount) / [Relative price data value](#relative-price-data-value) | required | Structure of object depends on the [Pricing data discriminator](#pricing-data-discriminator) |
 
 #### Pricing data discriminator
 
@@ -402,7 +402,8 @@ The availability and pricing is returned for each applicable combination of occu
     "ChildCount": 0,
     "CategoryIds": [
         "295d96e7-8501-4cbd-b78d-8bf590bf6db9"
-    ]
+    ],
+    "AvailabilityBlockId": "5mgbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -419,6 +420,7 @@ The availability and pricing is returned for each applicable combination of occu
 | `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found. |
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
+| `AvailabilityBlockId` | string | optional | Unique identifier of availability block, if present. When provided, only availability for this block is returned. |
 
 ### Response
 
