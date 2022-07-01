@@ -2,7 +2,7 @@
 
 ## 1st July 2022
 
-* Added  [Supported language codes](../booking-engine-api/guidelines/supported-language-codes.md) documentation.
+* Added [Supported language codes](../booking-engine-api/guidelines/supported-language-codes.md) documentation.
 
 ## 7th June 2022
 
