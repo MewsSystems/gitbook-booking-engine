@@ -420,7 +420,7 @@ The availability and pricing is returned for each applicable combination of occu
 | `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found. |
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
-| `AvailabilityBlockId` | string | optional | Unique identifier of availability block if present. When provided, only reserved for this block is returned.  |
+| `AvailabilityBlockId` | string | optional | Unique identifier of availability block, if present. When provided, only availability for this block is returned. |
 
 ### Response
 

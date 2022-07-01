@@ -1,10 +1,10 @@
 # Availability blocks
 
-## Get Availability blocks
+## Get availability blocks
 
-Get details for the given availability block for the given hotel.
+Get details of the availability blocks for the given hotel.
 This operation can be called initially to fetch data which may be important during the booking workflow.
-Availability block can restrict your booking engine's calendar to specific interval defined by `StartUtc` and `EndUtc` in the response, it also gives you `RateId` that should be used.
+Availability blocks can restrict your booking engine's calendar to specific intervals defined by `StartUtc` and `EndUtc` in the response, it also gives you `RateId` that should be used.
 
 ### Request
 
