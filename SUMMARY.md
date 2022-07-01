@@ -28,6 +28,7 @@
     * [On session payments](booking-engine-api/use-cases/on-session-payments.md)
     * [Payment card authorization](booking-engine-api/use-cases/payment-card-authorization.md)
     * [Supporting payment cards](booking-engine-api/use-cases/supporting-payment-cards.md)
+    * [Availability blocks](booking-engine-api/use-cases/availability-blocks.md)
   * [API Operations](booking-engine-api/operations/README.md)
       * [Availability blocks](booking-engine-api/operations/availability-blocks.md)
       * [Configuration](booking-engine-api/operations/configuration.md)
