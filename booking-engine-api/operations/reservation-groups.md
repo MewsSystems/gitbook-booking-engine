@@ -52,7 +52,8 @@ Create a group of one or more reservations, i.e. make a reservation.
         "PaymentGatewayData": "...",
         "Expiration": "2030-10",
         "HolderName": "John Smith"
-    }
+    },
+    "AvailabilityBlockId": "5mgbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -65,6 +66,7 @@ Create a group of one or more reservations, i.e. make a reservation.
 | `Booker` | [Booker](#booker) | optional | Information about the person making the booking. |
 | `Reservations` | array of [Reservation data](#reservation-data) | required | Reservation parameters, such as dates and quantities of persons. |
 | `CreditCardData` | [Credit card data](#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
+| `AvailabilityBlockId` | string | optional | Unique identifier of availability block if present. Provide always when you have it.  |
 
 #### Customer
 
@@ -302,7 +304,7 @@ Fetch details of the specified reservation group.
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](#reservation) | required | Details of the created reservations in the group. |
 | `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](../use-cases/on-session-payments.md). |
-| `TotalAmount` | [Amount](payment-cards.md#multi-currency-amount) | required | Total amount of the whole group. |
+| `TotalAmount` | [Amount](hotels.md#multi-currency-amount) | required | Total amount of the whole group. |
 | `PaymentRequests` | array of [Payment request](#payment-request) | optional | Contains payment requests related to the reservation group. |
 | `Payments` | array of [Payment](#payment) | optional | Contains Payments related to the payment requests. |
 

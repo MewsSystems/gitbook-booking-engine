@@ -22,11 +22,11 @@ The API accepts only `HTTP POST` requests with `Content-Type` set to `applicatio
     "CultureCode": null 
 }
 ```
-| Property | Type | Contract | Description |
-| :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the Client as described in [Authorization](./authorization.md) |
-| `LanguageCode` | string | optional | Code of the language |
-| `CultureCode` | string | optional | Code of the culture |
+| Property       | Type   | Contract | Description                                                                      |
+|:---------------|:-------|:---------|:---------------------------------------------------------------------------------|
+| `Client`       | string | required | Identification of the Client as described in [Authorization](./authorization.md) |
+| `LanguageCode` | string | optional | Code of the language. [Supported language codes](./supported-language-codes.md)  |
+| `CultureCode`  | string | optional | Code of the culture                                                              |
 
 * All API operations require `Client` to be present in the request.
 * All API operations optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce the language and culture of the operation, which affects for example the names of entities, descriptions or error messages.

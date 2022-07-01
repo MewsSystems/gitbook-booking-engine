@@ -235,7 +235,7 @@ This operation can be called initially to fetch data which may be important duri
 | `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd\). If left blank, the default will be `4`. |
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
 | `IntroVideoUrl` | string | optional | Booking engine's intro video URL. |
-| `LanguageCode` | string | optional | Language code which Mews Booking Engine should use. |
+| `LanguageCode` | string | optional | Language code which Mews Booking Engine should use. [Supported language codes](../guidelines/supported-language-codes.md) |
 | `NowUtc` | string | required | Current server date and time in UTC timezone in ISO 8601 format. |
 | `PrimaryColor` | string | optional | Booking engine's primary color in Hex format. |
 | `Theme` | [Theme](#theme) | optional | Booking engine's theme variant. |
