@@ -2,7 +2,7 @@
 
 ## 1st July 2022
 
-* Added  [Supported currency codes](../booking-engine-api/guidelines/supported-currency-codes.md) documentation
+* Added [Supported currency codes](../booking-engine-api/guidelines/supported-currency-codes.md) documentation
 
 ## 7th June 2022
 
