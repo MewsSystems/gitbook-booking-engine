@@ -415,7 +415,7 @@ The availability and pricing is returned for each applicable combination of occu
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
 | `ProductIds` | array of string | optional | Unique identifiers of products which should be included into pricing calculations. |
-| `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. [Supported currency codes](../guidelines/supported-currency-codes.md) |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found. |
 | `ChildCount` | number | optional | Requested number of children. |

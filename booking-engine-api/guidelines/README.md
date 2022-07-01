@@ -9,4 +9,5 @@ This section provides guidelines and general information on how to use the __Mew
 * [Environments](environments.md)
 * [Authorization](authorization.md)
 * [Images](images.md)
+* [Supported currency codes](supported-currency-codes.md)
 * [Supported language codes](supported-language-codes.md)

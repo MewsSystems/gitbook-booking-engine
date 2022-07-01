@@ -24,6 +24,7 @@
       * [Environments](booking-engine-api/guidelines/environments.md)
       * [Authorization](booking-engine-api/guidelines/authorization.md)
       * [Images](booking-engine-api/guidelines/images.md)
+      * [Supported currency codes](booking-engine-api/guidelines/supported-currency-codes.md)
       * [Supported language codes](booking-engine-api/guidelines/supported-language-codes.md) 
   * [Use cases](booking-engine-api/use-cases/README.md)
     * [Availability blocks](booking-engine-api/use-cases/availability-blocks.md)

@@ -229,7 +229,7 @@ This operation can be called initially to fetch data which may be important duri
 | `CityId` | string | required | Unique identifier of the default city. |
 | `Configurations` | array of [Configurations](#configuration-1) | required | Configurations of the booking engine instances. |
 | `Services` | array of [Services](#service) | required | Services that the configurations are set up for. |
-| `CurrencyCode` | string | optional | ISO 4217 code of the currency which Mews Booking Engine should use when displaying prices. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency which Mews Booking Engine should use when displaying prices. [Supported currency codes](../guidelines/supported-currency-codes.md)|
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Mews Booking Engine \(voucher codes are listed by default\). |
 | `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th\). If left blank, the default will be 0. |
 | `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd\). If left blank, the default will be `4`. |
