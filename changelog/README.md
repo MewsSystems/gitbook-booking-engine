@@ -1,5 +1,12 @@
 # Changelog
 
+## 1st July 2022
+
+* Added new operation [Get availability blocks](../booking-engine-api/operations/availability-blocks.md#get-availability-blocks)
+* `AvailabilityBlockId` property added to [Get availability](../booking-engine-api/operations/hotels.md#get-availability), [Create reservation groups](../booking-engine-api/operations/reservation-groups.md#create-reservation-groups) and [Get reservation pricing](../booking-engine-api/operations/reservations.md#get-reservation-pricing)
+* Added new [Availability Blocks Use Case](../booking-engine-api/use-cases/availability-blocks.md)
+
+
 ## 7th June 2022
 
 * Launch of __Mews Booking Engine Guide__ at new URL [https://mews-systems.gitbook.io/booking-engine-guide/](https://mews-systems.gitbook.io/booking-engine-guide/), based on the old Distributor Guide
