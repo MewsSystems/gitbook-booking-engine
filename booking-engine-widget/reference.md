@@ -48,7 +48,7 @@ The API functions supported are listed below. Some functions are common to both 
 
 #### setLanguageCode\(languageCode\)
 
-* `languageCode` Type: `string` Description: The language code to be set, in format `en-US`
+* `languageCode` Type: `string` Description: The language code to be set, in format `en-US`. [Supported language codes](../booking-engine-api/guidelines/supported-language-codes.md)
 * Sets the language of the booking engine’s localization. The language code should be in the format _language_-_countryCode_, e.g. `en-US`, as a variant of [IETF tag](https://en.wikipedia.org/wiki/IETF_language_tag). If `languageCode` is not in the valid format, nothing happens.
 
 #### setCurrencyCode\(currencyCode\)
