@@ -23,3 +23,6 @@ This is the live production environment.
 * **Hotel Id** - This depends on the hotel and should be provided to you by the hotel administrator.
 * **Configuration Id** - This depends on the hotel setup and can be found in **Mews Operations** administration.
 
+## Whitelisting
+
+Whitelisting (also called 'allowlisting') is a common security measure which can be applied to a system to allow only specified external systems to talk to it. This has traditionally been achieved using IP address-based firewall rules. However, this approach does not work with modern cloud based architectures, which use dynamic and shared IP addresses, proxy servers and elastic resources. For this reason, we do not support the use of IP address whitelists for our APIs and we cannot supply a list of IP addresses for our APIs.
