@@ -38,6 +38,7 @@
       * [Payment cards](booking-engine-api/operations/payment-cards.md)
       * [Reservations](booking-engine-api/operations/reservations.md)
       * [Reservation groups](booking-engine-api/operations/reservation-groups.md)
+      * [Services](booking-engine-api/operations/services.md)
       * [Vouchers](booking-engine-api/operations/vouchers.md)
   * [Deprecations](booking-engine-api/deprecations/README.md)
 * [FAQ](FAQ/README.md)

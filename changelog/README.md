@@ -1,5 +1,8 @@
 # Changelog
 
+## 11th October 2022
+* Added new * [Services](booking-engine-api/operations/services.md) endpoints documentation.
+
 ## 1st July 2022
 
 * Added new operation [Get availability blocks](../booking-engine-api/operations/availability-blocks.md#get-availability-blocks)
