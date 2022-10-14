@@ -38,7 +38,7 @@ This section describes all operations supported by the API, organised by theme.
 | <div style="width:200px">Operation or Endpoint</div> | Description |
 | :-- | :-- |
 | [Get services availability](services.md#get-services-availability) | Get availability for the specified service for each time unit in the specified date interval |
-| [Get services pricing](services.md#get-services-pricing) | Create a group of one or more reservations, i.e. make a reservation |
+| [Get services pricing](services.md#get-services-pricing) |Get pricing for the specified service for each time unit in the specified date interval |
 
 ## Vouchers
 

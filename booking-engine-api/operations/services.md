@@ -16,7 +16,6 @@ Get availability for the specified service for each time unit in the specified d
     "StartUtc": "202-01-01T00:00:00Z",
     "EndUtc": "2022-01-31T00:00:00Z",
     "CategoryIds": ["4037c0ec-a59d-43f1-9d97-d6c984764e8c"],
-    "FullAmounts": false,
     "LanguageCode": "en-GB"
 }
 ```
@@ -25,10 +24,9 @@ Get availability for the specified service for each time unit in the specified d
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
-| `StartUtc` | string | required | Start date of the requested interval |
-| `EndUtc` | string | required | End date of the requested interval |
-| `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
-| `FullAmounts` | boolean | required | Should response contain Amount objects or just Gross value.  |
+| `StartUtc` | string | required | Start date of the requested interval. |
+| `EndUtc` | string | required | End date of the requested interval. |
+| `CategoryIds` | array of string | optional | Unique identifiers of specific categories for which availability should be returned. If omitted, availability will be returned for all categories. |
 | `LanguageCode` | string | optional | Code of the language. [Supported language codes](../guidelines/supported-language-codes.md)  |
 
 
@@ -59,39 +57,21 @@ Get availability for the specified service for each time unit in the specified d
         0
       ]
     }
-  ],
-  "ApplicableRestrictions": []
+  ]
 }
 ```
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `TimeUnitStartsUtc` | array of timeUnit start Utc | required | Each time unit specified in request interval |
-| `CategoryAvailabilities` | array of CategoryAvailabilities | required | List of availability counts for each category. Each availability number belongs to TimeUnitStartsUtc linked by same index. |
+| `TimeUnitStartsUtc` | array of string | required | Each time unit specified in request interval. Values are in UTC timezone in ISO 8601 format. |
+| `CategoryAvailabilities` | array of [Category Availability](#category-availability) | required | List of availability counts for each category. Each availability number belongs to TimeUnitStartsUtc linked by same index. |
 
-### How to read response
+#### Category Availability
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `CategoryId` | string | required | Identifier of the room category. |
+| `Availabilities` | array of number | required | List of availability counts for each TimeUnitStartsUtc linked by same index. |
 
-```json
-[
-  {
-    "CategoryId": "ddc48d9f-f21d-422a-b24a-aa6b00e2b77e",
-    "Availabilities": {
-      "2022-10-04T22:00:00Z": 56,
-      "2022-10-05T22:00:00Z": 40,
-      "2022-10-06T22:00:00Z": 26
-    }
-  },
-  {
-    "CategoryId": "abcdefg-08ad-4d19-98cc-aa6b00e2999e",
-    "Availabilities": {
-      "2022-10-04T22:00:00Z": 0,
-      "2022-10-05T22:00:00Z": 10,
-      "2022-10-06T22:00:00Z": 0
-    }
-  }
-]
-
-```
 
 ## Get services pricing
 
@@ -111,7 +91,6 @@ Get pricing for the specified service for each time unit in the specified date i
     "EndUtc": "2022-01-31T00:00:00Z",
     "CategoryIds": ["4037c0ec-a59d-43f1-9d97-d6c984764e8c"],
     "RateIds": ["4037c0ec-a59d-43f1-9d97-d6c984764e8c"],
-    "FullAmounts": false,
     "LanguageCode": "en-GB",
     "CurrencyCode": "EUR"
 }
@@ -121,13 +100,12 @@ Get pricing for the specified service for each time unit in the specified date i
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
-| `StartUtc` | string | required | Start date of the requested interval |
-| `EndUtc` | string | required | End date of the requested interval |
-| `FullAmounts` | boolean | required | Should response contain Amount objects or just Gross value.  |
+| `StartUtc` | string | required | Start date of the requested interval. |
+| `EndUtc` | string | required | End date of the requested interval. |
+| `CategoryIds` | array of string | optional | Unique identifiers of specific room categories for which pricing should be computed. If omitted, pricing will be computed and returned for all room categories. |
+| `RateIds` | array of string | optional | Unique identifiers of specific rates for which pricing should be computed. If omitted, pricing will be computed and returned for all rates. |
 | `LanguageCode` | string | optional | Code of the language. [Supported language codes](../guidelines/supported-language-codes.md)  |
-| `CurrencyCode` | string | optional | Code of the currency pricing should be returned in. [Supported currency codes](../guidelines/supported-currency-codes.md)  |
-| `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the pricing computed only. If omitted, pricing for all categories is returned instead. |
-| `RateIds` | array of string | optional | Unique identifiers of rates for which should be the pricing computed only. If omitted, pricing for all rates is returned instead. |
+| `CurrencyCode` | string | optional | Currency code which should be used for prices in the response. [Supported currency codes](../guidelines/supported-currency-codes.md)  |
 
 ### Response
 
@@ -212,14 +190,14 @@ Get pricing for the specified service for each time unit in the specified date i
 | :-- | :-- | :-- | :-- |
 | `RateGroups` | array of [Rate group](hotels.md#rate-group) | required | Information about all available rate groups. |
 | `Rates` | array of [Rate](hotels.md#rate) | required | Information about all available rates. |
-| `CategoryPrices` | array of [Occupancy](#category-price) | required | Prices for all specified categories |
+| `CategoryPrices` | array of [Occupancy](#category-price) | required | Prices for all specified categories. |
 
 #### Category price 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `CategoryId` | string | required | Unique identifier of category. |
-| `OccupancyPrices` | array of [Occupancy](#occupancy) | required | List of Occupancies containing of age categories combination for which are prices applied for |
-| `RateGroupPrices` | array of [Rate group price](#rate-group-price) | required | Prices for all specified categories and occupancies from Occupancy Prices |
+| `OccupancyPrices` | array of [Occupancy](#occupancy) | required | List of Occupancies containing of age categories combination for which are prices applied for. |
+| `RateGroupPrices` | array of [Rate group price](#rate-group-price) | required | Prices for all specified categories and occupancies from Occupancy Prices. |
 
 #### Occupancy
 Objects composed of identifier `AgeCategoryId` referring to Age Category entity with `PersonCount` number of persons of this Age category type.
@@ -237,7 +215,7 @@ Objects composed of identifier `AgeCategoryId` referring to Age Category entity 
 | `Id` | string | required | Unique identifier of the rate. |
 | `Name` | [Localized text](hotels.md#localized-text) | required | Name of the rate localized into all supported languages. |
 | `Description` | [Localized text](hotels.md#localized-text) | required | Description of the rate localized into all supported languages. |
-| `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode` |
+| `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode`. |
 | `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) to which the rate is bound. |
 | `RateGroupId` | string | required | [Rate group](hotels.md#rate-group) Identifier of the rate. |
 | `Ordering` | number | required | Number defining the ordering of the rate. |
@@ -275,10 +253,10 @@ Objects composed of identifier `AgeCategoryId` referring to Age Category entity 
 #### Rate
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Currency` | string | required | Amount currency |
+| `Currency` | string | required | Amount currency. |
 | `GrossValue` | number | required | Gross value of the amount. (Net + sum of `Breakdown > Items`) |
 | `NetValue` | number | required | Net value of the amount. |
-| `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of taxes related to this amount |
+| `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of taxes related to this amount. |
 
 
 #### Complete tax
@@ -286,5 +264,5 @@ Objects composed of identifier `AgeCategoryId` referring to Age Category entity 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `TaxRateCode` | string | Unique identifier of the tax rate. |
-| `NetValue` | number | required | Net value taxValue is calculated from |
-| `TaxValue` | number | required | Tax value calculated from `NetValue` based on Tax configuration |
+| `NetValue` | number | required | Net value taxValue is calculated from. |
+| `TaxValue` | number | required | Tax value calculated from `NetValue` based on Tax configuration. |
