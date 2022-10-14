@@ -82,7 +82,7 @@ Get a price quotation for a specific hotel, date interval, room category and per
 
 ## Get reservation price
 
-Get a final price of requested reservation
+Get a total price for the requested reservations.
 
 ### Request
 
@@ -113,8 +113,8 @@ Get a final price of requested reservation
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `ConfigurationId` | string | required | Unique identifier of the Booking Engine configuration used. |
-| `CurrencyCode` | string | optional | ISO 4217 code of the currency in which price will be calculated in. Enterprise default currency code is used as default. [Supported currency codes](../guidelines/supported-currency-codes.md)|
-| `Reservations` | array of [Reservation](#reservation) | required | Unique identifier of the Booking Engine configuration used. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency in which price will be calculated. Enterprise default currency code is used as default. [Supported currency codes](../guidelines/supported-currency-codes.md)|
+| `Reservations` | array of [Reservation](#reservation) | required | List of reservations. |
 
 #### Reservation
 
@@ -206,36 +206,42 @@ Get a final price of requested reservation
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Identifier` | string | required | Unique identifier for reservation provided in the request data |
-| `AmountToChargeOnConfirmation` | [Amount](#totalamount) | optional | Amount that needs to be charged on payment gateway on reservationGroup confirmation |
-| `TotalAmount` | [Total Amount](#totalamount) | required | `TotalAmount` object of the reservation |
-| `ProductOrderPrices` | array of [ProductOrderPrice](#productorderprice) | required | List of `ProductOrderPrice` objects assigned to reservation |
+| `Identifier` | string | required | Unique identifier for reservation provided in the request data. |
+| `AmountToChargeOnConfirmation` | [Total Amount](#totalamount) | optional | Amount that needs to be charged on payment gateway on reservationGroup confirmation. |
+| `TotalAmount` | [Total Amount](#totalamount) | required | Total amount of the reservation. |
+| `ProductOrderPrices` | array of [ProductOrderPrice](#productorderprice) | required | List of product order prices assigned to the reservation. |
 
 #### ProductOrderPrice
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `ProductId` | string | required | Unique identifier of product |
+| `ProductId` | string | required | Unique identifier of product. |
 | `AgeCategoryId` | string | optional | Identifier of age category. |
 | `ProductName` | [Localized text](hotels.md#localized-text) | required | Name of the hotel. |
-| `ProductOptions` | [ProductOptions](#productoptions) | required | Product options |
+| `ProductOptions` | [ProductOptions](#productoptions) | required | Product options. |
 | `ChargingMode` | string [Product charging mode](hotels.md#product-charging-mode) | required | Charging mode of the product. |
 | `TotalAmount` | [Total Amount](#totalamount) | required | Total amount of product. |
 
-##### ProductOptions
+#### ProductOptions
+| Property | Type | Contract |Description |
+| :-- | :-- | :-- |
+| `SelectedByDefault` | boolean | required  | If product was selected by default for reservation. |
+| `BillAsPackage` | boolean | required  | Product is part of a package. |
+| `OfferToCustomer` | boolean | required  | Product is available in booking engine. |
+| `ExcludePriceFromOffer` | boolean | required  | Product was not available in booking engine, but it is counted in reservation total price ( eg. CityTax ). |
+| `OfferToEmployee` | boolean | required  | Product available in mews operations. |
+
+#### TotalAmount
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `Currency` | string | required | ISO 4217 code of the currency. |
+| `GrossValue` | number | required | Gross value of the amount. (Net + sum of `TaxValues`). |
+| `NetValue` | number | required | Net value of the amount. |
+| `TaxValues` | array of [Tax values](hotels.md#tax-value) | required | Tax values of the amount. **@Deprecated**. |
+| `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of complete taxes related to this amount. |
+
+#### Complete tax
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- |
-| `SelectedByDefault` | boolean  | If product was selected by default for reservation  |
-| `BillAsPackage` | boolean  | Product is part of a package |
-| `OfferToCustomer` | boolean  | Product is available in booking engine |
-| `ExcludePriceFromOffer` | boolean  | Product was not available in booking engine, but it is counted in reservation total price ( eg. CityTax ) |
-| `OfferToEmployee` | boolean  | Product available in mews operations |
-
-##### TotalAmount
-Is composed of [Amount](reservation-groups.md#amount) extended of `Breakdown` with `Items` of array of [Tax value](#tax-value)
-
-##### Tax value
-| Property | Type | Description |
-| :-- | :-- | :-- |
-| `TaxRateCode` | string | Unique identifier of Tax Rate Code. |
-| `NetValue` | Number | Net amount of product |
-| `TaxValue` | Number | Tax amount of product ( Calculated from NetValue based on TaxRateCode ) |
+| `TaxRateCode` | string | required | Unique identifier of Tax Rate Code. |
+| `NetValue` | Number | required |  Net amount of product. |
+| `TaxValue` | Number | required | Tax amount of product ( Calculated from NetValue based on TaxRateCode ). |
