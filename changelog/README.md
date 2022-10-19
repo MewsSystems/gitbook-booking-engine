@@ -1,8 +1,13 @@
 # Changelog
 
-## 18th October 2022
+## 20th October 2022
+
 * Added new operation [Get services availability](../booking-engine-api/operations/services.md#get-services-availability)
 * Added new operation [Get services pricing](../booking-engine-api/operations/services.md#get-services-pricing)
+
+## 19th October 2022
+
+* Added new operation [Get reservation price](../booking-engine-api/operations/reservations.md#get-reservation-price)
 
 ## 1st July 2022
 

@@ -29,6 +29,7 @@ This section describes all operations supported by the API, organised by theme.
 | <div style="width:200px">Operation or Endpoint</div> | Description |
 | :-- | :-- |
 | [Get reservations pricing](reservations.md#get-reservations-pricing) | Get a price quotation for a specific hotel, date interval, room category and person count |
+| [Get reservation price](reservations.md#get-reservation-price) | Get final price of the specified reservations |
 | [Create reservation group](reservation-groups.md#create-reservation-group) | Create a group of one or more reservations, i.e. make a reservation |
 | [Get reservation group](reservation-groups.md#get-reservation-group) | Fetch details of the specified reservation group |
 
