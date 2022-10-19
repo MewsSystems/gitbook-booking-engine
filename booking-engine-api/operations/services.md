@@ -24,6 +24,7 @@ Get availability for the specified service for each time unit in the specified d
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
+| `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) for which availability should be returned. |
 | `StartUtc` | string | required | Start date of the requested interval. |
 | `EndUtc` | string | required | End date of the requested interval. |
 | `CategoryIds` | array of string | optional | Unique identifiers of specific categories for which availability should be returned. If omitted, availability will be returned for all categories. |
@@ -80,7 +81,7 @@ Get pricing for the specified service for each time unit in the specified date i
 ### Request
 
 
-`[ApiBaseUrl]/api/distributor/v1/services/getAvailability`
+`[ApiBaseUrl]/api/distributor/v1/services/getPricing`
 
 ```json
 {
@@ -100,6 +101,7 @@ Get pricing for the specified service for each time unit in the specified date i
 | :-- | :-- | :-- | :-- |
 | `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
+| `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) for which availability should be returned. |
 | `StartUtc` | string | required | Start date of the requested interval. |
 | `EndUtc` | string | required | End date of the requested interval. |
 | `CategoryIds` | array of string | optional | Unique identifiers of specific room categories for which pricing should be computed. If omitted, pricing will be computed and returned for all room categories. |
@@ -131,9 +133,9 @@ Get pricing for the specified service for each time unit in the specified date i
       "ServiceId": "33c75941-c2ec-467e-9797-abc800c8110d",
       "RateGroupId": "3ede420b-9e9e-4008-abef-abc800c82505",
       "Ordering": 0,
-      "Name":{
-        "es-ES":"Fully Flexible",
-        "en-US":"Fully Flexible"
+      "Name": {
+        "es-ES": "Fully Flexible",
+        "en-US": "Fully Flexible"
       },
       "Description": {},
       "IsPrivate": false,
@@ -159,25 +161,106 @@ Get pricing for the specified service for each time unit in the specified date i
       ],
       "RateGroupPrices":[
         {
-          "MinRateId": "f02923a9-ffa3-4d83-a9d7-abc800c81111",
+          "MinRateId": "abd865c2-8cc3-4ebc-acad-aca100b125b9",
           "MinPrice": {
-            "TotalAmount": { /* Amount */ },
-            "AverageAmountPerTimeUnit": { /* Amount */ }
+            "TotalAmount": {
+              "Currency": "EUR",
+              "GrossValue": 83.41,
+              "NetValue": 77.65,
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": null,
+                    "NetValue": 18.11,
+                    "TaxValue": 0.0
+                  },
+                  {
+                    "TaxRateCode": "CZ-L",
+                    "NetValue": 57.50,
+                    "TaxValue": 5.76
+                  },
+                  {
+                    "TaxRateCode": "CZ-Z",
+                    "NetValue": 2.04,
+                    "TaxValue": 0.00
+                  }
+                ]
+              }
+            },
+            "AverageAmountPerTimeUnit": {
+              "Currency": "EUR",
+              "GrossValue": 41.71,
+              "NetValue": 38.83,
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": null,
+                    "NetValue": 9.06,
+                    "TaxValue": 0.0
+                  },
+                  {
+                    "TaxRateCode": "CZ-L",
+                    "NetValue": 28.75,
+                    "TaxValue": 2.88
+                  },
+                  {
+                    "TaxRateCode": "CZ-Z",
+                    "NetValue": 1.02,
+                    "TaxValue": 0.00
+                  }
+                ]
+              }
+            }
           },
           "MaxPrice": {
-            "TotalAmount": { /* Amount */ },
-            "AverageAmountPerTimeUnit": { /* Amount */ }
-          }
-        },
-        {
-          "MinRateId": "f02923a9-ffa3-4d83-a9d7-abc800c82222",
-          "MinPrice": {
-            "TotalAmount": { /* Amount */ },
-            "AverageAmountPerTimeUnit": { /* Amount */ }
-          },
-          "MaxPrice": {
-            "TotalAmount": { /* Amount */ },
-            "AverageAmountPerTimeUnit": { /* Amount */ }
+            "TotalAmount": {
+              "Currency": "EUR",
+              "GrossValue": 20020.15,
+              "NetValue": 18201.97,
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": null,
+                    "NetValue": 18.11,
+                    "TaxValue": 0.0
+                  },
+                  {
+                    "TaxRateCode": "CZ-L",
+                    "NetValue": 18181.82,
+                    "TaxValue": 1818.18
+                  },
+                  {
+                    "TaxRateCode": "CZ-Z",
+                    "NetValue": 2.04,
+                    "TaxValue": 0.00
+                  }
+                ]
+              }
+            },
+            "AverageAmountPerTimeUnit": {
+              "Currency": "EUR",
+              "GrossValue": 10010.08,
+              "NetValue": 9100.99,
+              "Breakdown": {
+                "Items": [
+                  {
+                    "TaxRateCode": null,
+                    "NetValue": 9.06,
+                    "TaxValue": 0.0
+                  },
+                  {
+                    "TaxRateCode": "CZ-L",
+                    "NetValue": 9090.91,
+                    "TaxValue": 909.09
+                  },
+                  {
+                    "TaxRateCode": "CZ-Z",
+                    "NetValue": 1.02,
+                    "TaxValue": 0.00
+                  }
+                ]
+              }
+            }
           }
         }
       ]
@@ -190,17 +273,20 @@ Get pricing for the specified service for each time unit in the specified date i
 | :-- | :-- | :-- | :-- |
 | `RateGroups` | array of [Rate group](hotels.md#rate-group) | required | Information about all available rate groups. |
 | `Rates` | array of [Rate](hotels.md#rate) | required | Information about all available rates. |
-| `CategoryPrices` | array of [Occupancy](#category-price) | required | Prices for all specified categories. |
+| `CategoryPrices` | array of [Category price](#category-price) | required | Prices for all specified categories. |
 
 #### Category price 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `CategoryId` | string | required | Unique identifier of category. |
-| `OccupancyPrices` | array of [Occupancy](#occupancy) | required | List of Occupancies containing of age categories combination for which are prices applied for. |
-| `RateGroupPrices` | array of [Rate group price](#rate-group-price) | required | Prices for all specified categories and occupancies from Occupancy Prices. |
+| `OccupancyPrices` | array of objects with arrays of [Occupancy](#occupancy) | required | List of occupancies for age categories against which rate group prices are supplied. |
+| `RateGroupPrices` | array of [Rate group price](#rate-group-price) | required | Prices for the given category for each of the occupancy bands specified in OccupancyPrices. |
 
 #### Occupancy
-Objects composed of identifier `AgeCategoryId` referring to Age Category entity with `PersonCount` number of persons of this Age category type.
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `AgeCategoryId` | string | required | Identifier of age category. |
+| `PersonCount` | number | required | Number of persons of this Age category type. |
 
 #### Rate group price
 | Property | Type | Contract | Description |
@@ -221,14 +307,14 @@ Objects composed of identifier `AgeCategoryId` referring to Age Category entity 
 | `Ordering` | number | required | Number defining the ordering of the rate. |
 
 
-### Amount
+#### Amount
 
 ```json
 {
   "Currency": "EUR",
   "GrossValue": 10006.50,
   "NetValue": 9096.54,
-  "Breakdown":{
+  "Breakdown": {
     "Items":[
       {
         "TaxRateCode": "ES-2016-R",
