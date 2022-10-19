@@ -223,7 +223,7 @@ Get a total price for the requested reservations.
 
 #### ProductOptions
 | Property | Type | Contract |Description |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `SelectedByDefault` | boolean | required  | If product was selected by default for reservation. |
 | `BillAsPackage` | boolean | required  | Product is part of a package. |
 | `OfferToCustomer` | boolean | required  | Product is available in booking engine. |
@@ -241,7 +241,7 @@ Get a total price for the requested reservations.
 
 #### Complete tax
 | Property | Type | Contract | Description |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `TaxRateCode` | string | required | Unique identifier of Tax Rate Code. |
 | `NetValue` | Number | required |  Net amount of product. |
 | `TaxValue` | Number | required | Tax amount of product ( Calculated from NetValue based on TaxRateCode ). |
