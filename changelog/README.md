@@ -1,6 +1,6 @@
 # Changelog
 
-## 18th October 2022
+## 19th October 2022
 
 * Added new operation [Get reservation price](../booking-engine-api/operations/reservations.md#get-reservation-price)
  
