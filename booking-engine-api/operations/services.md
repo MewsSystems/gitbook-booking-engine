@@ -292,8 +292,20 @@ Get pricing for the specified service for each time unit in the specified date i
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `MinRateId` | string | required | Unique identifier of rate. |
-| `MinPrice` | [Amount](#amount) objects | required | TotalAmount contains total price for the specified interval for rate, AverageAmountPerTimeUnit contains price for one timeUnit. (Day/Night) |
-| `MaxPrice` | [Amount](#amount) objects | required | TotalAmount contains total price for the specified interval for rate, AverageAmountPerTimeUnit contains price for one timeUnit. (Day/Night) |
+| `MinPrice` | [Min price](#min-price) objects | required | Minimal price for the specified interval for rate. |
+| `MaxPrice` | [Max price](#max-price) objects | required | Maximal price for the specified interval for rate. |
+
+#### Min price
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `TotalAmount` | [Amount](#amount) objects | required | Total price for specified interval. |
+| `AverageAmountPerTimeUnit` | [Amount](#amount) objects | required | Price for one timeUnit. (Day/Night) |
+
+#### Max price
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `TotalAmount` | [Amount](#amount) objects | required | Total price for specified interval. |
+| `AverageAmountPerTimeUnit` | [Amount](#amount) objects | required | Price for one timeUnit. (Day/Night) |
 
 #### Rate
 | Property | Type | Contract | Description |
@@ -306,35 +318,15 @@ Get pricing for the specified service for each time unit in the specified date i
 | `RateGroupId` | string | required | [Rate group](hotels.md#rate-group) Identifier of the rate. |
 | `Ordering` | number | required | Number defining the ordering of the rate. |
 
-
 #### Amount
 
-```json
-{
-  "Currency": "EUR",
-  "GrossValue": 10006.50,
-  "NetValue": 9096.54,
-  "Breakdown": {
-    "Items":[
-      {
-        "TaxRateCode": "ES-2016-R",
-        "NetValue": 9090.91,
-        "TaxValue": 909.09
-      },
-      {
-        "TaxRateCode": "ES-2016-S",
-        "NetValue": 4.13,
-        "TaxValue": 0.87
-      },
-      {
-        "TaxRateCode": null,
-        "NetValue": 1.50,
-        "TaxValue": 0.0
-      }
-    ]
-  }
-}
-```
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `Currency` | string | required | ISO 4217 code of the currency. |
+| `GrossValue` | number | required | Gross value of the amount. (Net + sum of `TaxValues`) |
+| `NetValue` | number | required | Net value of the amount. |
+| `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of taxes related to this amount. |
+
 
 #### Rate
 | Property | Type | Contract | Description |
@@ -352,3 +344,7 @@ Get pricing for the specified service for each time unit in the specified date i
 | `TaxRateCode` | string | Unique identifier of the tax rate. |
 | `NetValue` | number | required | Net value taxValue is calculated from. |
 | `TaxValue` | number | required | Tax value calculated from `NetValue` based on Tax configuration. |
+
+### Response diagram
+
+![Get services pricing response](./assets/get_services_pricing_v2_v2.png)
