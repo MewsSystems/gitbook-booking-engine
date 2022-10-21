@@ -33,6 +33,14 @@ This section describes all operations supported by the API, organised by theme.
 | [Create reservation group](reservation-groups.md#create-reservation-group) | Create a group of one or more reservations, i.e. make a reservation |
 | [Get reservation group](reservation-groups.md#get-reservation-group) | Fetch details of the specified reservation group |
 
+
+## Services
+
+| <div style="width:200px">Operation or Endpoint</div> | Description |
+| :-- | :-- |
+| [Get services availability](services.md#get-services-availability) | Get availability for the specified service for each time unit in the specified date interval |
+| [Get services pricing](services.md#get-services-pricing) |Get pricing for the specified service for each time unit in the specified date interval |
+
 ## Vouchers
 
 | <div style="width:200px">Operation or Endpoint</div> | Description |
