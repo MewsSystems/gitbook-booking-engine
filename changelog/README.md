@@ -1,5 +1,9 @@
 # Changelog
 
+## 25th October 2022
+* Added new [Google Analytics 4](../booking-engine-widget/integrations/google-triggers-reference.md#google-analytics-4-ga4-events) documentation
+* Enhanced [Google Tag Manager (GTM)](../booking-engine-widget/integrations/google-tag-manager.md#google-tag-manager-gtm) documentation
+
 ## 20th October 2022
 
 * Added new operation [Get services availability](../booking-engine-api/operations/services.md#get-services-availability)

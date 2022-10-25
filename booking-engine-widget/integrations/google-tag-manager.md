@@ -1,71 +1,75 @@
-# Google Tag Manager
+# Google Tag Manager (GTM)
 
-> **Notice of usage:** Google Tag Manager is a third party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens to them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with the Mews Booking Engine. If you need a more complex setup, it is up to you to configure and test it.
+> **Notice of usage:** Google Tag Manager (GTM) is a third party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens to them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with the Mews Booking Engine. If you need a more complex setup, it is up to you to configure and test it and we recommend to ask specialist to set it up for you.
 
-This guide assumes you have at least a basic knowledge of [Google Tag Manager](https://www.google.com/analytics/tag-manager/) - how to create and publish a container, how to set up triggers and custom events and how to connect them to tags.
+This guide assumes you have at least a basic knowledge of [Google Tag Manager](https://www.google.com/analytics/tag-manager/) - how to create and publish a container, how to set up triggers, custom events and variables and how to connect them to tags.
+
+## Important links
+[Google Tag Manager support](https://support.google.com/tagmanager/)
+[Google Analytics support](https://support.google.com/analytics/)
+
 
 ## Enabling Google Tag Manager in Mews Booking Engine
 
-You can enable Google Tag Manager (GTM) by setting up your GTM container’s ID in the booking engine's configuration in __Mews Operations__.
+You can enable Google Tag Manager (GTM) by setting up your GTM container ID in the booking engine's configuration in __Mews Operations__.
 The ID has format `GTM-XXXXXX` and you can find it in Google Tag Manager.
 
-> **Important:** It is not enough to just copy and paste the GTM container code to a website, you have to set it up in the configuration.
+> **Important:** It is not enough to just copy and paste the GTM container code to a website, you have to set it up in the configuration of the Google Tag manager.
 > However, if you use the container on your website, Mews Booking Engine will connect to it and will not create a new one.
 
-## Migrating to Google Tag Manager
+## Basic setup
 
-In previous versions, Mews Booking Engine supported direct integrations with Google Analytics and Google AdWords. These legacy integrations still remain functional for backward compatibility, but will be removed completely in the near future.
-We strongly suggest you migrate them to Google Tag Manager.
+### Tracking page-views with with Google Analytics 4 (GA4)
 
-> **Important:** If you enable Google Tag Manager in Mews Booking Engine, it will take precedence over any legacy integration, and those will not be triggered.
-> This means that once you enable Google Tag Manager, you will have to migrate all of your integrations to it!
+This is a basic description of how to set up tracking of page-views via Google Analytics 4 (GA4) in Mews Booking engine.
 
-## Triggers
+#### Create trigger for Mews booking engine events
 
-This is a basic description of how to set up a Mews Booking Engine event as a Trigger.
-For a full list of events, see the [Google Triggers Reference](google-triggers-reference.md).
+For tracking of all screens you can set one trigger with value `^ga4` which will track all events within Mews Booking engine. Do not forget to check on checkbox `Use regex matching`.
 
-For an integration with Google Tag Manager, Mews Booking Engine provides a set of Custom Events that you can set up as Triggers. To set up a Trigger for an event, match it with its name:
+> For a full list of events and e-commerce events, see the [Google Triggers Reference](google-triggers-reference.md).
 
-![trigger](../../.gitbook/assets/trigger.png)
+![GTM trigger](../../.gitbook/assets/1.png)
 
-If you want to track multiple events with one Trigger, you can easily use regex matching on an event name. For example, `^distributor` will track every booking engine \/ distributor event, which can be useful for setting a Trigger for Universal Analytics:
+#### Create variables for Location and Title
 
-![regex trigger](../../.gitbook/assets/triggerregex.png)
+To dynamically set name and URL of tracked page-view, each event triggered in Mews Booking engine contains parameters `page_title` and `page_location`. You will need to create two custom variables in GTM so you can use them later in next step to send data to google Analytics.
 
-## Basic setups
+![GTM Page Title variable](../../.gitbook/assets/2a.png)
+![GTM Page Location variable](../../.gitbook/assets/2b.png)
 
-### Universal Analytics
+#### Create Google Analytics 4 Tag
 
-You can track all the events for further statistical computations about behaviour of your customers. Use the Google Universal Analytics tag with the `Event` track type.
-The Trigger should be a regex grouping of all the events you want to track \(to track all events, you can use `^distributor` regex, as described above\).
+Once you have a trigger and variables set, you can set the `Google Analytics: GA4 configuration` tag.
 
-![events\_tag](../../.gitbook/assets/eventstag.png)
+1. Create a new tag - choose the `Google Analytics: GA4 configuration` type of tag
+2. Add your Google Analytics 4 `Measurement ID` which you will find in the Google Analytics
+3. Add `Fields to set` - create two fields for `page_title` and `page_location`. Use the two custom variables created in the previous step to fetch the location and title from datalayer automatically
+4. Save and publish the tag and configuration
 
-### Google Ecommerce
+![GTM Page Location variable](../../.gitbook/assets/3.png)
 
-You can track transactions with the Google Universal Analytics tag using the `Transaction` track type on the `distributorBookingFinished` event.
-All the data needed for tracking is set in the Tag Manager’s _data layer_ and will be passed automatically.
+After correct setup you will get all the screens users go trough in Mews Booking engine with URLs as well with correct page titles
 
-Each reservation is sent as _Product_ with quantity set to 1; the name of the reserved category is sent as _Product name_; the name of the hotel is sent as _Product category_.
+### Google Analytics 4 eCommerce and custom events
 
-![ecommerce\_tag](../../.gitbook/assets/ecommercetag.png)
+In Universal analytics eCommerce was working automatically, but in the GA4 you need to create and configure all triggers / variables / tags manually. Follow Google Analytics official guide on how to set it. [Google Analytics - eCommerce support](https://support.google.com/analytics/answer/12200568?hl=en#zippy=%2Cgoogle-tag-manager-websites)
 
-### Google Enhanced Ecommerce
+Mews booking engine fires following GA4 eCommerce events. Naming of the events is same as standard Google recommendation.
 
-We also publish all interesting data for enhanced e-commerce tracking. To track these, set up a tag with the `Enable overriding settings in this tag` option enabled, then under **More Settings &gt; Ecommerce**, set option `Enable Enhanced Ecommerce Features` to `True` and check `Use Data Layer`. The trigger should be set to all booking engine \/ distributor events as described previously.
+* view_item_list
+* select_promotion
+* add_to_cart
+* remove_from_cart
+* begin_checkout
+* add_payment_info
+* purchase
 
-The Track Type of the event shouldn't be important in this case, you can even re-use the same tag as for tracking all booking engine \/ distributor events in analytics.
-Be sure to also enable Enhanced Ecommerce in your Google Analytics, under **Admin &gt; Ecommerce** settings. The Enhanced Ecommerce plug-in should not be used alongside the Ecommerce plug-in for the same property.
+All the events contain additional data in Data layer that you can use to set up tracking according to your needs.
 
-![](../../.gitbook/assets/image.png)
+> For a full list of events and e-commerce events and data layer values, see the [Google Triggers Reference](google-triggers-reference.md).
 
-#### Tracking with Mews Payments and source attribution
-
-When you have Mews Payments set up, a payment by a customer is legally required to happen in our domain. Therefore, all the transactions during a check-out are attributed to Mews domain.
-This is an unfortunate limitation of the check-out process that we cannot currently overcome.
-
-## Conditionally firing tags based on tracking consents
+### Conditionally firing tags based on tracking consents
 
 Google Tag Manager integrations are very often used to track users, be it with cookies or other approaches. You can use [Tracking Consents](google-triggers-reference.md#trackingconsents) and Google Tag Manager to use integrations only when permitted.
 A commonly used integration which often needs a tracking consent is Universal Analytics.
@@ -111,6 +115,34 @@ Let's see how you can fire Universal Analytics tag only when [Tracking Consents]
 6. **All set up!**
 	* Preview or submit your changes
 	* From now on, Universal Analytics will fire only when the performance consent is given
+
+## Universal analytics setup (Legacy - Google will deprecate UA on 1.7.2023)
+
+### Universal Analytics
+
+You can track all the events for further statistical computations about behaviour of your customers. Use the Google Universal Analytics tag with the `Event` track type.
+The Trigger should be a regex grouping of all the events you want to track \(to track all events, you can use `^distributor` regex, as described above\).
+
+![events\_tag](../../.gitbook/assets/eventstag.png)
+
+### Google Ecommerce (Legacy - Google will deprecate UA in 1.7.2023)
+
+You can track transactions with the Google Universal Analytics tag using the `Transaction` track type on the `distributorBookingFinished` event.
+All the data needed for tracking is set in the Tag Manager’s _data layer_ and will be passed automatically.
+
+Each reservation is sent as _Product_ with quantity set to 1; the name of the reserved category is sent as _Product name_; the name of the hotel is sent as _Product category_.
+
+![ecommerce\_tag](../../.gitbook/assets/ecommercetag.png)
+
+### Google Enhanced Ecommerce
+
+We also publish all interesting data for enhanced e-commerce tracking. To track these, set up a tag with the `Enable overriding settings in this tag` option enabled, then under **More Settings &gt; Ecommerce**, set option `Enable Enhanced Ecommerce Features` to `True` and check `Use Data Layer`. The trigger should be set to all booking engine \/ distributor events as described previously.
+
+The Track Type of the event shouldn't be important in this case, you can even re-use the same tag as for tracking all booking engine \/ distributor events in analytics.
+Be sure to also enable Enhanced Ecommerce in your Google Analytics, under **Admin &gt; Ecommerce** settings. The Enhanced Ecommerce plug-in should not be used alongside the Ecommerce plug-in for the same property.
+
+![](../../.gitbook/assets/image.png)
+
 
 ## Troubleshooting
 
