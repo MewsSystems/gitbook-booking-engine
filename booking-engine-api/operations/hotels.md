@@ -434,6 +434,7 @@ The availability and pricing is returned for each applicable combination of occu
             "SettlementTrigger": "Start",
             "SettlementOffset": "P0M0DT0H0M0S",
             "SettlementValue": 1.00000000,
+            "SettlementFlatValue": null,
             "SettlementMaximumTimeUnits": null
         }
     ],
@@ -503,7 +504,9 @@ The availability and pricing is returned for each applicable combination of occu
 | `SettlementAction` | string [Settlement action](#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
 | `SettlementTrigger` | string [Settlement trigger](#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
-| `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
+| `SettlementValue` | number | optional | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. When null, `FlatValue` is provided with absolute decimal value. |
+| `SettlementFlatValue` | number | optional | Absolute value of settlement cost in settlement currency code. When provided `SettlementValue` is `null` |
+| `SettlementCurrencyCode` | number | required | Settlement currency code |
 | `SettlementMaximumTimeUnits` | number | optional | Maximum number of time units that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
 
 #### Settlement type
