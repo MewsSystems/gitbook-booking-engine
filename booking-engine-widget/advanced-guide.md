@@ -28,7 +28,6 @@ function(distributor) {
     // distributor.setStartDate(date);
     // distributor.setEndDate(date);
     // distributor.setVoucherCode(code);
-    // distributor.setRooms(rooms);
     // Singlehotel mode api calls
     // distributor.showRooms();
     // distributor.showRates(roomId);
