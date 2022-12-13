@@ -1,7 +1,7 @@
 # Changelog
 
 ## 13rd December 2022
-* Added [OpenAPI definition](../booking-engine-api/README.md)
+* Added [OpenAPI definition](../booking-engine-api/README.md#openapi-definition)
 
 ## 9th November 2022
 * Changed [SettlementValue](../booking-engine-api/operations/hotels.md#rate-group) to optional field and added `SettlementFlatValue` property of absolute settlement amount
