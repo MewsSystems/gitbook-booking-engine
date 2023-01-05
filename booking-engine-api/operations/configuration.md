@@ -26,6 +26,12 @@ This operation can be called initially to fetch data which may be important duri
 | `PrimaryId` | string | required | Unique identifier of the primary [Configuration](#configuration-1). |
 | `Ids` | array of string | required | Set of unique identifiers of [Configurations](#configuration-1). |
 
+### Request diagram 
+
+![](../../.gitbook/assets/configuration_diagram.png)
+
+Please note: The use of enterprise Ids for getting default booking engine is deprecated and won't be supported in the near future. 
+
 ### Response
 
 ```json
