@@ -3,7 +3,7 @@
 The URL of the Booking Engine Standalone page has the following format:
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 ```
 
 The `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` part should be replaced with your Booking Engine Configuration ID.
@@ -17,7 +17,7 @@ If you want to use a Booking Engine with multiple enterprises, you can place sev
 Note in this case the _theme_ will be pulled from the ID of the first configuration in the URL.
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj
 ```
 
 ## Customization
