@@ -4,7 +4,7 @@ With deeplinks you can create URLs which open Booking Engine Standalone in some 
 You do this by simply adding [supported parameters](#supported-parameters) to the URL in the form of a URL query string. For example:
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 ```
 
 ## Supported parameters 
@@ -13,17 +13,18 @@ This is the list of parameters that can be added to the URL query string. Parame
 
 ### Parameters supported in single and multi-enterprise mode
 
-| Name | Description | Example |
-| :--- | :--- | :--- |
-| mewsStart | an arrival date in ISO 8601 format \(`YYYY-MM-DD`\) | `2023-01-20` for January 20, 2023 |
-| mewsEnd | a departure date in ISO 8601 format \(`YYYY-MM-DD`\) | `2023-01-23` for January 23, 2023 |
-| mewsVoucherCode | a voucher code | `E1A71167851A30043B12` |
-| mewsRoute | [mewsRoute](#mewsroute) | `rooms` for rooms step |
-| mewsRoom | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\) | `da394bbb-9685-4bb8-9547-ab7300915967` |
-| mewsAdultCount  | number of adults that should be selected by default | `3`                                    |
-| mewsChildCount  | number of children that should be selected by default | `1`                                    |
-| language | a language code \(`xx-YY`\) | `en-US` for U.S. English |
-| currency | a currency code \(`XXX`\) | `USD` for United States dollar |
+| Name            | Description                                                                                     | Example                                                                      |
+|:----------------|:------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
+| mewsStart       | an arrival date in ISO 8601 format \(`YYYY-MM-DD`\)                                             | `2023-01-20` for January 20, 2023                                            |
+| mewsEnd         | a departure date in ISO 8601 format \(`YYYY-MM-DD`\)                                            | `2023-01-23` for January 23, 2023                                            |
+| mewsVoucherCode | a voucher code                                                                                  | `E1A71167851A30043B12`                                                       |
+| mewsRoute       | [mewsRoute](#mewsroute)                                                                         | `rooms` for rooms step                                                       |
+| mewsSort        | sort categories on category step by lowest/highest price (Overrides all other ordering methods) | `mewsSort=asc` sorts by lowest price, `mewsSort=desc` sorts by highest price |
+| mewsRoom        | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\)                   | `da394bbb-9685-4bb8-9547-ab7300915967`                                       |
+| mewsAdultCount  | number of adults that should be selected by default                                             | `3`                                                                          |
+| mewsChildCount  | number of children that should be selected by default                                           | `1`                                                                          |
+| language        | a language code \(`xx-YY`\)                                                                     | `en-US` for U.S. English                                                     |
+| currency        | a currency code \(`XXX`\)                                                                       | `USD` for United States dollar                                               |
 
 ### Additional parameters supported in multi-enterprise mode
 
@@ -63,7 +64,7 @@ With parameter `mewsRoute` you can open the Mews Booking Engine on a specific st
 The following deeplink will open the booking engine with a specific start date, specific voucher code and specific language:
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
 ```
 
 ### Example 2: Pre-selected room and currency on rate selection step
@@ -71,7 +72,7 @@ https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsStart=
 The following deeplink will open the booking engine on the rate selection step with a specific pre-selected room and specific currency:
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
 ```
 
 ### Example 3: Multi-enterprise with pre-selected city on hotel selection step
@@ -79,5 +80,5 @@ https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=E
 The following deeplink will open the booking engine in multi-enterprise mode on the hotel selection step with a specific pre-selected city:
 
 ```text
-https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
+https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee;ffffffff-gggg-hhhh-iiii-jjjjjjjjjjjj?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
 ```

@@ -1,5 +1,9 @@
 # Changelog
 
+## 26th January 2023
+* Standalone: Changed domain from api.mews.com to app.mews.com
+* Added new deeplink parameter [mewsSort](../booking-engine-standalone/deeplinks.md#parameters-supported-in-single-and-multi-enterprise-mode) for sorting categories by price
+* 
 ## 13rd December 2022
 * Added [OpenAPI definition](../booking-engine-api/README.md#openapi-definition)
 

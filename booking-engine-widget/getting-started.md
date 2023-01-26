@@ -30,7 +30,7 @@ Use the code snippet \'as is\' and as described, doing otherwise may cause unexp
 * Do **not** place the code snippet anywhere else than in the `<head>`
 * Do **not** modify the code snippet in any way and do not attach the `async` attribute
 * Do **not** use the code snippet inside an `iframe`
-* Do **not** add the [Booking Engine Standalone](../booking-engine-standalone/README.md) URL (e.g. `https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the `iframe`
+* Do **not** add the [Booking Engine Standalone](../booking-engine-standalone/README.md) URL (e.g. `https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the `iframe`
 * Do **not** pack the contents of the script files that the code snippet references into your own JavaScript bundle
 * Do **not** use a booking engine script cached by your server, use the one from this Guide
 
