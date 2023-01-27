@@ -19,7 +19,7 @@ This is the list of parameters that can be added to the URL query string. Parame
 | mewsEnd         | a departure date in ISO 8601 format \(`YYYY-MM-DD`\)                                            | `2023-01-23` for January 23, 2023                                            |
 | mewsVoucherCode | a voucher code                                                                                  | `E1A71167851A30043B12`                                                       |
 | mewsRoute       | [mewsRoute](#mewsroute)                                                                         | `rooms` for rooms step                                                       |
-| mewsSort        | sort categories on category step by lowest/highest price (Overrides all other ordering methods) | `mewsSort=asc` sorts by lowest price, `mewsSort=desc` sorts by highest price |
+| mewsSort        | sort categories on category step by lowest/highest price; overrides all other ordering methods  | `mewsSort=asc` sorts by lowest price, `mewsSort=desc` sorts by highest price |
 | mewsRoom        | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\)                   | `da394bbb-9685-4bb8-9547-ab7300915967`                                       |
 | mewsAdultCount  | number of adults that should be selected by default                                             | `3`                                                                          |
 | mewsChildCount  | number of children that should be selected by default                                           | `1`                                                                          |
