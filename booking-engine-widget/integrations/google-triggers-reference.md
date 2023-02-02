@@ -27,7 +27,7 @@ List of all available events:
 * ga4_BookingCreated
 * ga4_ConfirmationLoaded
 
-**GA4 eCommrece events**
+**GA4 eCommerce events**
 
 * select_promotion
 * view_item_list
