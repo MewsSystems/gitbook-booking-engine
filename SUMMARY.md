@@ -44,5 +44,6 @@
 * [FAQ](FAQ/README.md)
 	* [Ways to integrate](FAQ/ways-to-integrate.md)
 * [Changelog](changelog/README.md)
+	* [Changelog 2022](changelog/changelog2022.md)
 	* [Changelog 2021](changelog/changelog2021.md)
 	* [Changelog 2020](changelog/changelog2020.md)
