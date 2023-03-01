@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Mews Booking Engine Guide](README.md)
 * [Booking Engine Standalone](booking-engine-standalone/README.md)
   * [Getting started](booking-engine-standalone/getting-started.md)
   * [Deeplinks](booking-engine-standalone/deeplinks.md)
