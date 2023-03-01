@@ -9,4 +9,3 @@ It's a more advanced way of integrating the Mews Booking Engine into your websit
 * [Reference](reference.md)
 * [Integrations](integrations/README.md)
 * [Troubleshooting](troubleshooting.md)
-* [Changelog](changelog/README.md)

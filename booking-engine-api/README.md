@@ -10,5 +10,4 @@ Use this option if you want to create your own custom booking engine.
 * [Guidelines](guidelines/README.md)
 * [Use cases](use-cases/README.md)
 * [API Operations](operations/README.md)
-* [Changelog](changelog/README.md)
 * [Deprecations](deprecations/README.md)

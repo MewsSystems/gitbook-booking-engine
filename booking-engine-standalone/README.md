@@ -6,4 +6,3 @@ This section describes how to use it.
 
 * [Getting started](getting-started.md)
 * [Deeplinks](deeplinks.md)
-* [Changelog](changelog/README.md)
