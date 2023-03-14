@@ -1,6 +1,6 @@
 # Changelog
 
-## 1st March 2023
+## 14th March 2023
 * Minor changes for readability and consistency
 * Added reference to Deprecations Policy on API [Deprecations](../booking-engine-api/deprecations/README.md) page.
 
