@@ -1,4 +1,4 @@
-# Introduction
+# Mews Booking Engine Guide
 
 Welcome to the online documentation for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website, so your guests can create reservations in your properties directly in __Mews Operations__.
 You can do this in one of three ways:
