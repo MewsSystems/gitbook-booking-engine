@@ -1,4 +1,6 @@
 # Changelog
+## 23th March 2023
+* Added rate price information into `ga4_RatesLoaded` event.
 
 ## 14th March 2023
 * Minor changes for readability and consistency
