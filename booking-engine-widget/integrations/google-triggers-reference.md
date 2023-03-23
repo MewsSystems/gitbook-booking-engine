@@ -126,9 +126,9 @@ Example
 
 Rates selection have been shown to user
 
-| Data Layer Variable Name | Description                                                       |
-| :-- |:------------------------------------------------------------------|
-| rates | Array of rates shown to user with their currency and gross price. |
+| Data Layer Variable Name | Description |
+| :-- | :-- |
+| rates | Array of rates shown to user, together with their currency and gross price. |
 
 ### ga4_ProductsLoaded
 
