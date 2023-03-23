@@ -1,8 +1,10 @@
 # Changelog
+## 23rd March 2023
+* Widget: Updated description for `ga4_RatesLoaded` event
 
 ## 14th March 2023
-* Minor changes for readability and consistency
-* Added reference to Deprecations Policy on API [Deprecations](../booking-engine-api/deprecations/README.md) page.
+* General: Minor changes for readability and consistency
+* API: Added reference to Deprecations Policy on API [Deprecations](../booking-engine-api/deprecations/README.md) page
 
 ## 26th January 2023
 * Standalone: Changed domain from `api.mews.com` to `app.mews.com`
