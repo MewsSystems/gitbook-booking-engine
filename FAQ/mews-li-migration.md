@@ -37,5 +37,6 @@ Replace domain in your booking engine loading script from `https://mews.li` to `
     ...
 </head>
 ```
+After a successful migration, the keyword `mews.li` should not appear on your website anymore.
 
 If you have any questions, please contact us at support@mews.com.
