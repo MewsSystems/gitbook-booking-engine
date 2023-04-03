@@ -4,7 +4,7 @@
 
 ## Standalone Booking Engine links migration
 
-Find every occurrence links containing `https://mews.li` domain pointing to standalone booking engine hosted on our domain and replace them with `https://app.mews.com`. See [Standalone implementation guide](../booking-engine-standalone/getting-started.md).
+Find every occurrence of links containing `https://mews.li` domain pointing to the standalone booking engine hosted on our domain and replace them with `https://app.mews.com`. See [Standalone implementation guide](../booking-engine-standalone/getting-started.md).
 
 ### Example
 
@@ -18,7 +18,7 @@ Find every occurrence links containing `https://mews.li` domain pointing to stan
 ```
 ## Widget Booking Engine migration
 
-Replace domain in your booking engine loading script from `https://mews.li` to `https://api.mews.com`. See [installation guideline](../booking-engine-widget/getting-started.md).
+Replace the domain in your booking engine loading script from `https://mews.li` to `https://api.mews.com`. See [installation guideline](../booking-engine-widget/getting-started.md).
 
 #### ❌ Deprecated implementation
 ```html
@@ -37,6 +37,6 @@ Replace domain in your booking engine loading script from `https://mews.li` to `
     ...
 </head>
 ```
-After a successful migration, the keyword `mews.li` should not appear on your website anymore.
+After a successful migration, the keyword `mews.li` should no logner appear on your website.
 
 If you have any questions, please contact us at support@mews.com.
