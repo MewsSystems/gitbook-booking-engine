@@ -10,11 +10,11 @@ Find every occurrence of links containing `https://mews.li` domain pointing to t
 
 #### ❌ Deprecated implementation
 ```html
-<a href=href="https://www.mews.li/distributor/6b87e134-8c75-468a-82d4-aca900c43c70">Book Now</a>
+<a href="https://www.mews.li/distributor/6b87e134-8c75-468a-82d4-aca900c43c70">Book Now</a>
 ```
 #### ✅ After migration implementation
 ```html
-<a href=href="https://app.mews.com/distributor/6b87e134-8c75-468a-82d4-aca900c43c70">Book Now</a>
+<a href="https://app.mews.com/distributor/6b87e134-8c75-468a-82d4-aca900c43c70">Book Now</a>
 ```
 ## Widget Booking Engine migration
 
