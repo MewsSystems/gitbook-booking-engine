@@ -1,8 +1,8 @@
 # How to migrate booking engine off mews.li
 
-> ⚠️ Support for this deprecated implementation will end on May 1, which may cause your booking engine to stop working.
+> ⚠️ Support for this deprecated implementation will end on May 1, which will cause your booking engine to stop working.
 
-## Standalone Booking Engine links migration
+## Standalone Booking Engine migration
 
 Find every occurrence of links containing `https://mews.li` domain pointing to the standalone booking engine hosted on our domain and replace them with `https://app.mews.com`. See [Standalone implementation guide](../booking-engine-standalone/getting-started.md).
 
@@ -24,7 +24,7 @@ Replace the domain in your booking engine loading script from `https://mews.li` 
 ```html
 <head>
     ...
-<script src="https://mews.li/distributor/distributor.min.js"></script>
+    <script src="https://mews.li/distributor/distributor.min.js"></script>
     ...
 </head>
 ```

@@ -22,4 +22,4 @@ If you need further assistance, or have any questions or special requests, pleas
 
 > # ⚠️ Action required
 > ## We will sunset the mews.li domain on May 1st 2023.
-> We need you to update implementation of your booking engine following this [migration guide](./FAQ/mews-li-migration.md). We will no longer support `mews.li` domain, therefore failure to complete by the deadline will result in the shutdown of the booking engine.
+> We need you to update implementation of your booking engine following this [migration guide](./FAQ/mews-li-migration.md). We will no longer support the `mews.li` domain, therefore failure to complete the update by the deadline will result in shutdown of the booking engine.
