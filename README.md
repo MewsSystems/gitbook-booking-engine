@@ -1,3 +1,7 @@
+> # ⚠️ Action required
+> ## We will sunset the mews.li domain on May 1st 2023.
+> We need you to update implementation of your booking engine following this [migration guide](FAQ/mews-li-migration.md). We will no longer support the `mews.li` domain, therefore failure to complete the update by the deadline will result in shutdown of the booking engine.
+
 # Mews Booking Engine Guide
 
 Welcome to the online documentation for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website, so your guests can create reservations in your properties directly in __Mews Operations__.
@@ -19,7 +23,3 @@ If you need further assistance, or have any questions or special requests, pleas
 > * For the history of changes to the Guide, see the [Changelog](changelog/README.md)
 > * For important information on deprecations in the API, see [Deprecations](booking-engine-api/deprecations/README.md)
 > * To track changes and updates to any part of the Guide, you can follow the [GitHub repository](https://github.com/MewsSystems/gitbook-booking-engine/tree/master)
-
-> # ⚠️ Action required
-> ## We will sunset the mews.li domain on May 1st 2023.
-> We need you to update implementation of your booking engine following this [migration guide](./FAQ/mews-li-migration.md). We will no longer support the `mews.li` domain, therefore failure to complete the update by the deadline will result in shutdown of the booking engine.
