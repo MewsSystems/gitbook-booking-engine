@@ -37,6 +37,6 @@ Replace the domain in your booking engine loading script from `https://mews.li` 
     ...
 </head>
 ```
-After a successful migration, the keyword `mews.li` should no logner appear on your website.
+After a successful migration, the keyword `mews.li` should no longer appear on your website.
 
 If you have any questions, please contact us at support@mews.com.
