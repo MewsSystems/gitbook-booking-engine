@@ -203,10 +203,12 @@ Get hotels data for a single specified hotel. This operation can be called initi
 | `Name` | [Localized text](#localized-text) | required | Name of the hotel. |
 | `Description` | [Localized text](#localized-text) | required | Description of the hotel. |
 | `PaymentGateway` | one of [Payment gateway](#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
-| `Products` | array of [Product](#product) | required | All products orderable with rooms. |
+| `Products` | array of [Product](#product) | required | All products orderable with rooms associated with the first bookable service in the list of services of this enterprise. |
 | `RoomCategories` | array of [Room category](#room-category) | required | All room categories offered by hotel. |
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
 | `ImageBaseUrl` | string | required | Base URL of images. |
+
+> The returned list of products contains only the products associated with the first bookable service in the list of services of this enterprise.
 
 #### Country
 
