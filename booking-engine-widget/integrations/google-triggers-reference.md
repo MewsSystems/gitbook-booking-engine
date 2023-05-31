@@ -27,6 +27,10 @@ List of all available events:
 * ga4_BookingCreated
 * ga4_ConfirmationLoaded
 
+**Extra events**
+
+* ga4_FetchedWithOccupancy
+
 **GA4 eCommerce events**
 
 * select_promotion
@@ -73,11 +77,13 @@ Some events expose additional data layer variables. They are described separatel
 | performance | boolean | required | Performance, e.g. collecting information about how users use a website; data are anonymized. |
 
 
-### ga4_ApplicationLoaded
+### Step / pageview events
+
+#### ga4_ApplicationLoaded
 
 Event which fires when the application is loaded for user
 
-### ga4_VoucherAdded
+#### ga4_VoucherAdded
 
 Voucher have been added into booking
 
@@ -85,15 +91,15 @@ Voucher have been added into booking
 | :-- | :-- |
 | voucherCode | Code of voucher added by user |
 
-### ga4_PropertiesLoaded
+#### ga4_PropertiesLoaded
 
 Step of properties selection was loaded for user
 
-### ga4_CalendarLoaded
+#### ga4_CalendarLoaded
 
 Calendar step have been loaded for user
 
-### ga4_CategoriesLoaded
+#### ga4_CategoriesLoaded
 
 Categories / Room selection have been shown to user
 
@@ -122,7 +128,7 @@ Example
     },
 ```
 
-### ga4_RatesLoaded
+#### ga4_RatesLoaded
 
 Rates selection have been shown to user
 
@@ -130,7 +136,7 @@ Rates selection have been shown to user
 | :-- | :-- |
 | rates | Array of rates shown to user, together with their currency and gross price. |
 
-### ga4_ProductsLoaded
+#### ga4_ProductsLoaded
 
 Products selection have been shown to user
 
@@ -138,25 +144,37 @@ Products selection have been shown to user
 | :-- | :-- |
 | products | Array of products shown to user |
 
-### ga4_PromotedServicesLoaded
+#### ga4_PromotedServicesLoaded
 
 Promoted Services have been shown to user
 
-### ga4_SummaryLoaded
+#### ga4_SummaryLoaded
 
 Summary step have been shown to user
 
-### ga4_DetailsLoaded
+#### ga4_DetailsLoaded
 
 Final screen with form to fill have been shown to user
 
-### ga4_BookingCreated
+#### ga4_BookingCreated
 
 Mews created booking within the PMS. Additional information are available in `purchase` event
 
-### ga4_ConfirmationLoaded
+#### ga4_ConfirmationLoaded
 
 Confirmation screen have been shown to user, this step is shown after returning from Payment gateway as final step of the process
+
+### Extra events
+
+#### ga4_FetchedWithOccupancy
+
+Dates screen has been submitted with selected occupancy in the form.
+
+| Data Layer Variable Name | Description                                                                              |
+|:-------------------------|:-----------------------------------------------------------------------------------------|
+| adultCount               | Number - total count of `Adult` ageCategories selected in the Dates step occupancy form. |
+| childCount               | Number - total count of `Child` ageCategories selected in the Dates step occupancy form. |
+
 
 ### GA4 eCommerce events
 
