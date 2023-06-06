@@ -1,4 +1,8 @@
 # Changelog
+
+## 1st June 2023
+* Added a new custom event to track the number of selected adults and children `ga4_FetchedWithOccupancy` into [Google Trigger Reference](../booking-engine-widget/integrations/google-triggers-reference.md#ga4fetchedwithoccupancy)
+
 ## 23rd March 2023
 * Widget: Updated description for `ga4_RatesLoaded` event
 
