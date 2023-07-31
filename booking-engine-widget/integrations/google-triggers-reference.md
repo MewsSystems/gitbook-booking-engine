@@ -55,7 +55,7 @@ If a hotel is selected, information about it is also added to the event \(note t
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | hotelName | Name of the hotel |
-| hoteId | Unique identifier of the hotel |
+| hotelId | Unique identifier of the hotel |
 | enterpriseName | Array with languages translated names of enterprise |
 
 Pageload events with 'ga4_' prefix have as well following attributes available in datalayer:
@@ -371,7 +371,7 @@ If a hotel is selected, information about it is also added to the event \(note t
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | hotelName | Name of the hotel |
-| hoteId | Unique identifier of the hotel |
+| hotelId | Unique identifier of the hotel |
 
 Some events expose additional data layer variables. They are described separately for each event.
 
