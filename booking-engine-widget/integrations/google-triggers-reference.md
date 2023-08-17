@@ -1,107 +1,123 @@
 # Google Triggers Reference
 
-> **Notice of usage:** Google Tag Manager is a third party service and we provide this integration as is. We export a set of supported events and their data to the container, however, we have no control over what happens to them and how they are used. Below we provide a set of basic setup examples that have been tested and verified to work with the Mews Booking Engine. If you need a more complex setup, it is up to you to configure and test it.
+> **Notice of usage:** Google Tag Manager (GTM) and Google Analytics 4 (GA4) are third party services and we provide this integration as is.
+We support a set of custom events and Data Layer variables for use with GTM and GA4, however we have no control over what happens to them and how they are used. The basic setup examples we provide have been tested and verified to work with the Mews Booking Engine, however if you need a more complex setup then we cannot provide the support to do so and we recommend to ask a specialist to set it up and test it for you.
 
-All events data is passed to Tag Manager through _Data Layer_. To use it in your tags, set up _Variable_ with a proper name as a variable of the data layer, like this:
+This reference provides details of **custom events** and **Data Layer variables** generated within the Booking Engine, which can be used to trigger analytics tags to fire, i.e. to send data to Google Analytics.
+You will need to reference these events and variables when setting up tag _triggers_ in Google Tag Manager.
+
+## Contents
+
+* [Data Layer variables](#data-layer-variables)
+* [Custom events](#custom-events)
+* [GA4 pageview events](#ga4-pageview-events)
+* [GA4 eCommerce events](#ga4-ecommerce-events)
+
+## Data Layer variables
+
+All event data is passed to Google Tag Manager through a _Data Layer_.
+
+> ### What is a Data Layer?
+> A Data Layer is a Javascript object in a website or app that collects analytics data in a standardized way. It acts as a layer between the site and the tag management system.
+> The layer stores values, such as page name and URL, that are populated automatically when a visitor uses the site.
+> The data is transferred into tag management variables and can be used to activate triggers in your tag configurations.
+> [Google Help — The data layer](https://support.google.com/tagmanager/answer/6164391?hl=en)
+
+To use data from the Data Layer in your tags, in the GTM configuration set up a _Variable_ with a suitable name as a Data Layer Variable (DLV), like this:
 
 ![variable](../../.gitbook/assets/variable.png)
 
-> **Note:** All prices currently presented via the data layer are gross \(including taxes and fees\).
+The [Custom events](#custom-events) reference below describes which Data Layer Variables are relevant to which custom events.
 
-## Google Analytics 4 (GA4 events)
+> **Prices:** Note all prices currently presented via the Data Layer are gross prices, i.e. including taxes and fees.
 
-List of all available events:
+## Custom events
 
-**Step / pageview events**
+**GA4 pageview events**
 
-* ga4_ApplicationLoaded
-* ga4_VoucherAdded
-* ga4_PropertiesLoaded
-* ga4_CalendarLoaded
-* ga4_CategoriesLoaded
-* ga4_RatesLoaded
-* ga4_ProductsLoaded
-* ga4_PromotedServicesLoaded
-* ga4_SummaryLoaded
-* ga4_DetailsLoaded
-* ga4_BookingCreated
-* ga4_ConfirmationLoaded
-
-**Extra events**
-
-* ga4_FetchedWithOccupancy
+* [ga4_ApplicationLoaded](#ga4_applicationloaded)
+* [ga4_VoucherAdded](#ga4_voucheradded)
+* [ga4_PropertiesLoaded](#ga4_propertiesloaded)
+* [ga4_CalendarLoaded](#ga4_calendarloaded)
+* [ga4_CategoriesLoaded](#ga4_categoriesloaded)
+* [ga4_RatesLoaded](#ga4_ratesloaded)
+* [ga4_ProductsLoaded](#ga4_productsloaded)
+* [ga4_PromotedServicesLoaded](#ga4_promotedservicesloaded)
+* [ga4_SummaryLoaded](#ga4_summaryloaded)
+* [ga4_DetailsLoaded](#ga4_detailsloaded)
+* [ga4_BookingCreated](#ga4_bookingcreated)
+* [ga4_ConfirmationLoaded](#ga4_confirmationloaded)
 
 **GA4 eCommerce events**
 
-* select_promotion
-* view_item_list
-* add_to_cart
-* remove_from_cart
-* begin_checkout
-* add_payment_info
-* purchase
+* [select_promotion](#select_promotion)
+* [view_item_list](#view_item_list)
+* [add_to_cart](#add_to_cart)
+* [remove_from_cart](#remove_from_cart)
+* [begin_checkout](#begin_checkout)
+* [add_payment_info](#add_payment_info)
+* [purchase](#purchase)
 
-### Data layer variables in events
+### Data Layer Variables in events
 
 Each event is fired with a standard set of data:
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
-| eventName | Name of the event in readable form without prefix, e.g. `Step Dates`. |
-| trackingConsents | [TrackingConsents](#trackingconsents) applied at the time the event was created. |
+| eventName | Name of the event, in readable form without prefix, e.g. `Voucher Added`. |
+| trackingConsents | [Tracking consents](#tracking-consents) applied at the time the event was created. |
 
-If a hotel is selected, information about it is also added to the event \(note the hotel is always selected when in _Singlehotel_ mode\).
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| hotelName | Name of the hotel |
-| hotelId | Unique identifier of the hotel |
-| enterpriseName | Array with languages translated names of enterprise |
-
-Pageload events with 'ga4_' prefix have as well following attributes available in datalayer:
+If a user selects a hotel or property in the Booking Engine, information about it is also added to the event. In _Singlehotel_ mode, the property is always selected.
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
-| page_location | URL style location to be used for tracking URL |
-| page_title | Human readable name of screen|
+| hotelName | Name of the hotel or property |
+| hotelId | Unique identifier of the hotel or property |
+| enterpriseName | Array with name of the enterprise (hotel / property) in each supported language |
 
-Some events expose additional data layer variables. They are described separately for each event.
+Pageload events with the 'ga4_' prefix also have the following attributes available in the Data Layer:
 
-### TrackingConsents
+| Data Layer Variable Name | Description |
+| :-- | :-- |
+| page_location | URL style location, to be used for tracking URL |
+| page_title | Human readable name of page or screen|
+
+Some events expose additional DLVs. These are described separately for each event.
+
+### Tracking consents
 
 | Name | Type | Contract | Purpose |
 | :-- | :-- | :-- | :-- |
 | advertising | boolean | required | Advertising, e.g. used to help advertisers deliver more relevant advertising, or to limit how many times you see an advertisment. |
-| functional | boolean | required | Unnecessary functionality, e.g. remembering user choices made in the past. |
+| functional | boolean | required | Functional, non-essential functionality, e.g. remembering user choices made in the past. |
 | necessary | boolean | required | Necessary functionality. |
 | performance | boolean | required | Performance, e.g. collecting information about how users use a website; data are anonymized. |
 
+## GA4 pageview events
 
-### Step / pageview events
+### ga4_ApplicationLoaded
 
-#### ga4_ApplicationLoaded
+* Event which fires when the application is loaded for the user
 
-Event which fires when the application is loaded for user
+### ga4_VoucherAdded
 
-#### ga4_VoucherAdded
-
-Voucher have been added into booking
+* A voucher has been added into the booking
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | voucherCode | Code of voucher added by user |
 
-#### ga4_PropertiesLoaded
+### ga4_PropertiesLoaded
 
-Step of properties selection was loaded for user
+* The properties selection step was loaded for the user
 
-#### ga4_CalendarLoaded
+### ga4_CalendarLoaded
 
-Calendar step have been loaded for user
+* The calendar step has been loaded for the user
 
-#### ga4_CategoriesLoaded
+### ga4_CategoriesLoaded
 
-Categories / Room selection have been shown to user
+* Categories / room selection has been shown to the user
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
@@ -110,9 +126,7 @@ Categories / Room selection have been shown to user
 | available | Array of room categories which have been shown to user as available |
 | unavailable | Array of room categories which have been shown to user as not available |
 
-Each of the items in arrays follows the google [Item specification for ecommerce](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtag)
-
-Example
+* Each of the items in arrays follows the google [Item specification for ecommerce](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtag), for example:
 
 ```
 {
@@ -128,86 +142,72 @@ Example
     },
 ```
 
-#### ga4_RatesLoaded
+### ga4_RatesLoaded
 
-Rates selection have been shown to user
+* Rates selection has been shown to the user
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
-| rates | Array of rates shown to user, together with their currency and gross price. |
+| rates | Array of rates shown to user, together with their currency and gross price |
 
-#### ga4_ProductsLoaded
+### ga4_ProductsLoaded
 
-Products selection have been shown to user
+* Products selection has been shown to the user
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | products | Array of products shown to user |
 
-#### ga4_PromotedServicesLoaded
+### ga4_PromotedServicesLoaded
 
-Promoted Services have been shown to user
+* Promoted Services has been shown to the user
 
-#### ga4_SummaryLoaded
+### ga4_SummaryLoaded
 
-Summary step have been shown to user
+* Summary step has been shown to the user
 
-#### ga4_DetailsLoaded
+### ga4_DetailsLoaded
 
-Final screen with form to fill have been shown to user
+* The final screen with form to fill in has been shown to the user
 
-#### ga4_BookingCreated
+### ga4_BookingCreated
 
-Mews created booking within the PMS. Additional information are available in `purchase` event
+* Mews created a booking within the PMS. Additional information is available in the `purchase` event.
 
-#### ga4_ConfirmationLoaded
+### ga4_ConfirmationLoaded
 
-Confirmation screen have been shown to user, this step is shown after returning from Payment gateway as final step of the process
+* The confirmation screen has been shown to the user. This step is shown after returning from the payment gateway as the final step of the process.
 
-### Extra events
+## GA4 eCommerce events
 
-#### ga4_FetchedWithOccupancy
-
-Dates screen has been submitted with selected occupancy in the form.
-
-| Data Layer Variable Name | Description                                                                              |
-|:-------------------------|:-----------------------------------------------------------------------------------------|
-| adultCount               | Number - total count of `Adult` ageCategories selected in the Dates step occupancy form. |
-| childCount               | Number - total count of `Child` ageCategories selected in the Dates step occupancy form. |
-
-
-### GA4 eCommerce events
-
-Please follow the google guide for tracking eCommerce in GA4. YOu need to set up events with all mandatory parameters so they are tracked correctly.
+Please follow the [Google guide for tracking eCommerce in GA4](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce). You need to set up events with all mandatory parameters so they are tracked correctly.
 We are pushing all available variables into the eCommerce tracking for more advanced setups as well.
-All mandatory and supported fields
-> [Google eCommerce support page](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce)
 
-#### select_promotion
+### select_promotion
 
-Voucher have been added to reservation
+* Voucher has been added to the booking
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | promotion_id | Array of rates shown to user |
 
-#### view_item_list
+### view_item_list
 
-List of available rooms show to user for eCommerce purpose
+* List of available rooms shown to user for eCommerce purposes
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | items | Array of items (rooms / categories) shown to user |
 
-#### add_to_cart
+### add_to_cart
 
-User added room and products to cart
+* User added room and products to cart
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | items | Array of items (rooms / categories / products) added by user in reservation |
 
-Example:
+* Example:
 
 ```
 {
@@ -247,25 +247,25 @@ Example:
 }
 ```
 
-#### remove_from_cart
+### remove_from_cart
 
-In case user removed item from cart, this event is triggered. See `add_to_cart` event parameters
+* User removed an item from the cart. See `add_to_cart` for event parameters.
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | items | Array of items (rooms / categories / products) remover by user in reservation |
 
-#### begin_checkout
+### begin_checkout
 
-User started the process of checkout. See `add_to_cart` event parameters
+* User started the process of check-out. See `add_to_cart` for event parameters.
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
 | items | Array of items (rooms / categories / products) added by user in reservation |
 
-#### add_payment_info
+### add_payment_info
 
-User added the payment information
+* User added payment information.
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
@@ -274,11 +274,10 @@ User added the payment information
 | value | Amount of the reservation |
 | items | Array of items (rooms / categories / products) added by user in reservation |
 
-#### purchase
+### purchase
 
-Most important eCommerce event.
-We are exposing many variables in the event which can be used for advanced tracking. See the example for full description.
-Most important variables
+* Purchase made. This is the most important eCommerce event. We expose many variables in the event which can be used for advanced tracking. See the example for full description.
+* The most important variables are:
 
 | Data Layer Variable Name | Description |
 | :-- | :-- |
@@ -296,7 +295,8 @@ Most important variables
 | children | Count of children in reservations |
 | items | Array of items (rooms / categories / products) added by user in reservation. See example for different types of items |
 
-Example:
+* Example:
+
 ```
 {
   event: "purchase",
@@ -354,270 +354,3 @@ Example:
   children: 0 // Count of children
 }
 ```
-
-## Deprecated - Universal Analytics events - will
-
-### Data layer variables in events
-
-Each event is fired with a standard set of data:
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| eventName | Name of the event in readable form without prefix, e.g. `Step Dates`. |
-| trackingConsents | [TrackingConsents](#trackingconsents) applied at the time the event was created. |
-
-If a hotel is selected, information about it is also added to the event \(note the hotel is always selected when in _Singlehotel_ mode\).
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| hotelName | Name of the hotel |
-| hotelId | Unique identifier of the hotel |
-
-Some events expose additional data layer variables. They are described separately for each event.
-
-### TrackingConsents
-
-| Name | Type | Contract | Purpose |
-| :-- | :-- | :-- | :-- |
-| advertising | boolean | required | Advertising, e.g. used to help advertisers deliver more relevant advertising, or to limit how many times you see an advertisment. |
-| functional | boolean | required | Unnecessary functionality, e.g. remembering user choices made in the past. |
-| necessary | boolean | required | Necessary functionality. |
-| performance | boolean | required | Performance, e.g. collecting information about how users use a website; data are anonymized. |
-
-### distributorLoaded   <a id="distributorloaded"></a>
-
-The Distributor application was initialized \(triggers once per session even with a Merchant redirect\).
-
-### distributorConfigurationSet   <a id="distributorconfigurationset"></a>
-
-Initial values were configured. When there is no custom value, it propagates the default one.
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| startDate | Start date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-20`. |
-| endDate | End date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-22`. |
-| languageCode | Language code, i.e. `en-US`. |
-| currencyCode | Currency code in ISO format, i.e`EUR`. [Supported currency codes](../../booking-engine-api/guidelines/supported-currency-codes.md) |
-| promoCode | Value of the promo code, i.e.`promo`. |
-
-### distributorOpened
-
-* Booking Engine (Distributor) was opened
-
-### distributorClosed
-
-* Booking Engine (Distributor) was closed
-
-### distributorTrackingConsentsSet
-
-* [TrackingConsents](#trackingconsents) were set
-
-### distributorStepDates
-
-* A Dates step was displayed
-
-### distributorStepHotels
-
-* A Hotels step was displayed
-
-### distributorStepRooms
-
-* A Rooms step was displayed
-
-### distributorStepRates
-
-* A Rates step was displayed
-
-### distributorStepSummary
-
-* A Summary step was displayed
-
-### distributorStepCheckout
-
-* A Checkout step was displayed
-
-### distributorStepConfirmation
-
-* A confirmation page was displayed
-
-### distributorLanguageCodeChanged
-
-* A language code was changed
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| languageCode | Language code of the selected language, e.g. `en-US`. |
-
-### distributorCurrencyCodeChanged
-
-* A currency code was changed
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| currencyCode | Currency code of the selected currency, e.g. `USD`. |
-
-### distributorStartDateSelected
-
-* A start date of the reservation was selected
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| startDate | Selected start date in ISO 8601 format YYYY-MM-DD, e.g. `2017-01-20`. |
-
-### distributorEndDateSelected
-
-* An end date of the reservation was selected
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| endDate | Selected end date in ISO 8601 format YYYY-MM-DD, e.g.`2017-01-22`. |
-
-### distributorPromoCodeSelected
-
-* A promo code was set
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| promoCode | Value of the inserted promo code as a string, e.g. `promo`. It is not validated. |
-
-### distributorAvailabilityLoaded
-
-* Availability of hotel was loaded
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| availableRooms | Array of available rooms or spaces. |
-
-* Each item in the `availableRooms` array contains the following data:
-
-| Name | Description |
-| :-- | :-- |
-| roomName | Name of the room or space. |
-| roomId | Unique identifier of the room or space. |
-| availableRateIds | List of available rate ids for the room or space |
-| lowestPrice | Price of the room or space in the hotel's default rate currency |
-| price | All prices of the room or space in all available currencies as `(key: currency, value: price)` dictionary/object. |
-
-### distributorAlternativeDatesOffered
-
-* Alternative dates were displayed
-
-### distributorOfferedDatesSelected
-
-* Alternative dates when there is no availability selected
-
-### distributorCategoryGalleryOpened
-
-* Category gallery was opened
-
-### distributorRoomSelected
-
-* A room or space was selected
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| roomId | Unique identifier of the selected room or space. |
-| roomName | Name of the selected room or space in the hotel’s default language. |
-| spaceType | Name of the space type (`Room`, `Bed` or `Dorm`) for the selected room or space. |
-
-### distributorSpaceTypeCountChanged
-
-* The count of the selected space type was changed
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| count | Count of the selected space type. |
-
-### distributorRoomOccupancyChanged
-
-* The count of adults and/or children was changed for the room or space
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| roomIndex | Index of the changed room or space. |
-| adultCount | Number of the selected adults. |
-| childCount | Number of the selected children. |
-
-### distributorProductAdded
-
-* A product was added to the order
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| productId | Unique identifier of the added product. |
-| productName | Name of the product in the hotel’s default language. |
-
-### distributorProductRemoved
-
-* A product was removed from the order
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| productId | Unique identifier of the removed product. |
-| productName | Name of product in the hotel’s default language. |
-
-### distributorRoomAdded
-
-* A room or rooms were added to the order
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| reservations.orderId | Unique identifier used only within session to identify order items |
-| reservations.hotelId | Unique identifier of selected hotel |
-| reservations.roomId | Unique identifier of selected room or space |
-| reservations.rateId | Unique identifier of selected rate |
-| reservations.productIds | Collection of selected product unique identifiers |
-| reservations.startDate | Reservation start date |
-| reservations.endDate | Reservation end date |
-| reservations.adultCount | Number of selected adults |
-| reservations.childCount | Number of selected children |
-
-### distributorRoomCountChanged
-
-* The quantity of rooms or spaces in the order was increased or decreased
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| orderId | Unique ID used only within session to identify order items |
-| roomId | Unique identifier of selected room or space |
-| rateId | Unique identifier of selected rate |
-| countChange | Change of quantity \(e.g. 1, -1\) |
-
-### distributorBookingPrepared
-
-* A booking is prepared and user needs to enter their details; this event triggers when the user reaches the Checkout step
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| totalCost | current total cost of the reservation group, in the hotel’s default currency |
-
-### distributorBookingFinished
-
-* A booking was made; this event triggers once every time a reservation group is made
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| reservationGroupId | ID of the reservation group |
-| totalCost | Total cost of the reservation group, in the hotel’s default currency |
-| currencyCode | Hotel’s default currency code in ISO format |
-
-### distributorReservationCreated
-
-* A reservation was created; this event triggers when each reservation is made in the reservation group
-
-| Data Layer Variable Name | Description |
-| :-- | :-- |
-| customerEmail | The customer’s email |
-| customerName | The customer’s name |
-| currencyCode | Hotel’s default currency code in ISO format |
-| reservationGroupId | ID of the reservation group |
-| id | ID of the reservation |
-| roomId | ID of the room or space category |
-| rateId | ID of the rate of the reservation |
-| number | Confirmation number of the reservation |
-| roomName | Name of the room or space |
-| startDate | Start date of the reservation |
-| endDate | End date of the reservation |
-| nights | Total number of nights |
-| cost | Cost of the reservation in the hotel’s default currency |
-| alternativeCost | Cost of the reservation in all currencies supported by the property as \(key: currency, value: price\) dictionary/object. |
