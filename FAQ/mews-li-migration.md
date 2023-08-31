@@ -1,6 +1,6 @@
 # How to migrate booking engine off mews.li
 
-> ⚠️ Support for this deprecated implementation will end on May 1, which will cause your booking engine to stop working.
+> ⚠️ Support for this outdated implementation was discontinued as of May 1 - we are not responsible for the functionality of the booking engine on this domain
 
 ## Standalone Booking Engine migration
 
