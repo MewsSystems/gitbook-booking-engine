@@ -191,9 +191,20 @@ Therefore, the `SendMarketingEmails` property for the booker should be set accor
 | `Notes` | string | optional | Additional notes. |
 | `Amount` | [Amount](hotels.md#multi-currency-amount) | required | Total amount of the reservation. |
 
-### Error response
+### Documentation Update: Reservation Status Based on Feature Setting
 
-In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top of the standard ones:
+
+#### Enable Automatic Cancellation for Optional Reservations
+
+**When the feature [Enable automatic cancellation for optional reservations](https://help.mews.com/s/article/confirm-or-cancel-optional-reservations?language=en_US) is activated on your bookable service under *Visit Options*:**
+
+- Reservations with a balance due upon confirmation will initially be set to an **Optional** state.
+- These reservations will only transition to a **Confirmed** status upon successful payment of the due amount.
+
+**If the feature is not activated:**
+
+- Reservations will be created directly in the **Confirmed** state.
+
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
