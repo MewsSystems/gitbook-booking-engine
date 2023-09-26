@@ -205,6 +205,10 @@ Therefore, the `SendMarketingEmails` property for the booker should be set accor
 
 - Reservations will be created directly in the **Confirmed** state.
 
+### Error response
+
+In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top of the standard ones:
+
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
