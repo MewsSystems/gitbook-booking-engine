@@ -90,22 +90,28 @@ Get a total price for the requested reservations.
 
 ```json
 {
-    "Client": "My Client 1.0.0",
-    "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
-    "CurrencyCode": "EUR",
-    "Reservations": [
-      {
-        "Identifier": "uniqueClientGeneratedIdentifier1",
-        "StartUtc": "2015-01-01T00:00:00Z",
-        "EndUtc": "2015-01-03T00:00:00Z",
-        "ProductIds": [],
-        "VoucherCode": null,
-        "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
-        "RoomCategoryId": "4037c0ec-a59d-43f1-9d97-d6c984764e8c",
-        "AdultCount": 2,
-        "ChildCount": 0
-      }
-    ]
+  "Client": "My Client 1.0.0",
+  "ConfigurationId": "e4da5c87-1b4b-4e68-841e-abc800c82505",
+  "CurrencyCode": "EUR",
+  "Reservations": [
+    {
+      "Identifier": "uniqueClientGeneratedIdentifier1",
+      "StartUtc": "2030-01-01T00:00:00Z",
+      "EndUtc": "2030-01-03T00:00:00Z",
+      "ProductIds": [
+        "13800226-e46d-429d-b31f-ae590104b256"
+      ],
+      "VoucherCode": null,
+      "RateId": "7888ba86-7ad2-4d50-abd3-acf700f0d20a",
+      "RoomCategoryId": "a0c790b7-51c4-4702-a351-abc800c8118b",
+      "OccupancyData": [
+        {
+          "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8",
+          "PersonCount": 1
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -120,8 +126,8 @@ Get a total price for the requested reservations.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `AdultCount` | number | required | Number of adults. |
-| `ChildCount` | number | required | Number of children. |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ Deprecated |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ Deprecated |
 | `Identifier` | string | required | Unique identifier for reservation generated on client. |
 | `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
 | `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
@@ -129,6 +135,14 @@ Get a total price for the requested reservations.
 | `VoucherCode` | string | optional | Voucher code applied to reservation |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `RoomCategoryId` | string | required | Unique identifier of the room category. |
+| `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
+
+#### Occupancy Data
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `AgeCategoryId` | string | required | Age category identifier. |
+| `PersonCount` | number | required | Person count. |
 
 
 ### Response
@@ -140,24 +154,24 @@ Get a total price for the requested reservations.
       "Identifier": "uniqueClientGeneratedIdentifier1",
       "TotalAmount": {
         "Currency": "EUR",
-        "GrossValue": 203.00,
-        "NetValue": 184.82,
+        "GrossValue": 310.00,
+        "NetValue": 282.72,
         "TaxValues": [
           {
             "TaxRateCode": "ES-2016-R",
-            "Value": 18.18
+            "Value": 27.28
           }
         ],
         "Breakdown": {
           "Items": [
             {
               "TaxRateCode": "ES-2016-R",
-              "NetValue": 181.82,
-              "TaxValue": 18.18
+              "NetValue": 272.72,
+              "TaxValue": 27.28
             },
             {
               "TaxRateCode": null,
-              "NetValue": 3.0,
+              "NetValue": 10.0,
               "TaxValue": 0.0
             }
           ]
@@ -166,11 +180,10 @@ Get a total price for the requested reservations.
       "AmountToChargeOnConfirmation": null,
       "ProductOrderPrices": [
         {
-          "ProductId": "47c186ec-7b2b-43f2-95fb-abc800c82505",
+          "ProductId": "13800226-e46d-429d-b31f-ae590104b256",
           "AgeCategoryId": null,
           "ProductName": {
-            "es-ES": "Bicicleta",
-            "en-US": "Bike Rental"
+            "es-ES": "Before check in"
           },
           "ProductOptions": {
             "SelectedByDefault": false,
@@ -182,14 +195,14 @@ Get a total price for the requested reservations.
           "ChargingMode": "Once",
           "TotalAmount": {
             "Currency": "EUR",
-            "GrossValue": 3.0,
-            "NetValue": 3.0,
+            "GrossValue": 10.0,
+            "NetValue": 10.0,
             "TaxValues": [],
             "Breakdown": {
               "Items": [
                 {
                   "TaxRateCode": null,
-                  "NetValue": 3.0,
+                  "NetValue": 10.0,
                   "TaxValue": 0.0
                 }
               ]
@@ -206,31 +219,31 @@ Get a total price for the requested reservations.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Identifier` | string | required | Unique identifier for reservation provided in the request data. |
-| `AmountToChargeOnConfirmation` | [Total Amount](#totalamount) | optional | Amount that needs to be charged on payment gateway on reservationGroup confirmation. |
-| `TotalAmount` | [Total Amount](#totalamount) | required | Total amount of the reservation. |
-| `ProductOrderPrices` | array of [ProductOrderPrice](#productorderprice) | required | List of product order prices assigned to the reservation. |
+| `Identifier` | string | optional | Unique identifier for reservation provided in the request data. |
+| `AmountToChargeOnConfirmation` | [Amount](#amount) | optional | Amount that needs to be charged on payment gateway on reservationGroup confirmation. |
+| `TotalAmount` | [Amount](#amount) | required | Total amount of the reservation. |
+| `ProductOrderPrices` | array of [ProductOrderPricingInfo](#productorderpricinginfo) | required | List of product order prices assigned to the reservation. |
 
-#### ProductOrderPrice
+#### ProductOrderPricingInfo
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `ProductId` | string | required | Unique identifier of product. |
 | `AgeCategoryId` | string | optional | Identifier of age category. |
-| `ProductName` | [Localized text](hotels.md#localized-text) | required | Name of the hotel. |
-| `ProductOptions` | [ProductOptions](#productoptions) | required | Product options. |
-| `ChargingMode` | string [Product charging mode](hotels.md#product-charging-mode) | required | Charging mode of the product. |
-| `TotalAmount` | [Total Amount](#totalamount) | required | Total amount of product. |
+| ~~`ProductName`~~ | ~~[Localized text](hotels.md#localized-text)~~ | ~~required~~ | ~~Name of the hotel.~~ Deprecated |
+| `ProductOptions` | [ProductOptions](#productoptions) | optional | Product options. |
+| ~~`ChargingMode`~~ | ~~string [Product charging mode](hotels.md#product-charging-mode)~~ | ~~required~~ | ~~Charging mode of the product.~~ Deprecated |
+| `TotalAmount` | [Amount](#amount) | required | Total amount of product. |
 
 #### ProductOptions
 | Property | Type | Contract |Description |
 | :-- | :-- | :-- | :-- |
-| `SelectedByDefault` | boolean | required  | If product was selected by default for reservation. |
-| `BillAsPackage` | boolean | required  | Product is part of a package. |
-| `OfferToCustomer` | boolean | required  | Product is available in booking engine. |
-| `ExcludePriceFromOffer` | boolean | required  | Product was not available in booking engine, but it is counted in reservation total price ( eg. CityTax ). |
-| `OfferToEmployee` | boolean | required  | Product available in Mews Operations. |
+| `SelectedByDefault` | boolean | optional  | If product was selected by default for reservation. |
+| `BillAsPackage` | boolean | optional  | Product is part of a package. |
+| `OfferToCustomer` | boolean | optional  | Product is available in booking engine. |
+| `ExcludePriceFromOffer` | boolean | optional  | Product was not available in booking engine, but it is counted in reservation total price ( eg. CityTax ). |
+| `OfferToEmployee` | boolean | optional  | Product available in Mews Operations. |
 
-#### TotalAmount
+#### Amount
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `Currency` | string | required | ISO 4217 code of the currency. |
@@ -243,5 +256,5 @@ Get a total price for the requested reservations.
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `TaxRateCode` | string | required | Unique identifier of Tax Rate Code. |
-| `NetValue` | Number | required |  Net amount of product. |
-| `TaxValue` | Number | required | Tax amount of product ( Calculated from NetValue based on TaxRateCode ). |
+| `NetValue` | number | required |  Net amount of product. |
+| `TaxValue` | number | required | Tax amount of product ( Calculated from NetValue based on TaxRateCode ). |
