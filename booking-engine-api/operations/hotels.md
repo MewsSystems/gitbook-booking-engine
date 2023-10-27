@@ -405,7 +405,7 @@ The availability and pricing is returned for each applicable combination of occu
           "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
           "PersonCount": 2
         }
-    ]
+    ],
     "CategoryIds": [
         "295d96e7-8501-4cbd-b78d-8bf590bf6db9"
     ],
