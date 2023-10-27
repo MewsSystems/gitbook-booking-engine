@@ -17,10 +17,14 @@ Get a price quotation for a specific hotel, date interval, room category and per
     "VoucherCode": "Discount2042",
     "RoomCategoryId": "3540c7d4-e128-41e2-81d8-ff4d196c595a",
     "Occupancies": [
-        {
-            "AdultCount": 2,
-            "ChildCount": 0
-        }
+      {
+        "OccupancyData": [
+          {
+            "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8",
+            "PersonCount": 1
+          }
+        ]
+      }
     ],
     "ProductIds": [
         "d0e88da5-ae64-411c-b773-60ed68954f64"
@@ -45,8 +49,9 @@ Get a price quotation for a specific hotel, date interval, room category and per
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `AdultCount` | number | required | Number of adults. |
-| `ChildCount` | number | required | Number of children. |
+| `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ Deprecated |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ Deprecated |
 
 ### Response
 
@@ -56,6 +61,12 @@ Get a price quotation for a specific hotel, date interval, room category and per
         {
             "AdultCount": 1,
             "ChildCount": 0,
+            "OccupancyData": [
+              {
+                "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8",
+                "PersonCount": 1
+              }
+            ],
             "Pricing": [
                 {
                     "MaxPrice": {
