@@ -403,7 +403,7 @@ The availability and pricing is returned for each applicable combination of occu
     "OccupancyData": [
         {
           "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
-          "PersonCount": 1
+          "PersonCount": 2
         }
     ]
     "CategoryIds": [
@@ -474,6 +474,12 @@ The availability and pricing is returned for each applicable combination of occu
                 {
                     "AdultCount": 1,
                     "ChildCount": 0,
+                    "OccupancyData": [
+                        {
+                        "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                        "PersonCount": 1
+                        }
+                    ],
                     "Pricing": [
                         {
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
@@ -485,6 +491,12 @@ The availability and pricing is returned for each applicable combination of occu
                 {
                     "AdultCount": 2,
                     "ChildCount": 0,
+                    "OccupancyData": [
+                        {
+                        "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                        "PersonCount": 2
+                        },
+                    ],
                     "Pricing": [
                         {
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
