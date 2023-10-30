@@ -402,8 +402,8 @@ The availability and pricing is returned for each applicable combination of occu
     "VoucherCode": "Discount2042",
     "OccupancyData": [
         {
-          "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
-          "PersonCount": 2
+            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+            "PersonCount": 2
         }
     ],
     "CategoryIds": [
@@ -476,8 +476,8 @@ The availability and pricing is returned for each applicable combination of occu
                     "ChildCount": 0,
                     "OccupancyData": [
                         {
-                        "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
-                        "PersonCount": 1
+                            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                            "PersonCount": 1
                         }
                     ],
                     "Pricing": [
@@ -493,8 +493,8 @@ The availability and pricing is returned for each applicable combination of occu
                     "ChildCount": 0,
                     "OccupancyData": [
                         {
-                        "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
-                        "PersonCount": 2
+                            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                            "PersonCount": 2
                         },
                     ],
                     "Pricing": [
