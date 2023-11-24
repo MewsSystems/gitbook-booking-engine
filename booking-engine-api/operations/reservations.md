@@ -50,8 +50,8 @@ Get a price quotation for a specific hotel, date interval, room category and per
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
-| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ Deprecated |
-| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ Deprecated |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ **Deprecated** |
 
 ### Response
 
@@ -137,8 +137,8 @@ Get a total price for the requested reservations.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ Deprecated |
-| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ Deprecated |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ **Deprecated** |
 | `Identifier` | string | required | Unique identifier for reservation generated on client. |
 | `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
 | `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
@@ -240,9 +240,9 @@ Get a total price for the requested reservations.
 | :-- | :-- | :-- | :-- |
 | `ProductId` | string | required | Unique identifier of product. |
 | `AgeCategoryId` | string | optional | Identifier of age category. |
-| ~~`ProductName`~~ | ~~[Localized text](hotels.md#localized-text)~~ | ~~required~~ | ~~Name of the hotel.~~ Deprecated |
+| ~~`ProductName`~~ | ~~[Localized text](hotels.md#localized-text)~~ | ~~required~~ | ~~Name of the hotel.~~ **Deprecated** |
 | `ProductOptions` | [ProductOptions](#productoptions) | optional | Product options. |
-| ~~`ChargingMode`~~ | ~~string [Product charging mode](hotels.md#product-charging-mode)~~ | ~~required~~ | ~~Charging mode of the product.~~ Deprecated |
+| ~~`ChargingMode`~~ | ~~string [Product charging mode](hotels.md#product-charging-mode)~~ | ~~required~~ | ~~Charging mode of the product.~~ **Deprecated** |
 | `TotalAmount` | [Amount](#amount) | required | Total amount of product. |
 
 #### ProductOptions
@@ -260,7 +260,7 @@ Get a total price for the requested reservations.
 | `Currency` | string | required | ISO 4217 code of the currency. |
 | `GrossValue` | number | required | Gross value of the amount. (Net + sum of `TaxValues`). |
 | `NetValue` | number | required | Net value of the amount. |
-| ~~`TaxValues`~~ | ~~array of [Tax values](hotels.md#tax-value)~~ | ~~required~~ | ~~Tax values of the amount~~ Deprecated. |
+| ~~`TaxValues`~~ | ~~array of [Tax values](hotels.md#tax-value)~~ | ~~required~~ | ~~Tax values of the amount~~ **Deprecated**. |
 | `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of complete taxes related to this amount. |
 
 #### Complete tax
