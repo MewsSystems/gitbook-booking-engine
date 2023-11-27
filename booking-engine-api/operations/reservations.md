@@ -242,7 +242,7 @@ Get a total price for the requested reservations.
 | `AgeCategoryId` | string | optional | Identifier of age category. |
 | ~~`ProductName`~~ | ~~[Localized text](hotels.md#localized-text)~~ | ~~required~~ | ~~Name of the hotel.~~ **Deprecated!** |
 | `ProductOptions` | [ProductOptions](#productoptions) | optional | Product options. |
-| ~~`ChargingMode`~~ | ~~string [Product charging mode](hotels.md#product-charging-mode)~~ | ~~required~~ | ~~Charging mode of the product.~~ **Deprecated** |
+| ~~`ChargingMode`~~ | ~~string [Product charging mode](hotels.md#product-charging-mode)~~ | ~~required~~ | ~~Charging mode of the product.~~ **Deprecated!** |
 | `TotalAmount` | [Amount](#amount) | required | Total amount of product. |
 
 #### ProductOptions
