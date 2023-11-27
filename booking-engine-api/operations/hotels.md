@@ -577,7 +577,7 @@ The availability and pricing is returned for each applicable combination of occu
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults for the associated pricing.~~ **Deprecated!** |
-| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of childs for the associated pricing.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of childs for the associated pricing.~~ **Deprecated!** |
 | `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
 | `Pricing` | array of [Pricing](#pricing) | required | Pricing information. |
 
