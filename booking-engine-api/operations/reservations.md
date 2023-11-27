@@ -51,7 +51,7 @@ Get a price quotation for a specific hotel, date interval, room category and per
 | :-- | :-- | :-- | :-- |
 | `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
 | ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ **Deprecated!** |
-| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ **Deprecated!** |
 
 ### Response
 
