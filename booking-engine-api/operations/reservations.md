@@ -137,7 +137,7 @@ Get a total price for the requested reservations.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ **Deprecated** |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults.~~ **Deprecated!** |
 | ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of children.~~ **Deprecated** |
 | `Identifier` | string | required | Unique identifier for reservation generated on client. |
 | `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
