@@ -260,7 +260,7 @@ Get a total price for the requested reservations.
 | `Currency` | string | required | ISO 4217 code of the currency. |
 | `GrossValue` | number | required | Gross value of the amount. (Net + sum of `TaxValues`). |
 | `NetValue` | number | required | Net value of the amount. |
-| ~~`TaxValues`~~ | ~~array of [Tax values](hotels.md#tax-value)~~ | ~~required~~ | ~~Tax values of the amount~~ **Deprecated**. |
+| ~~`TaxValues`~~ | ~~array of [Tax values](hotels.md#tax-value)~~ | ~~required~~ | ~~Tax values of the amount~~ **Deprecated!**. |
 | `Breakdown.Items` | array of [Complete tax](#complete-tax) | required | List of complete taxes related to this amount. |
 
 #### Complete tax
