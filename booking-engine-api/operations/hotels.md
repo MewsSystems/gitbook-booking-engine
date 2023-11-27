@@ -425,7 +425,7 @@ The availability and pricing is returned for each applicable combination of occu
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `OccupancyData` | array of [Occupancy Data](#occupancy-data) | required | Occupancy numbers for the reservations. |
 | ~~`AdultCount`~~ | ~~number~~ | ~~optional~~ | ~~Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found.~~ **Deprecated** |
-| ~~`ChildCount`~~ | ~~number~~ | ~~optional~~ | ~~Requested number of children.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~optional~~ | ~~Requested number of children.~~ **Deprecated!** |
 | `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 | `AvailabilityBlockId` | string | optional | Unique identifier of availability block, if present. When provided, only availability for this block is returned. |
 
