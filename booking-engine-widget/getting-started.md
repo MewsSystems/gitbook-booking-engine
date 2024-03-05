@@ -65,6 +65,8 @@ If you have a Content Security Policy (CSP) set up on your website, the followin
 ```text
 *.mews.com
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
+https://www.google.com/recaptcha/
+https://recaptcha.google.com/recaptcha/
 ```
 
 The last URL (pay.datatrans.com) is for [PCI Proxy](https://www.pci-proxy.com/), which is the secure, PCI-DSS compliant solution that is used by __Mews Payments__ to process payment cards.
