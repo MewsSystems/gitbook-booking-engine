@@ -64,6 +64,7 @@ If you have a Content Security Policy (CSP) set up on your website, the followin
 
 ```text
 *.mews.com
+https://apps.mews.com
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
 https://www.recaptcha.net
 https://www.google.com/recaptcha/
