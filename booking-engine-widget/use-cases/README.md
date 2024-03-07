@@ -7,3 +7,4 @@ This section describes how to use the Booking Engine Widget in some well-known s
 * [Testing in the Demo environment](testing-in-demo-environment.md)
 * [Using your own Date inputs](using-your-own-date-inputs.md)
 * [Multiple enterprises and pre-selected locations](multi-enterprises.md)
+* [Disable widget caching](disable-widget-caching.md)
