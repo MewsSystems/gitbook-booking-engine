@@ -1,4 +1,4 @@
-# Changelog
+# Changelog 2022
 
 ## 13th December 2022
 * API: Added [OpenAPI definition](../booking-engine-api/README.md#openapi-definition)
@@ -43,7 +43,6 @@
 * Widget: Introduced new API methods to Distributor instance: [`setAdultCount`](../booking-engine-widget/reference.md) and [`setChildCount`](../booking-engine-widget/reference.md).
 * Standalone: Introduced new deeplinks `mewsAdultCount` and `mewsChildCount` to set initial occupancy.
 
-| Changelog by year |
+| Next |
 | :-- |
 | [Changelog 2021](changelog2021.md) |
-| [Changelog 2020](changelog2020.md) |
