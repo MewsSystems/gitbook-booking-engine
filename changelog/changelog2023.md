@@ -1,4 +1,4 @@
-# Changelog
+# Changelog 2023
 
 ## 2nd November 2023
 * API: Corrected out of date link to PCI Proxy documentation in [Supporting payment cards](../booking-engine-api/use-cases/supporting-payment-cards.md)
@@ -20,8 +20,6 @@
 * Standalone: Changed domain from `api.mews.com` to `app.mews.com`
 * Standalone: Added new deeplink parameter [mewsSort](../booking-engine-standalone/deeplinks.md#parameters-supported-in-single-and-multi-enterprise-mode) for sorting categories by price
 
-| Changelog by year                  |
-|:-----------------------------------|
+| Next |
+| :-- |
 | [Changelog 2022](changelog2022.md) |
-| [Changelog 2021](changelog2021.md) |
-| [Changelog 2020](changelog2020.md) |
