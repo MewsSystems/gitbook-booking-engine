@@ -254,9 +254,9 @@ The main purpose of a payment gateway is to securely obtain the credit card of t
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `PaymentCardStorageType` | string [Payment card storage type](#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
-| `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
+| `IsMerchant` | boolean | required | Whether the gateway is processed through **Mews Payments** or not (formerly called Mews Merchant). |
 | `SupportedCreditCardTypes` | array of [Credit card type](#credit-card-type) | required | Supported payment cards, should be used to enhance UX. |
-| `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
+| `PublicKey` | string | required | Merchant identifier for which PCI Proxy iframe is connected. |
 | `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO 4217 format. |
 
 #### Payment card storage type

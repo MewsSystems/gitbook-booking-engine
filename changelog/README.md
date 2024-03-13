@@ -1,5 +1,11 @@
 # Changelog
 
+## 5th March 2024
+* Updated CSP requirements for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy)
+
+## 2nd November 2023
+* API: Corrected out of date link to PCI Proxy documentation in [Supporting payment cards](../booking-engine-api/use-cases/supporting-payment-cards.md)
+
 ## 18th August 2023
 * Widget: Re-wrote the documentation for [Google Tag Manager integration](../booking-engine-widget/integrations/README.md)
 
