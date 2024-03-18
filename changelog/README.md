@@ -1,6 +1,6 @@
 # Changelog
 
-## 13th March 2024
+## 19th March 2024
 * Introduced detailed guide for [Disabling widget caching](../booking-engine-widget/use-cases/disable-widget-caching.md)
 
 ## 5th March 2024
