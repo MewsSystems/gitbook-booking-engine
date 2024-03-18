@@ -12,6 +12,7 @@
     * [Testing in the Demo environment](booking-engine-widget/use-cases/testing-in-demo-environment.md)
     * [Using your own Date inputs](booking-engine-widget/use-cases/using-your-own-date-inputs.md)
     * [Multiple enterprises and pre-selected locations](booking-engine-widget/use-cases/multi-enterprises.md)
+    * [Disabling widget caching](booking-engine-widget/use-cases/disable-widget-caching.md)
   * [Advanced guide](booking-engine-widget/advanced-guide.md)
   * [Reference](booking-engine-widget/reference.md)
   * [Integrations](booking-engine-widget/integrations/README.md)

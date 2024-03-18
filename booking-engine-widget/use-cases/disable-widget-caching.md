@@ -59,5 +59,5 @@ This config might vary depending on the version of the plugin you are using. The
 
 Ensuring `distributor.min.js` is excluded from caching mechanisms is paramount for leveraging the latest advancements and features without manual updates. By following these steps, you can maintain your site's performance while ensuring your visitors always have access to the most current functionalities.
 
-# Conclusion
-Only a few examples of how to do this have been given, but your implementation case might differ. You should be able to verify and confirm that our script is not cached on your side. This can be done simply by displaying the source code of your website and double-checking the script tag with the url. Please be aware that a sub-optimal implementation may impact your eligibility for ongoing support from Mews.
+## Conclusion
+Only a few examples of how to do this have been given, your implementation case might differ. You should be able to verify and confirm that our script is not cached on your side. This can be done simply by displaying the source code of your website and double-checking the script tag with the url. Please be aware that a sub-optimal implementation may impact your eligibility for ongoing support from Mews.
