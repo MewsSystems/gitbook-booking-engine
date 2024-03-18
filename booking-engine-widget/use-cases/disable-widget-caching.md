@@ -1,6 +1,8 @@
-# Do not use a booking engine script cached by your server
+# Disabling widget caching
 
-In the dynamic world of web development, ensuring your site's features remain up-to-date without manual intervention is crucial for providing a seamless user experience. One such feature critical to keeping your site current is the script `distributor.min.js` provided by Mews. This script is a reverse proxy for always delivering the latest version of the distributor file. However, when this script is cached, it can lead to serving an outdated version, depriving users of new features and enhancements, may also cause the booking engine to malfunction.
+> **Important:** Do not use a booking engine script cached by your server!
+
+In the dynamic world of web development, ensuring your site's features remain up-to-date without manual intervention is crucial for providing a seamless user experience. One such feature critical to keeping your site current is the script `distributor.min.js` provided by **Mews**. This script is a reverse proxy for always delivering the latest version of the distributor file. However, when this script is cached, it can lead to serving an outdated version, depriving users of new features and enhancements. It may also cause the booking engine to malfunction.
 
 ### Installation
 
@@ -20,11 +22,11 @@ Place the following `<script>` code snippet in the `<head>` of your web page's H
 <iframe src="https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
 ```
 
-## Excluding Scripts from WordPress Caching
+## Excluding scripts from WordPress caching
 
 WordPress and many popular caching plugins optimize website performance by caching site content. While beneficial for loading speed and reducing server load, caching static resources like JavaScript files can inadvertently freeze them to an older version. Here's how to ensure `distributor.min.js` remains dynamic and updated by excluding it from WordPress and caching plugins' caching mechanisms.
 
-### Using WordPress Plugins
+### Using WordPress plugins
 
 Several WordPress plugins allow you to exclude specific scripts or files from being cached. While the steps may vary depending on the plugin you use, the general approach is to add the script's URL to the plugin's exclusion settings. Look for options labeled as "Never Cache the Following Pages," "Excluded Files," or similar. Enter the script's URL to ensure it's not cached:
 
@@ -32,7 +34,7 @@ Several WordPress plugins allow you to exclude specific scripts or files from be
 https://api.mews.com/distributor/distributor.min.js
 ```
 
-## Configuring Popular WordPress Caching Plugins
+## Configuring popular WordPress caching plugins
 
 This config might vary depending on the version of the plugin you are using. The following instructions are based on the latest versions of the plugins at the time of writing.
 
@@ -58,4 +60,4 @@ This config might vary depending on the version of the plugin you are using. The
 Ensuring `distributor.min.js` is excluded from caching mechanisms is paramount for leveraging the latest advancements and features without manual updates. By following these steps, you can maintain your site's performance while ensuring your visitors always have access to the most current functionalities.
 
 # Conclusion
-Only a few examples of how to do this have been given, but your implementation case might differ. You should be able to verify and confirm that our script is not cached on your side. This can be simply done by displaying the source code of your website and double-checking the script tag with the url. Please be aware that a suboptimal implementation may impact your eligibility for ongoing support from Mews.
+Only a few examples of how to do this have been given, but your implementation case might differ. You should be able to verify and confirm that our script is not cached on your side. This can be done simply by displaying the source code of your website and double-checking the script tag with the url. Please be aware that a sub-optimal implementation may impact your eligibility for ongoing support from Mews.

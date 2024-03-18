@@ -32,7 +32,7 @@ Use the code snippet \'as is\' and as described, doing otherwise may cause unexp
 * Do **not** use the code snippet inside an `iframe`
 * Do **not** add the [Booking Engine Standalone](../booking-engine-standalone/README.md) URL (e.g. `https://app.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the `iframe`
 * Do **not** pack the contents of the script files that the code snippet references into your own JavaScript bundle
-* Do **not** use a booking engine script cached by your server, use the one from this Guide see [Disable widget caching](./use-cases/disable-widget-caching.md)
+* Do **not** use a booking engine script cached by your server, use the one from this Guide – see [Disabling widget caching](./use-cases/disable-widget-caching.md)
 
 The script file size is kept as minimal as possible (approx 11 kB gzipped) to allow quick web page initialization. Also, serving the script from our CDN servers ensures seamless releases of new features, bug fixes and improvements.
 
@@ -57,7 +57,7 @@ Place the following `<script>` code snippet in the `<head>` of your web page's H
 ```
 
 
-> **Warning:** Please double-check that you've added the script as instructed and followed all the requirements above. If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working. See [Disable widget caching](./use-cases/disable-widget-caching.md)
+> **Warning:** Please double-check that you've added the script as instructed and followed all the requirements above. If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working. See [Disabling widget caching](./use-cases/disable-widget-caching.md)
 
 ### Content Security Policy
 
