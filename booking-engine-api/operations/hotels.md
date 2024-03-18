@@ -400,8 +400,12 @@ The availability and pricing is returned for each applicable combination of occu
     ],
     "CurrencyCode": "EUR",
     "VoucherCode": "Discount2042",
-    "AdultCount": 2,
-    "ChildCount": 0,
+    "OccupancyData": [
+        {
+            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+            "PersonCount": 2
+        }
+    ],
     "CategoryIds": [
         "295d96e7-8501-4cbd-b78d-8bf590bf6db9"
     ],
@@ -419,10 +423,20 @@ The availability and pricing is returned for each applicable combination of occu
 | `ProductIds` | array of string | optional | Unique identifiers of products which should be included into pricing calculations. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. [Supported currency codes](../guidelines/supported-currency-codes.md) |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
-| `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found. |
-| `ChildCount` | number | optional | Requested number of children. |
+| `OccupancyData` | array of [Occupancy Data](#occupancy-data) | required | Occupancy numbers for the reservations. |
+| ~~`AdultCount`~~ | ~~number~~ | ~~optional~~ | ~~Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support the given values, then the nearest applicable values are found.~~ **Deprecated** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~optional~~ | ~~Requested number of children.~~ **Deprecated!** |
 | `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 | `AvailabilityBlockId` | string | optional | Unique identifier of availability block, if present. When provided, only availability for this block is returned. |
+
+
+#### Occupancy Data
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `AgeCategoryId` | string | required | Age category identifier - see [Where can I get Age Category ID?](../../FAQ/README.md#where-can-i-get-age-category-id). |
+| `PersonCount` | number | required | Number of people in the given age category. |
+
 
 ### Response
 
@@ -460,6 +474,12 @@ The availability and pricing is returned for each applicable combination of occu
                 {
                     "AdultCount": 1,
                     "ChildCount": 0,
+                    "OccupancyData": [
+                        {
+                            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                            "PersonCount": 1
+                        }
+                    ],
                     "Pricing": [
                         {
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
@@ -471,6 +491,12 @@ The availability and pricing is returned for each applicable combination of occu
                 {
                     "AdultCount": 2,
                     "ChildCount": 0,
+                    "OccupancyData": [
+                        {
+                            "AgeCategoryId": "47ae3dbb-0de6-4afd-845b-af4900c21e2c",
+                            "PersonCount": 2
+                        },
+                    ],
                     "Pricing": [
                         {
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
@@ -550,8 +576,9 @@ The availability and pricing is returned for each applicable combination of occu
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `AdultCount` | number | required | Number of adults for the associated pricing. |
-| `ChildCount` | number | required | Number of childs for the associated pricing. |
+| ~~`AdultCount`~~ | ~~number~~ | ~~required~~ | ~~Number of adults for the associated pricing.~~ **Deprecated!** |
+| ~~`ChildCount`~~ | ~~number~~ | ~~required~~ | ~~Number of childs for the associated pricing.~~ **Deprecated!** |
+| `OccupancyData` | array of [OccupancyData](#occupancy-data) | required | List of occupancy data. |
 | `Pricing` | array of [Pricing](#pricing) | required | Pricing information. |
 
 #### Pricing

@@ -6,6 +6,7 @@ Here we address some Frequently Asked Questions concerning the Mews Booking Engi
 * [Where can I get Configuration ID?](#where-can-i-get-configuration-id)
 * [Why doesn't the Booking Engine use the Configuration IDs I've provided?](#why-doesnt-the-booking-engine-use-the-configuration-ids-ive-provided)
 * [Where can I get City ID?](#where-can-i-get-city-id)
+* [Where can I get Age Category ID?](#where-can-i-get-age-category-id)
 
 ## Which method should I use to integrate?
 
@@ -45,3 +46,17 @@ You can find the Mews City ID in __Mews Operations__:
 * In the upper section there ia a field **City Identifier**. This is your City ID. It has a format `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`.
 
 ![City ID in Mews Operations](../.gitbook/assets/commander-city-id.png)
+
+
+## Where can I get Age Category ID?
+
+You can find the AgeCategory ID in **Mews Operations**:
+
+* Start on the **Dashboard** (the main screen).
+* In the left-hand menu, select **Settings** -> **Services**.
+* In the section **Bookable services**, select the service which has the Booking Engine configuration. If there's just one service, select that one.
+* On the left, select **Age categories**.
+* Select the age category you want.
+* In the URL there is an ID at the end, right after `/Detail/`. This is the age category ID. It has the format `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`.
+
+![ageCategoryId](https://github.com/MewsSystems/gitbook-booking-engine/assets/22661032/8d69a7ad-d641-4021-b9f1-788c9bb07df0)
