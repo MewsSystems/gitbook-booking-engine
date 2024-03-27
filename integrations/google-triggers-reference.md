@@ -25,7 +25,7 @@ All event data is passed to Google Tag Manager through a _Data Layer_.
 
 To use data from the Data Layer in your tags, in the GTM configuration set up a _Variable_ with a suitable name as a Data Layer Variable (DLV), like this:
 
-![variable](../../.gitbook/assets/variable.png)
+![variable](../.gitbook/assets/variable.png)
 
 The [Custom events](#custom-events) reference below describes which Data Layer Variables are relevant to which custom events.
 

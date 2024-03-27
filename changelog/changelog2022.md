@@ -7,8 +7,8 @@
 * API: Changed [SettlementValue](../booking-engine-api/operations/hotels.md#rate-group) to optional field and added `SettlementFlatValue` property of absolute settlement amount
 
 ## 25th October 2022
-* Widget: Added new [Google Analytics 4](../booking-engine-widget/integrations/google-triggers-reference.md#google-analytics-4-ga4-events) documentation
-* Widget: Enhanced [Google Tag Manager (GTM)](../booking-engine-widget/integrations/google-tag-manager.md#google-tag-manager-gtm) documentation
+* Widget: Added new [Google Analytics 4](../integrations/google-triggers-reference.md#google-analytics-4-ga4-events) documentation
+* Widget: Enhanced [Google Tag Manager (GTM)](../integrations/google-tag-manager.md#google-tag-manager-gtm) documentation
 
 ## 20th October 2022
 

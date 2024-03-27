@@ -107,11 +107,11 @@ The API functions supported are listed below. Some functions are common to both 
 
 #### disableTracking()
 
-* Sets all tracking consents to false (see [Integrations](integrations/README.md)).
+* Sets all tracking consents to false (see [Integrations](../integrations/README.md)).
 
 #### enableTracking()
 
-* Sets all tracking consents to true (see [Integrations](integrations/README.md)).
+* Sets all tracking consents to true (see [Integrations](../integrations/README.md)).
 
 ### Single Mode API functions
 
