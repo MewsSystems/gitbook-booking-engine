@@ -354,3 +354,8 @@ We are pushing all available variables into the eCommerce tracking for more adva
   children: 0 // Count of children
 }
 ```
+
+### Visual Diagram of GA4 Events in the Booking Engine
+The following diagram provides a visual representation of GA4 related events and their respective trigger points within the booking engine.
+
+![variable](../.gitbook/assets/ga4_event_reference.jpg)

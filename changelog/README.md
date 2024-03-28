@@ -1,5 +1,8 @@
 # Changelog
 
+## 28th March 2024
+* Introduced [Visual Diagram of GA4 Events in the Booking Engine](../integrations/google-triggers-reference.md#visual-diagram-of-ga4-events-in-the-booking-engine)
+
 ## 19th March 2024
 * Introduced detailed guide for [Disabling widget caching](../booking-engine-widget/use-cases/disable-widget-caching.md)
 
