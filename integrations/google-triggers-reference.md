@@ -368,6 +368,7 @@ We are pushing all available variables into the eCommerce tracking for more adva
   reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2", // Reservation Group ID – will be added to export in Mews Operation to identify each reservation group
   reservationGroupName: "Name-29-8-8617", // Reservation Group name – can be mapped to export from mews Operations for each reservation
   reservationIds: "244e472a-4e47-4445-8677-af0000f58111", // Comma separated list of all reservation (item) IDs
+  productIds: "ec34da8b-0932-493e-a742-baf1af194789", // Comma separated list of all reservation (item) IDs
   chainName: "Jan's Hotel Chain", // Chain name
   netValue: 18.7, // Price without taxes
   grossValue: 20, // Price with taxes
