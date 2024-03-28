@@ -1,5 +1,9 @@
 # Changelog
 
+## TBD
+
+* `purchase` event now lists products and rooms as separate items, aligning with the presentation in all preceding events throughout the flow
+
 ## 19th March 2024
 * Introduced detailed guide for [Disabling widget caching](../booking-engine-widget/use-cases/disable-widget-caching.md)
 
