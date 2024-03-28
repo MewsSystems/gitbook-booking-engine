@@ -2,7 +2,7 @@
 
 The Mews Booking Engine API is a public API with client name authorization. It is sufficient to know the unique identifier of a hotel in order to access it, however it is required that the client identify itself by providing the `Client` property in all requests made to the API.
 
-The Client application needs to be pre-registered with Mews Support at `support@mews.com`. The registration request should contain:
+The Client application needs to be pre-registered with the Mews Support. You can open a ticket from Mews Operations via our Mews Digital Assistant. The registration request should contain:
 
 * `Client`  - the name of the client that will be used for every API request
 * `Email` -  an email contact for the client's tech/dev department; this email will be used by our developers in order to notify you about any breaking changes in the API

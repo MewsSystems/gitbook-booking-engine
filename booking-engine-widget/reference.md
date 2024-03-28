@@ -15,7 +15,7 @@
 Javascript API calls are defined on the booking engine instance, which is created with the initialization call. This instance is returned to you as an argument of a callback function that you can pass as the second parameter to the initialization call.
 The following simple example shows how to use the calls to set up start and end dates, and then open the booking engine:
 
-```javascript
+```html
 <!-- Example of use of an instance to call the API -->
 <script>
 Mews.Distributor({
@@ -107,11 +107,11 @@ The API functions supported are listed below. Some functions are common to both 
 
 #### disableTracking()
 
-* Sets all tracking consents to false (see [Integrations](integrations/README.md)).
+* Sets all tracking consents to false (see [Integrations](../integrations/README.md)).
 
 #### enableTracking()
 
-* Sets all tracking consents to true (see [Integrations](integrations/README.md)).
+* Sets all tracking consents to true (see [Integrations](../integrations/README.md)).
 
 ### Single Mode API functions
 

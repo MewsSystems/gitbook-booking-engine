@@ -5,7 +5,7 @@ You can integrate with the __Mews Booking Engine__ in one of three ways. Which o
 ## Booking Engine Standalone
 
 If you’re not sure which integration method to use, go with the standalone option. It’s the simplest way to connect your website with the Mews Booking Engine and enable your guests to make direct bookings.
-We will provide you with a link to a page where your Booking Engine instance is located. For more information, see [Booking Engine Standalone](../booking-engine-standalone/README.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
+We will provide you with a link to a page where your Booking Engine instance is located. For more information, see [Booking Engine Standalone](../booking-engine-standalone/README.md) or open a ticket from Mews Operations via our Mews Digital Assistant.
 
 ## Booking Engine Widget
 
@@ -19,4 +19,4 @@ Note that this option is only available to customers with an Enterprise subscrip
 
 ## Need help?
 
-Browse the Guide to see if your question is answered, but if not and you need further assistance, please get in touch via [support@mews.com](mailto:support@mews.com).
+Browse the Guide to see if your question is answered, but if not and you need further assistance, you can open a ticket from Mews Operations via our Mews Digital Assistant.

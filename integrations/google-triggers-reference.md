@@ -25,7 +25,7 @@ All event data is passed to Google Tag Manager through a _Data Layer_.
 
 To use data from the Data Layer in your tags, in the GTM configuration set up a _Variable_ with a suitable name as a Data Layer Variable (DLV), like this:
 
-![variable](../../.gitbook/assets/variable.png)
+![variable](../.gitbook/assets/variable.png)
 
 The [Custom events](#custom-events) reference below describes which Data Layer Variables are relevant to which custom events.
 
@@ -128,7 +128,7 @@ Some events expose additional DLVs. These are described separately for each even
 
 * Each of the items in arrays follows the google [Item specification for ecommerce](https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtag), for example:
 
-```
+```javascript
 {
       item_id: "0d9120fc-72cb-4d23-afe2-ad9000dcb803",
       item_name: "Room 1",
@@ -209,7 +209,7 @@ We are pushing all available variables into the eCommerce tracking for more adva
 
 * Example:
 
-```
+```javascript
 {
   event: "add_to_cart",
   items: [
@@ -297,7 +297,7 @@ We are pushing all available variables into the eCommerce tracking for more adva
 
 * Example:
 
-```jsonc
+```javascript
 {
   event: "purchase",
   gtm: {uniqueEventId: 18, start: 1661784899375},

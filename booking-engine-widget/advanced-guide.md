@@ -10,7 +10,7 @@ To get further information about the options and Javascript API calls, see the [
 
 **Important:** This is just an example, do not copy this directly to your website!
 
-```javascript
+```html
 <script>
 Mews.Distributor({
     // required
