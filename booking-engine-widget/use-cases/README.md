@@ -1,8 +1,8 @@
 # Use cases
 
-This section describes how to use the Booking Engine Widget in some well-known scenarios.
+This section provides guidance on using the Booking Engine Widget in various common scenarios.
 
-> **Important:** Make sure you fulfill all the required [Prerequisites](prerequisites.md). Without doing so, the code of the use cases can be hard to understand or the behavior of the code can differ from what you expect.
+> **Important:** Before diving into the use cases, ensure that you meet all the necessary [Prerequisites](prerequisites.md). Failing to do so may result in code that is difficult to comprehend, or in behavior that deviates from your expectations.
 
 * [Testing in the Demo environment](testing-in-demo-environment.md)
 * [Using your own Date inputs](using-your-own-date-inputs.md)
