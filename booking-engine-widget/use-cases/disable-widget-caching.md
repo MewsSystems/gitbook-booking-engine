@@ -4,7 +4,7 @@
 
 In the dynamic world of web development, ensuring your site's features remain up-to-date without manual intervention is crucial for providing a seamless user experience. One such feature critical to keeping your site current is the script `distributor.min.js` provided by **Mews**. This script is a reverse proxy for always delivering the latest version of the distributor file. However, when this script is cached, it can lead to serving an outdated version, depriving users of new features and enhancements. It may also cause the booking engine to malfunction.
 
-### Installation
+## Installation
 
 Place the following `<script>` code snippet in the `<head>` of your web page's HTML, preferably as close to the opening `<head>` tag as possible.
 
