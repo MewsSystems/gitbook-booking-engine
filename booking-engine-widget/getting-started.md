@@ -65,14 +65,48 @@ If you have a Content Security Policy (CSP) set up on your website, the followin
 
 ```text
 *.mews.com
+https://www.recaptcha.net
+https://www.google.com/recaptcha/
+https://recaptcha.google.com/recaptcha/
+https://www.gstatic.com/recaptcha/
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
+```
+
+The last URL (pay.datatrans.com) is for [PCI Proxy](https://www.pci-proxy.com/), which is the secure, PCI-DSS compliant solution that is used by __Mews Payments__ to process payment cards.
+
+#### Verifying Content Security Policy Configuration
+
+Once you have configured the Content Security Policy (CSP) for your website to include the necessary domains for the booking engine, it is crucial to ensure that the setup is correct to avoid any operational disruptions. Follow the steps below to verify the configuration:
+
+#### Step 1: Open the Browser Console
+1. **Access the Booking Engine Widget on your website:** Navigate through your website to the booking engine.
+2. **Open Developer Tools:** Use the keyboard shortcut `Ctrl+Shift+I` (or `Cmd+Option+I` on Mac) to open the developer tools in your browser.
+3. **Select the Console Tab:** Focus on the console tab to observe any errors that appear as you proceed through the booking steps.
+
+#### Step 2: Simulate a Booking
+1. **Perform Test Transactions:** Go through all the steps of the booking engine, from selection to the checkout screen.
+2. **Monitor for Errors:** Carefully monitor the console for any CSP-related errors, specifically looking for messages that indicate a refusal to load resources.
+
+#### Step 3: Confirm Error-Free Configuration
+1. **Check for 'Refused to Frame' Errors:** Ensure there are no errors such as `Refused to frame '_URL_' because it violates the following Content Security Policy directive: '....'`. Such errors suggest that the '\_URL\_' URL needs to be included in your CSP under the correct directive.
+2. **Validate Functionality:** If no relevant CSP errors appear and the booking process completes successfully, your CSP is configured correctly.
+
+#### Critical Errors
+Pay particular attention to any errors related to key functionalities such as reCAPTCHA and payment processing scripts, which are essential for booking security and integrity:
+- **reCAPTCHA:** Ensure domains related to Google’s reCAPTCHA are not blocked:
+```text
 https://www.recaptcha.net
 https://www.google.com/recaptcha/
 https://recaptcha.google.com/recaptcha/
 https://www.gstatic.com/recaptcha/
 ```
+- **Payment Processing:** Verify that the PCI Proxy script is allowed:
+```text
+  https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
+```
+This URL is critical for Mews Payments' PCI-DSS compliant processing capabilities via PCI Proxy.
 
-The last URL (pay.datatrans.com) is for [PCI Proxy](https://www.pci-proxy.com/), which is the secure, PCI-DSS compliant solution that is used by __Mews Payments__ to process payment cards.
+By following these steps, you can confirm that your Content Security Policy settings are correctly implemented, ensuring the booking engine operates smoothly and securely.
 
 
 ## Step 2: Initialize Booking Engine Widget
