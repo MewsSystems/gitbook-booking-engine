@@ -9,6 +9,9 @@
 ## 5th March 2024
 * Updated CSP requirements for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy)
 
+## 19th April 2024
+* Updated CSP details for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy)
+
 | Changelog by year |
 | :-- |
 | [Changelog 2023](changelog2023.md) |
