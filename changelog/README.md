@@ -1,19 +1,21 @@
 # Changelog
 
 ## 7th May 2024
-* GA4 `purchase` event now [lists products and rooms as separate items](../integrations/google-triggers-reference.md#purchase)
-
-## 28th March 2024
-* Introduced [Visual Diagram of GA4 Events in the Booking Engine](../integrations/google-triggers-reference.md#visual-diagram-of-ga4-events-in-the-booking-engine)
-
-## 19th March 2024
-* Introduced detailed guide for [Disabling widget caching](../booking-engine-widget/use-cases/disable-widget-caching.md)
-
-## 5th March 2024
-* Updated CSP requirements for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy)
+* Widget: Changed GA4 `purchase` event in the [Google Triggers Reference](../integrations/google-triggers-reference.md#purchase) so it now lists products and rooms as separate items.
 
 ## 19th April 2024
-* Updated CSP details for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy)
+* Widget: Updated Content Security Policy details for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy).
+
+## 28th March 2024
+* Widget: Added [Illustration of GA4 Events in the Booking Engine](../integrations/google-triggers-reference.md#illustration-of-ga4-events-in-the-booking-engine).
+
+## 18th March 2024
+* API: `AdultCount` and `ChildCount` deprecated and replaced by `OccupancyData` in [Get availability](../booking-engine-api/operations/hotels.md#get-availability), [Get reservations pricing](../booking-engine-api/operations/reservations.md#get-reservations-pricing) and [Get reservation price](../booking-engine-api/operations/reservations.md#get-reservation-price).
+* General: Added [Where can I get Age Category ID?](../FAQ/README.md#where-can-i-get-age-category-id).
+* Widget: Added detailed guide on [Disabling widget caching](../booking-engine-widget/use-cases/disable-widget-caching.md).
+
+## 5th March 2024
+* Widget: Updated Content Security Policy requirements for Booking Engine Widget in [Getting Started](../booking-engine-widget/getting-started.md#content-security-policy).
 
 | Changelog by year |
 | :-- |
