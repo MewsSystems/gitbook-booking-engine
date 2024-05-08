@@ -309,7 +309,12 @@ We are pushing all available variables into the eCommerce tracking for more adva
   hotelId: "6aaf20ac-a651-4826-b8c0-ad9000dcac3d",
   page_location: "/confirmation",
   page_title: "Confirmation",
-  items: [ // Rooms added to reservation group. There can be multiple items with different dates and confirmation numbers. Ideally, you map all, you can as well map just one as 95% of reservations will have only one item.
+  items: [ 
+    /*
+     * Rooms and products added to reservation group. There can be multiple rooms with different dates and confirmation numbers. Similarly, the number of different products can range from none to many.
+     *
+     * Please note that room prices do not include product costs. Each product's price is specified separately.
+     */
     {
       item_id: "244e472a-4e47-4445-8677-af0000f58111", // Room category id
       item_name: "Room 1", // Room category name
@@ -320,9 +325,9 @@ We are pushing all available variables into the eCommerce tracking for more adva
       item_brand: "Jan's Hotel Chain", // Property chain
       affiliation: "Jan's Hotel",
       currency: "EUR",
-      price: 20, // Price of reservation
-      netPrice: 18.7, // Price of reservation without taxes
-      grossPrice: 20,  // Price of reservation with taxes
+      price: 18, // Price of reservation
+      netPrice: 17.4, // Price of reservation without taxes
+      grossPrice: 18,  // Price of reservation with taxes
       pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
       quantity: 1, // Count of rooms of room category
       reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2",
@@ -331,10 +336,28 @@ We are pushing all available variables into the eCommerce tracking for more adva
       reservationRateName: "Best Price",
       checkInDate: "2022-08-29", // Check-in day of reservation
       checkOutDate: "2022-08-31", // Check-out day of reservation
-      tax: 1.3, // Tax of reservation
+      tax: 0.6, // Tax of reservation
       stayDuration: 2,  // Count of days in reservation
       adults: 2, // Count of adults in  reservation
       children: 0 // Count of children in reservation
+    },
+    {
+      item_id: "ec34da8b-0932-493e-a742-baf1af194789", // Product id
+      item_name: "Product 1", // Product name
+      item_category: "Product",
+      item_category2: "Jan's Hotel", // Property name
+      item_category3: "Jan's Hotel City", // Property city
+      item_brand: "Jan's Hotel Chain", // Property chain
+      affiliation: "Jan's Hotel",
+      currency: "EUR",
+      price: 2, // Price of product
+      netPrice: 1.3, // Price of product without taxes
+      grossPrice: 2,  // Price of product with taxes
+      pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
+      quantity: 1, // Count of products
+      reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2",
+      reservationGroupName: "Name-29-8-8617", // Reservation Group name – can be mapped to export from mews Operations for each reservation
+      tax: 0.7, // Tax of product
     }
   ],
   affiliation: "Jan's Hotel",
