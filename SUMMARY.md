@@ -42,6 +42,7 @@
 * [Integrations](integrations/README.md)
   * [Google Tag Manager](integrations/google-tag-manager.md)
   * [Google Triggers Reference](integrations/google-triggers-reference.md)
+  * [Google Tag Manager - Configuration](integrations/gtm-skeleton.md)
 * [FAQ](FAQ/README.md)
   * [Ways to integrate](FAQ/ways-to-integrate.md)
   * [Migration off the mews.li domain](FAQ/mews-li-migration.md)
