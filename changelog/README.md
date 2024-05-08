@@ -1,7 +1,7 @@
 # Changelog
 
 ## 7th May 2024
-* GA4 `purchase` event now [lists products and rooms as separate items](../integrations/google-triggers-reference.md#purchase), aligning with the presentation in all preceding events throughout the flow
+* GA4 `purchase` event now [lists products and rooms as separate items](../integrations/google-triggers-reference.md#purchase)
 
 ## 28th March 2024
 * Introduced [Visual Diagram of GA4 Events in the Booking Engine](../integrations/google-triggers-reference.md#visual-diagram-of-ga4-events-in-the-booking-engine)
