@@ -5,7 +5,7 @@ This guide provides a streamlined process for exporting and configuring a Google
 ## Prepare Your Configuration
 
 1. **Download the Configuration File:**
-    - Access the prepared skeleton configuration file: [Google Tag Manager - Configuration.json](./files/GTM-Mews.md).
+    - Access the prepared skeleton configuration file: [Google Tag Manager - Configuration.json](../.gitbook/assets/GTM-Mews.json).
 
 2. **IMPORTANT: Customize the Configuration:**
     - Open the downloaded JSON file in your preferred text editor.
