@@ -12,6 +12,7 @@ You will need to reference these events and variables when setting up tag _trigg
 * [Custom events](#custom-events)
 * [GA4 pageview events](#ga4-pageview-events)
 * [GA4 eCommerce events](#ga4-ecommerce-events)
+* [Illustration of GA4 events in the Booking Engine](#illustration-of-ga4-events-in-the-booking-engine)
 
 ## Data Layer variables
 
@@ -378,7 +379,7 @@ We are pushing all available variables into the eCommerce tracking for more adva
 }
 ```
 
-### Visual Diagram of GA4 Events in the Booking Engine
-The following diagram provides a visual representation of GA4 related events and their respective trigger points within the booking engine.
+## Illustration of GA4 events in the Booking Engine
+The following annotated screenshots provide a visual illustration of GA4 related events and their respective trigger points within the Booking Engine.
 
 ![variable](../.gitbook/assets/ga4_event_reference.jpg)
