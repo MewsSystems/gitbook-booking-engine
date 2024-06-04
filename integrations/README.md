@@ -15,7 +15,7 @@ The integration with Google Tag Manager is intended only to serve data to Google
 > **Consent and Tracking:**
 > If a guest declines cookies or tracking, their interactions won’t be tracked in Google Analytics.
 > 
-> Remember to address these considerations when interpreting GA data and making business decisions.
+> Please remember to address these considerations when interpreting GA data and making business decisions.
 
 
 * [Google Tag Manager](google-tag-manager.md)
