@@ -1,5 +1,8 @@
 # Changelog
 
+## 10th June 2024
+* Integration: Added [Disclaimer Regarding Google Analytics Data Accuracy](../integrations/google-tag-manager.md)
+
 ## 7th May 2024
 * Widget: Changed GA4 `purchase` event in the [Google Triggers Reference](../integrations/google-triggers-reference.md#purchase) so it now lists products and rooms as separate items.
 
