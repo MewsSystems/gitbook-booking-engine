@@ -3,6 +3,22 @@
 > **Notice of usage:** Google Tag Manager (GTM) and Google Analytics 4 (GA4) are third party services and we provide this integration as is.
 We support a set of custom events and Data Layer variables for use with GTM and GA4, however we have no control over what happens to them and how they are used. The basic setup examples we provide have been tested and verified to work with the Mews Booking Engine, however if you need a more complex setup then we cannot provide the support to do so and we recommend to ask a specialist to set it up and test it for you.
 
+
+> ### 🚨 Disclaimer regarding Google Analytics data accuracy
+>
+> We understand that some property owners have expressed concerns about discrepancies between the data they see in Google Analytics (GA) and the actual reality. It’s essential to be aware of the following factors:
+>
+> **Ad Blockers impact**
+> - Approximately 33% of internet users utilize ad blockers, which can block Google Analytics and Google Tag Manager (GTM) scripts. See for example this article for a reference: [https://backlinko.com/ad-blockers-users](https://backlinko.com/ad-blockers-users).
+> - Consequently, the data received from these services may not be 100% accurate.
+> - Metrics such as revenue and the number of bookings may appear lower than the actual figures, due to ad-blocking behavior.
+>
+> **Consent and tracking**
+> - If a guest declines cookies or tracking, their interactions won’t be tracked in Google Analytics.
+>
+> Please remember to address these considerations when interpreting GA data and making business decisions.
+
+
 **Google Tag Manager (GTM)**, in conjunction with **Google Analytics 4 (GA4)**, is a supported integration with the **Mews Booking Engine Widget**.
 Both GTM and GA4 are part of the **Google Marketing Platform**, a suite of web marketing products and services.
 
