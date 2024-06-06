@@ -1,6 +1,6 @@
 # Changelog
 
-## 10th June 2024
+## 6th June 2024
 * Integration: Added [Disclaimer regarding Google Analytics data accuracy](../integrations/google-tag-manager.md)
 
 ## 7th May 2024
