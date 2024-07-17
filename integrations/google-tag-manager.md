@@ -28,6 +28,8 @@ Both GTM and GA4 are part of the **Google Marketing Platform**, a suite of web m
 
 The Mews Booking Engine Widget includes code to support web marketing 'tags' that can be managed via Google Tag Manager, and which communicate data on user visits to Google Analytics for the purposes of web analytics. What this means is that with a Google Account you can access data on user visits, including page views and shopping cart behaviour.
 
+> If you use widget implementation on your website and collecting data via Google Analytics 4, make sure you configure [cross domain tracking](ga-cross-domain-tracking.md) properly in your GA4.
+
 > ### What is a Tag?
 > A Tag is something used to track activity on websites and apps, meaning the interaction between the user, their browser and the website or app. It's implemented as a piece of code inside the website or app that sends data to an analytics service (such as Google Analytics) when triggered to 'fire', usually by some event occurring within the website or app such as a page being requested by the user, or an item added to a shopping cart. As such, they provide invaluable information about how users are interacting with your digital property.
 

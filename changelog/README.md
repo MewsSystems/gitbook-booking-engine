@@ -1,5 +1,8 @@
 # Changelog
 
+## 18th July 2024
+* Widget, Integration: Added guide how to configure [Google Analytics 4 Cross-Domain Tracking](../integrations/ga-cross-domain-tracking.md).
+
 ## 6th June 2024
 * Integration: Added [Disclaimer regarding Google Analytics data accuracy](../integrations/google-tag-manager.md)
 
