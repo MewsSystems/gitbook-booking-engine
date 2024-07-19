@@ -32,6 +32,10 @@ The Mews Booking Engine Widget includes code to support web marketing 'tags' tha
 > ### What is a Tag?
 > A Tag is something used to track activity on websites and apps, meaning the interaction between the user, their browser and the website or app. It's implemented as a piece of code inside the website or app that sends data to an analytics service (such as Google Analytics) when triggered to 'fire', usually by some event occurring within the website or app such as a page being requested by the user, or an item added to a shopping cart. As such, they provide invaluable information about how users are interacting with your digital property.
 
+## Cross-domain tracking
+
+If you use the **Mews Booking Engine Widget** on your website and collect data via **Google Analytics 4**, make sure you configure [cross-domain tracking](ga-cross-domain-tracking.md), to track users correctly across both your domain and the Mews domain.
+
 ## GA4 vs Universal Analytics
 
 The current version of Google Analytics is called Google Analytics 4 or GA4. This replaces the now obsolete Universal Analytics, which worked slightly differently and may have different terminology. Universal Analytics is being discontinued by Google and therefore we have removed all references to it in our documentation.
