@@ -17,8 +17,8 @@ The integration with Google Tag Manager is intended only to serve data to Google
 > 
 > Please remember to address these considerations when interpreting GA data and making business decisions.
 
-> If you use widget implementation on your website and collecting data via Google Analytics 4, make sure you configure [cross domain tracking](ga-cross-domain-tracking.md) properly in your GA4.
 
 * [Google Tag Manager](google-tag-manager.md)
 * [Google Triggers Reference](google-triggers-reference.md)
-* [GA4 - Cross-Domain Tracking for Widget](ga-cross-domain-tracking.md)
+* [Google Tag Manager - Configuration](gtm-skeleton.md)
+* [Google Analytics cross-domain tracking](ga-cross-domain-tracking.md)
