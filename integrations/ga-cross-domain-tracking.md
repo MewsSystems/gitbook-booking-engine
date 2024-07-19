@@ -14,7 +14,7 @@ This is particularly important for booking engines using the **Mews Booking Engi
 
 Without configuring cross-domain tracking, a visitor who completes a booking as described would be tracked incorrectly. The visitor would appear as two separate users in Google Analytics, resulting in disjointed sessions. Additionally, the referral source attribution would be compromised, potentially misrepresenting the origin of the traffic.
 
-"For the booking engine widget, the `_gl` Google Linker query parameter has been implemented to maintain session continuity. Below is an illustration of how it functions."
+"For the booking engine widget, the Google Linker query parameter has been implemented to maintain session continuity. Below is an illustration of how it functions."
 ![Cross domain tracking - session preserving](../.gitbook/assets/ga4_cross_domain_0.png)
 
 ## How to configure cross-domain tracking
@@ -41,6 +41,4 @@ Without configuring cross-domain tracking, a visitor who completes a booking as 
 
 ## References
 
-- [Cross-domain tracking in Google Analytics 4 [analyticsmania.com]](https://www.analyticsmania.com/post/cross-domain-tracking-in-google-analytics-4/)
-- [[GA4] Set up cross-domain measurement
-[\[GA4\] Set up cross-domain measurement](https://support.google.com/analytics/answer/10071811)
+- [\[GA4\] Set up cross-domain measurement](https://support.google.com/analytics/answer/10071811)
