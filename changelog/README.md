@@ -1,6 +1,6 @@
 # Changelog
 
-## 19th July 2024
+## 22nd July 2024
 * Integrations: Added new page [Google Analytics cross-domain tracking](../integrations/ga-cross-domain-tracking.md).
 
 ## 6th June 2024
