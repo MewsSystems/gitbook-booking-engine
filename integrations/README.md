@@ -20,3 +20,5 @@ The integration with Google Tag Manager is intended only to serve data to Google
 
 * [Google Tag Manager](google-tag-manager.md)
 * [Google Triggers Reference](google-triggers-reference.md)
+* [Google Tag Manager - Configuration](gtm-skeleton.md)
+* [Google Analytics cross-domain tracking](ga-cross-domain-tracking.md)
