@@ -24,19 +24,24 @@ Without configuring cross-domain tracking, a visitor who completes a booking as 
 - Access **Data streams**
 - Select a web data stream
 - Ensure you choose the correct web data stream associated with your site
+
 ![Cross domain configuration - admin config](../.gitbook/assets/ga4_cross_domain_1.png)
 
 ### Step 2: Go to configure domains for your tags
 - In the web stream details, select **Configure tag settings**
+
 ![Cross domain configuration - Configure tag settings](../.gitbook/assets/ga4_cross_domain_2.jpg)
 - Select **Configure your domains**
+
 ![Cross domain configuration - Configure your domains](../.gitbook/assets/ga4_cross_domain_3.jpg)
 
 ### Step 3: Manually add the missing domains
 - Include both `mews.com` and your domain (e.g. `your-domain.com`)
 - To manually add a new domain, select **Add condition** under **Include domains that match the following condition**
 - Select **Save** to save your changes
+
 ![Cross domain configuration - Configure your domains](../.gitbook/assets/ga4_cross_domain_4.png)
+
 
 
 ## References
