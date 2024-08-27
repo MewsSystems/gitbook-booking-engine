@@ -18,11 +18,6 @@ Create a group of one or more reservations, i.e. make a reservation.
         "FirstName": "Hiro",
         "LastName": "Protagonist",
         "Telephone": "",
-        "AddressLine1": "",
-        "AddressLine2": "",
-        "City": "",
-        "PostalCode": "",
-        "StateCode": "",
         "NationalityCode": "",
         "SendMarketingEmails": false
     },
@@ -63,7 +58,7 @@ Create a group of one or more reservations, i.e. make a reservation.
 | `ConfigurationId` | string | required | Unique identifier of the Booking Engine configuration used. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](#customer) | required | Information about the customer or guest. |
-| `Booker` | [Booker](#booker) | optional | Information about the person making the booking. |
+| `Booker` | [Customer](#customer) | optional | Information about the person making the booking. |
 | `Reservations` | array of [Reservation data](#reservation-data) | required | Reservation parameters, such as dates and quantities of persons. |
 | `CreditCardData` | [Credit card data](#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
 | `AvailabilityBlockId` | string | optional | Unique identifier of availability block if present. Provide always when you have it.  |
@@ -76,23 +71,8 @@ Create a group of one or more reservations, i.e. make a reservation.
 | `FirstName` | string | required | First name of the customer. |
 | `LastName` | string | required | Last name of the customer. |
 | `Telephone` | string | optional | Telephone number of the customer. |
-| `AddressLine1` | string | optional | First line of the address. |
-| `AddressLine2` | string | optional | Second line of the address. |
-| `City` | string | optional | City. |
-| `PostalCode` | string | optional | Postal code of the address. |
-| `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
 | `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When `Booker` is present, this should be `false` or `null` because the customer is not subscribing, the booker is. See [Send marketing emails](#send-marketing-emails). |
-
-#### Booker
-
-| Property | Type | Contract | Description |
-| :-- | :-- | :-- | :-- |
-| `Email` | string | required | Email of the booker. |
-| `FirstName` | string | required | First name of the booker. |
-| `LastName` | string | required | Last name of the booker. |
-| `Telephone` | string | optional | Telephone number of the booker. |
-| `SendMarketingEmails` | boolean | optional | See [Send marketing emails](#send-marketing-emails). |
 
 #### Send marketing emails
 
