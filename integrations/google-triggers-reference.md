@@ -278,6 +278,9 @@ We are pushing all available variables into the eCommerce tracking for more adva
 ### purchase
 
 * Purchase made. This is the most important eCommerce event. We expose many variables in the event which can be used for advanced tracking. See the example for full description.
+The Purchase event is triggered on the booking confirmation screen under the following conditions:
+    1.	Payment Success: When the user returns from the payment gateway, and the payment is successfully completed.
+    2.	Flexible Rates: If the booking selected flexible rates and no payment is required, the Purchase event is triggered immediately upon booking confirmation.
 * The most important variables are:
 
 | Data Layer Variable Name | Description |
@@ -382,4 +385,4 @@ We are pushing all available variables into the eCommerce tracking for more adva
 ## Illustration of GA4 events in the Booking Engine
 The following annotated screenshots provide a visual illustration of GA4 related events and their respective trigger points within the Booking Engine.
 
-![variable](../.gitbook/assets/ga4_event_reference.jpg)
+![variable](../.gitbook/assets/ga4_event_reference_updated.png)
