@@ -1,8 +1,8 @@
 # Changelog
 
 
-## 7th November 2024
-* Updated [Google Triggers Reference](../integrations/google-triggers-reference.md), updated purchase event location and trigger condition. 
+## 11th November 2024
+* Integrations: Updated [Google Triggers Reference](../integrations/google-triggers-reference.md), updated purchase event location and trigger condition. 
 
 ## 28th August 2024
 * API: Fixed documentation for `Customer` which never accepted address fields and is of the same type as `Booker` in [Create reservation group](../booking-engine-api/operations/reservation-groups.md#create-reservation-group). Documentation only.
