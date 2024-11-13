@@ -1,15 +1,19 @@
-#### Changelog notes 
+### Summary
 
-```
-* Added/Extended operations....
-```
+* Summarise the changes here in bullet points
 
-#### Check during review
+### Checklist (general)
 
-- [ ] JSON example extended.
-  - [ ] New properties are added to the correct place in the JSON.
-- [ ] New properties in the table are added to the correct place.
-- [ ] Correct formatting:
-  - [ ] Spacing is consistent between titles, sections, tables, ...
-  - [ ] Correct JSON format - indentation.
-- [ ] DateTime properties should always be defined in ISO format.
+- [ ] Documentation follows the [Style Guide](https://mews.atlassian.net/wiki/x/KJAoCw)
+- [ ] Changelog dated the day when PR merged
+- [ ] Changelog accurately describes all changes
+- [ ] All hyperlinks tested
+- [ ] SUMMARY.md updated if new pages added
+
+### Checklist (API)
+
+- [ ] JSON examples updated
+- [ ] Properties in JSON examples in same order as in property tables
+- [ ] Changelog highlights the affected endpoints or operations
+- [ ] Changelog highlights any deprecations
+- [ ] Deprecation Table updated if any deprecations
