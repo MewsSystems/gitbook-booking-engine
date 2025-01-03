@@ -1,5 +1,14 @@
 # Changelog 2024
 
+## 11th November 2024
+* Integrations: Updated [Google Triggers Reference](../integrations/google-triggers-reference.md), updated purchase event location and trigger condition. 
+
+## 28th August 2024
+* API: Fixed documentation for `Customer` which never accepted address fields and is of the same type as `Booker` in [Create reservation group](../booking-engine-api/operations/reservation-groups.md#create-reservation-group). Documentation only.
+
+## 22nd July 2024
+* Integrations: Added new page [Google Analytics cross-domain tracking](../integrations/ga-cross-domain-tracking.md).
+
 ## 6th June 2024
 * Integration: Added [Disclaimer regarding Google Analytics data accuracy](../integrations/google-tag-manager.md)
 
