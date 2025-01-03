@@ -17,7 +17,7 @@ Get hotels data for a single specified hotel. This operation can be called initi
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client, as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client, as described in [Authentication](../guidelines/authentication.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 
 ### Response
@@ -415,7 +415,7 @@ The availability and pricing is returned for each applicable combination of occu
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
@@ -613,7 +613,7 @@ Fetch payment configuration parameters for the specified hotel.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response

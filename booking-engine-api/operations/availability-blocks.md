@@ -22,7 +22,7 @@ Availability blocks can restrict your booking engine's calendar to specific inte
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the API client, as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the API client, as described in [Authentication](../guidelines/authentication.md). |
 | `EnterpriseId` | string | required | Unique identifier of the hotel (enterprise). |
 | `AvailabilityBlockIds` | array of string | required | Set of unique identifiers of the Availability Blocks for which you want to get the details. |
 

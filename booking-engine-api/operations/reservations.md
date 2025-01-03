@@ -35,7 +35,7 @@ Get a price quotation for a specific hotel, date interval, room category and per
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `StartUtc` | string | required | Start date of the reservation, i.e. arrival date. |
 | `EndUtc` | string | required | End date of the reservation, i.e. departure date. |
@@ -128,7 +128,7 @@ Get a total price for the requested reservations.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `ConfigurationId` | string | required | Unique identifier of the Booking Engine configuration used. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency in which price will be calculated. Enterprise default currency code is used as default. [Supported currency codes](../guidelines/supported-currency-codes.md)|
 | `Reservations` | array of [Reservation](#reservation) | required | List of reservations. |
