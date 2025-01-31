@@ -365,7 +365,7 @@ The Purchase event is triggered on the booking confirmation screen under the fol
     }
   ],
   affiliation: "Jan's Hotel",
-  transaction_id: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2", // Changed to Reservation Group ID – will be added to export in Mews Operation to identify each reservation group
+  transaction_id: "e3a7cf516c22b17e2822f60477581522aa40f6eb",
   currency: "EUR",
   value: 20, // Total price of reservation group
   tax: 1.3, // Total tax of reservation group
