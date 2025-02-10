@@ -7,7 +7,7 @@ Use this option if you want to create your own custom booking engine.
 > We maintain an [OpenAPI definition](https://api.mews.com/swagger/distributor/swagger.json) (formerly Swagger) for the __Mews Booking Engine API__. You can use this to build out client applications using third party tools.
 > At this stage we consider this a Beta test version, but please use it and get in touch to let us know how you get on.
 
-* [Guidelines](guidelines/README.md)
+* [Usage guidelines](guidelines/README.md)
 * [Use cases](use-cases/README.md)
 * [API Operations](operations/README.md)
 * [Deprecations](deprecations/README.md)

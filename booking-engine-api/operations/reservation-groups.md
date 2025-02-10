@@ -54,7 +54,7 @@ Create a group of one or more reservations, i.e. make a reservation.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Client application name, as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Client application name, as described in [Authentication](../guidelines/authentication.md). |
 | `ConfigurationId` | string | required | Unique identifier of the Booking Engine configuration used. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](#customer) | required | Information about the customer or guest. |
@@ -216,7 +216,7 @@ Fetch details of the specified reservation group.
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Client application name, as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Client application name, as described in [Authentication](../guidelines/authentication.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
 | `Extent` | [Reservation group extent](#reservation-group-extent) | optional | Extent of data to be returned. e.g. it is possible to specify that together with the reservation group, payment requests and payments will be returned. |

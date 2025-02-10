@@ -22,7 +22,7 @@ Get availability for the specified service for each time unit in the specified d
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
 | `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) for which availability should be returned. |
 | `StartUtc` | string | required | Start date of the requested interval. |
@@ -99,7 +99,7 @@ Get pricing for the specified service for each time unit in the specified date i
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the client as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise. |
 | `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) for which availability should be returned. |
 | `StartUtc` | string | required | Start date of the requested interval. |

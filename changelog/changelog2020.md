@@ -2,7 +2,7 @@
 
 ## 26th November 2020
 
-* API: Changed of [API Client Authorization](../booking-engine-api/guidelines/authorization.md). Where the client needs to be registered.
+* API: Updated [Authentication](../booking-engine-api/guidelines/authentication.md) page.
 
 ## 20th November 2020
 

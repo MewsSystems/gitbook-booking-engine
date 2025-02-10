@@ -1,6 +1,8 @@
-# How to migrate booking engine off mews.li
+# Migration off the mews.li domain
 
-> ⚠️ Support for this outdated implementation was discontinued as of May 1 - we are not responsible for the functionality of the booking engine on this domain
+This is a guide to help you migrate your booking engine off the discontinued `mews.li` domain.
+
+> **Important:** Support for the old domain was discontinued in May 2024 - we are not responsible for the functionality of the booking engine on this domain.
 
 ## Standalone Booking Engine migration
 
@@ -39,4 +41,4 @@ Replace the domain in your booking engine loading script from `https://mews.li` 
 ```
 After a successful migration, the keyword `mews.li` should no longer appear on your website.
 
-If you have any questions, please open a ticket from Mews Operations via our Mews Digital Assistant.
+If you have any questions, please open a ticket from __Mews Operations__ via the Mews Digital Assistant.

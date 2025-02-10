@@ -22,7 +22,7 @@ This operation can be called initially to fetch data which may be important duri
 
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
-| `Client` | string | required | Identification of the API client, as described in [Authorization](../guidelines/authorization.md). |
+| `Client` | string | required | Identification of the API client, as described in [Authentication](../guidelines/authentication.md). |
 | `PrimaryId` | string | required | Unique identifier of the primary [Configuration](#configuration-1). |
 | `Ids` | array of string | required | Set of unique identifiers of [Configurations](#configuration-1). |
 
