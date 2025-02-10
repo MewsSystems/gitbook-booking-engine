@@ -1,6 +1,6 @@
 # Changelog
 
-## 4th February 2025
+## 10th February 2025
 * API: Renamed and rewritten [Authentication](../booking-engine-api/guidelines/authentication.md) page, and other small changes. Documentation-only, no change to the API.
 
 | Changelog by year |
