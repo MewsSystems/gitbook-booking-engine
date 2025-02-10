@@ -2,7 +2,7 @@
 
 This guide provides a streamlined process for exporting and configuring a Google Tag Manager (GTM) skeleton suitable for booking engine. Follow these precise steps to efficiently adapt your GTM setup to new requirements.
 
-## Prepare Your configuration
+## Prepare your configuration
 
 1. **Download the configuration file:**
     - Access the prepared skeleton configuration file: [Google Tag Manager - Configuration.json](../.gitbook/assets/GTM-Mews.json).
