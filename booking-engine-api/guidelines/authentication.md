@@ -6,9 +6,9 @@ The __Mews Booking Engine API__ is a public API that requires client authenticat
 
 Authentication is the process of verifying the identity of the client. To access the API, you must identify your client application by providing the `Client` property in all requests. This ensures that your client application is recognized and allowed to interact with the API.
 
-### Pre-registered
+### Registration
 
-Your client application needs to be pre-registered with Mews Support. You can open a ticket from __Mews Operations__ via the Mews Digital Assistant. The registration request should contain:
+Your client application needs to be pre-registered with Mews Support. You can open a ticket from __Mews Operations__ via the [Mews Digital Assistant](https://help.mews.com/s/article/How-to-use-the-Mews-Digital-Assistant). The registration request should contain:
 
 * `Client` - the name of the client application that will be used for every API request
 * `Email` - an email contact for your development department; this email will be used by our developers to notify you about any breaking changes in the API
