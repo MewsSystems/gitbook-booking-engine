@@ -1,5 +1,8 @@
 # Changelog
 
+## 29th May 2025
+* API: Minor amendments to the [Authentication](../booking-engine-api/guidelines/authentication.md) page to align the partner journey. Documentation-only, no change to the API.
+
 ## 10th February 2025
 * API: Renamed and rewritten [Authentication](../booking-engine-api/guidelines/authentication.md) page, and other small changes. Documentation-only, no change to the API.
 
