@@ -1,5 +1,1 @@
-# GX team is a default owner of whole codebase. Any file without specific ownership will fallback to them.
-*                               @MewsSystems/tech-fe-bookingengine-owners
-
-# Public Booking Engine API documentation falls under Connectivity
-/booking-engine-api             @MewsSystems/tech-fe-connectivity-owners
+* @MewsSystems/tech-be-connectivity-contract-owners
