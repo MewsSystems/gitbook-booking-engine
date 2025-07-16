@@ -348,3 +348,104 @@ Get pricing for the specified service for each time unit in the specified date i
 ### Response diagram
 
 ![Get services pricing response](./assets/get_services_pricing_v2_v2.png)
+
+## Get promoted services
+
+> ### Restricted!
+>
+> This functionality is currently in beta-test and as such it is subject to change.
+
+Get promoted (upsell) services for a given service and interval with prices in given currency. Returns available promoted services, their pricing, and related resource categories.
+
+### Request
+
+`[ApiBaseUrl]/api/distributor/v1/services/getPromotions`
+
+```json
+{
+    "Client": "My Client 1.0.0",
+    "EnterpriseId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
+    "ServiceId": "40665467-5862-4932-a861-aa6b00e2b660",
+    "StartUtc": "2022-01-01T00:00:00Z",
+    "EndUtc": "2022-01-31T00:00:00Z",
+    "CurrencyCode": "EUR"
+}
+```
+
+| Property | Type | Contract | Description |
+| :-- | :-- | :-- | :-- |
+| `Client` | string | required | Identification of the client as described in [Authentication](../guidelines/authentication.md). |
+| `EnterpriseId` | string | required | Unique identifier of the enterprise. |
+| `ServiceId` | string | required | Unique identifier of the [Service](configuration.md#service) for which promoted services should be returned. |
+| `StartUtc` | string | required | Start date of the requested interval. |
+| `EndUtc` | string | required | End date of the requested interval. |
+| `CurrencyCode` | string | required | Currency code for prices in the response. [Supported currency codes](../guidelines/supported-currency-codes.md) |
+
+### Response
+
+```json
+{
+  "PromotedServices": [
+    {
+      "PromotedServiceAssignmentId": "b1e2c3d4-5678-1234-9abc-1234567890ab",
+      "PromotedServiceId": "a1b2c3d4-5678-1234-9abc-1234567890ab",
+      "PromotedRateId": "c1d2e3f4-5678-1234-9abc-1234567890ab",
+      "PromotedServiceTimeUnitPeriod": "Day",
+      "PromotedServiceStartOffset": "P0D",
+      "PromotedServiceEndOffset": "P0D",
+      "PromotedServiceUnitCountLimit": "Unlimited",
+      "PromotedServiceReservationIntervalLimit": "InsideParent",
+      "PromotedServiceDefaultOccupancyData": [
+        { "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8", "PersonCount": 2 }
+      ],
+      "PromotedServiceOptions": { "ProRataCharging": false },
+      "PromotedRateName": { "en-US": "Flexible Rate" },
+      "PromotedResourceCategoryId": "ddc48d9f-f21d-422a-b24a-aa6b00e2b77e",
+      "PromotedResourceCategoryName": { "en-US": "Room" },
+      "PromotedResourceCategoryDescription": { "en-US": "A nice room" },
+      "ImageId": "e1f2a3b4-5678-1234-9abc-1234567890ab",
+      "TotalAmount": { "Currency": "EUR", "GrossValue": 100.0, "NetValue": 90.0, "Breakdown": { "Items": [] } },
+      "UnitAmount": { "Currency": "EUR", "GrossValue": 50.0, "NetValue": 45.0, "Breakdown": { "Items": [] } },
+      "AvailableCount": 5,
+      "Ordering": 1,
+      "MinPricePerTimeUnit": { "Currency": "EUR", "GrossValue": 50.0, "NetValue": 45.0, "Breakdown": { "Items": [] } }
+    }
+  ],
+  "ResourceCategories": [
+    {
+      "CategoryId": "ddc48d9f-f21d-422a-b24a-aa6b00e2b77e",
+      "Name": { "en-US": "Room" },
+      "Description": { "en-US": "A nice room" }
+    }
+  ]
+}
+```
+
+| Property             | Type                                                | Contract | Description                                                 |
+|:---------------------|:----------------------------------------------------|:---------|:------------------------------------------------------------|
+| `PromotedServices`   | array of [Promoted service](#promoted-service)      | required | List of available promoted services for the given interval. |
+| `ResourceCategories` | array of [Room categories](hotels.md#room-category) | required | List of resource categories related to promoted services.   |
+
+#### Promoted service
+| Property                                  | Type                                                | Contract | Description                                                 |
+|:------------------------------------------|:----------------------------------------------------|:---------|:------------------------------------------------------------|
+| `PromotedServiceAssignmentId`             | string                                              | required | Unique identifier of the promoted service assignment.       |
+| `PromotedServiceId`                       | string                                              | required | Unique identifier of the promoted service.                  |
+| `PromotedRateId`                          | string                                              | required | Unique identifier of the promoted rate.                     |
+| `PromotedServiceTimeUnitPeriod`           | string                                              | required | Time unit period (e.g. Day, Hour) for the promoted service. |
+| `PromotedServiceStartOffset`              | string                                              | required | Start offset for the promoted service (ISO 8601 duration).  |
+| `PromotedServiceEndOffset`                | string                                              | required | End offset for the promoted service (ISO 8601 duration).    |
+| `PromotedServiceUnitCountLimit`           | string                                              | required | Unit count limit for the promoted service.                  |
+| `PromotedServiceReservationIntervalLimit` | string                                              | required | Reservation interval limit for the promoted service.        |
+| `PromotedServiceDefaultOccupancyData`     | array of [Occupancy data](hotels.md#occupancy-data) | required | Default occupancy data for the promoted service.            |
+| `PromotedServiceOptions`                  | object                                              | required | Options for the promoted service (e.g. ProRataCharging).    |
+| `PromotedRateName`                        | [Localized text](hotels.md#localized-text)          | required | Name of the promoted rate.                                  |
+| `PromotedResourceCategoryId`              | string                                              | required | Resource category id for the promoted service.              |
+| `PromotedResourceCategoryName`            | [Localized text](hotels.md#localized-text)          | required | Name of the resource category.                              |
+| `PromotedResourceCategoryDescription`     | [Localized text](hotels.md#localized-text)          | required | Description of the resource category.                       |
+| `ImageId`                                 | string                                              | optional | Image id for the resource category.                         |
+| `TotalAmount`                             | [Amount](#amount)                                   | optional | Total price for the promoted service.                       |
+| `UnitAmount`                              | [Amount](#amount)                                   | optional | Price per time unit for the promoted service.               |
+| `AvailableCount`                          | number                                              | optional | Number of available promoted services.                      |
+| `Ordering`                                | number                                              | required | Ordering of the promoted service.                           |
+| `MinPricePerTimeUnit`                     | [Amount](#amount)                                   | required | Minimal price per time unit for the promoted service.       |
