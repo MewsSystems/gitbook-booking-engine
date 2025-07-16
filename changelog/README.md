@@ -1,6 +1,6 @@
 # Changelog
 
-## 17th July 2025
+## 16th July 2025
 * API: [Get promoted services](../booking-engine-api/operations/services.md#get-promoted-services)
   * Added new operation (restricted).
 
