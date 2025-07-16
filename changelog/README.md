@@ -1,5 +1,9 @@
 # Changelog
 
+## 17th July 2025
+* API: [Get promoted services](../booking-engine-api/operations/services.md#get-promoted-services)
+  * Added new operation (restricted).
+
 ## 10th February 2025
 * API: Renamed and rewritten [Authentication](../booking-engine-api/guidelines/authentication.md) page, and other small changes. Documentation-only, no change to the API.
 
