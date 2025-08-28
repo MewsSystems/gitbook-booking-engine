@@ -93,7 +93,17 @@ Get pricing for the specified service for each time unit in the specified date i
     "CategoryIds": ["4037c0ec-a59d-43f1-9d97-d6c984764e8c"],
     "RateIds": ["4037c0ec-a59d-43f1-9d97-d6c984764e8c"],
     "LanguageCode": "en-GB",
-    "CurrencyCode": "EUR"
+    "CurrencyCode": "EUR",
+    "OccupancyData": [
+        {
+            "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8",
+            "PersonCount": 1
+        },
+        {
+            "AgeCategoryId": "790c82c1-cbe6-4b8d-a45f-ade300e410a8",
+            "PersonCount": 1
+        }
+    ]
 }
 ```
 
@@ -108,6 +118,7 @@ Get pricing for the specified service for each time unit in the specified date i
 | `RateIds` | array of string | optional | Unique identifiers of specific rates for which pricing should be computed. If omitted, pricing will be computed and returned for all rates. |
 | `LanguageCode` | string | optional | Code of the language. [Supported language codes](../guidelines/supported-language-codes.md)  |
 | `CurrencyCode` | string | optional | Currency code which should be used for prices in the response. [Supported currency codes](../guidelines/supported-currency-codes.md)  |
+| `OccupancyData` | array of [Occupancy Data](hotels.md#occupancy-data) | optional | List of occupancy data. |
 
 ### Response
 
@@ -150,11 +161,11 @@ Get pricing for the specified service for each time unit in the specified date i
           "Occupancies": [
             {
               "AgeCategoryId": "16e8a466-729e-4d32-a221-ade300e410a8",
-              "PersonCount": 2
+              "PersonCount": 1
             },
             {
               "AgeCategoryId": "790c82c1-cbe6-4b8d-a45f-ade300e410a8",
-              "PersonCount": 0
+              "PersonCount": 1
             }
           ]
         }
@@ -275,11 +286,11 @@ Get pricing for the specified service for each time unit in the specified date i
 | `Rates` | array of [Rate](hotels.md#rate) | required | Information about all available rates. |
 | `CategoryPrices` | array of [Category price](#category-price) | required | Prices for all specified categories. |
 
-#### Category price 
+#### Category price
 | Property | Type | Contract | Description |
 | :-- | :-- | :-- | :-- |
 | `CategoryId` | string | required | Unique identifier of category. |
-| `OccupancyPrices` | array of objects with arrays of [Occupancy](#occupancy) | required | List of occupancies for age categories against which rate group prices are supplied. |
+| `OccupancyPrices` | array of objects with arrays of [Occupancy](#occupancy) | required | List of occupancies for age categories against which rate group prices are supplied. When `OccupancyData` request parameter is not provided, the prices for the combination of the default adult and a single child category is generated for up to 3 person counts. |
 | `RateGroupPrices` | array of [Rate group price](#rate-group-price) | required | Prices for the given category for each of the occupancy bands specified in OccupancyPrices. |
 
 #### Occupancy
