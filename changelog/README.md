@@ -1,5 +1,10 @@
 # Changelog
 
+## 29th August 2025
+* API: [Get services pricing](../booking-engine-api/operations/services.md#get-services-pricing)
+  * Added `OccupancyData` request parameter.
+  * Clarified the default behavior of `OccupancyPrices` property in [Category price](../booking-engine-api/operations/services.md#category-price) response object. Documentation-only, no change to the API.
+
 ## 16th July 2025
 * API: [Get promoted services](../booking-engine-api/operations/services.md#get-promoted-services)
   * Added new operation (restricted).
