@@ -1,5 +1,8 @@
 # Changelog
 
+## 31st October 2025
+* Integrations: Added `reservationOwnerEmail` field to GTM purchase event in [Google Triggers Reference](../integrations/google-triggers-reference.md#purchase). This field provides the email address of the reservation owner and requires booking engine configuration to be enabled.
+
 ## 29th August 2025
 * API: [Get services pricing](../booking-engine-api/operations/services.md#get-services-pricing)
   * Added `OccupancyData` request parameter.
