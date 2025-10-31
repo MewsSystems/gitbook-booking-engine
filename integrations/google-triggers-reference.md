@@ -281,6 +281,15 @@ We are pushing all available variables into the eCommerce tracking for more adva
 The Purchase event is triggered on the booking confirmation screen under the following conditions:
     1.	Payment Success: When the user returns from the payment gateway, and the payment is successfully completed.
     2.	Flexible Rates: If the booking selected flexible rates and no payment is required, the Purchase event is triggered immediately upon booking confirmation.
+
+> **Reservation Owner Email Configuration**
+> 
+> The `reservationOwnerEmail` field is now available in the `ecommerce` section of the purchase event. To enable this feature, it must be configured in Commander:
+> 
+> **Settings** → **Services** → **{service}** → **Booking engine** → **{booking engine}** → Check **"Collect emails for bookings in Google Tag Manager purchase event"**
+> 
+> **Reminder:** Only use guest email addresses as permitted by your privacy policy and T&Cs.
+
 * The most important variables are:
 
 | Data Layer Variable Name | Description |
@@ -297,6 +306,10 @@ The Purchase event is triggered on the booking confirmation screen under the fol
 | roomCount | Count of rooms in reservation |
 | adults | Count of Adults in reservations |
 | children | Count of children in reservations |
+| mewsSource | Source identifier (always "Mews Booking Engine") |
+| mewsAppVersion | Version of the Booking Engine application |
+| trackingConsents | Object containing tracking consent status for different categories |
+| ecommerce.reservationOwnerEmail | Email address of the reservation owner (requires booking engine configuration) |
 | items | Array of items (rooms / categories / products) added by user in reservation. See example for different types of items |
 
 * Example:
@@ -304,81 +317,100 @@ The Purchase event is triggered on the booking confirmation screen under the fol
 ```javascript
 {
   event: "purchase",
-  gtm: {uniqueEventId: 18, start: 1661784899375},
-  eventName: "Confirmation Loaded", 
-  id: "6aaf20ac-a651-4826-b8c0-ad9000dcac3d",
-  name: "Jan's Hotel", 
-  languageCode: "en-GB", 
-  hotelName: "Jan's Hotel", // Property name
-  hotelId: "6aaf20ac-a651-4826-b8c0-ad9000dcac3d",
-  page_location: "/confirmation",
-  page_title: "Confirmation",
-  items: [ 
-    /*
-     * Rooms and products added to reservation group. There can be multiple rooms with different dates and confirmation numbers. Similarly, the number of different products can range from none to many.
-     *
-     * Please note that room prices do not include product costs. Each product's price is specified separately.
-     */
-    {
-      item_id: "244e472a-4e47-4445-8677-af0000f58111", // Room category id
-      item_name: "Room 1", // Room category name
-      item_variant: "Best Price", // Selected rate
-      item_category: "Reservation",
-      item_category2: "Jan's Hotel", // Property name
-      item_category3: "Jan's Hotel City", // Property city
-      item_brand: "Jan's Hotel Chain", // Property chain
-      affiliation: "Jan's Hotel",
-      currency: "EUR",
-      price: 18, // Price of reservation
-      netPrice: 17.4, // Price of reservation without taxes
-      grossPrice: 18,  // Price of reservation with taxes
-      pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
-      quantity: 1, // Count of rooms of room category
-      reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2",
-      reservationGroupName: "Name-29-8-8617", // Reservation Group name – can be mapped to export from mews Operations for each reservation
-      confirmationNumber: "194", // Confirmation number of each reservation to be mapped with Mews operations
-      reservationRateName: "Best Price",
-      checkInDate: "2022-08-29", // Check-in day of reservation
-      checkOutDate: "2022-08-31", // Check-out day of reservation
-      tax: 0.6, // Tax of reservation
-      stayDuration: 2,  // Count of days in reservation
-      adults: 2, // Count of adults in  reservation
-      children: 0 // Count of children in reservation
-    },
-    {
-      item_id: "ec34da8b-0932-493e-a742-baf1af194789", // Product id
-      item_name: "Product 1", // Product name
-      item_category: "Product",
-      item_category2: "Jan's Hotel", // Property name
-      item_category3: "Jan's Hotel City", // Property city
-      item_brand: "Jan's Hotel Chain", // Property chain
-      affiliation: "Jan's Hotel",
-      currency: "EUR",
-      price: 2, // Price of product
-      netPrice: 1.3, // Price of product without taxes
-      grossPrice: 2,  // Price of product with taxes
-      pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
-      quantity: 1, // Count of products
-      reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2",
-      reservationGroupName: "Name-29-8-8617", // Reservation Group name – can be mapped to export from mews Operations for each reservation
-      tax: 0.7, // Tax of product
-    }
-  ],
-  affiliation: "Jan's Hotel",
-  transaction_id: "e3a7cf516c22b17e2822f60477581522aa40f6eb",
+  eventName: "Purchase",
+  ecommerce: {
+    transaction_id: "d4166ad6d39856ae206cf0f48738d63fbe864fb3",
+    value: 160, // Total price of reservation group
+    tax: 17.14, // Total tax of reservation group
+    currency: "EUR",
+    items: [
+      /*
+       * Rooms and products added to reservation group. There can be multiple rooms with different dates and confirmation numbers. Similarly, the number of different products can range from none to many.
+       *
+       * Please note that room prices do not include product costs. Each product's price is specified separately.
+       */
+      {
+        item_id: "d089a328-2876-47a8-9dca-b38700d3193a", // Room category id
+        item_name: "Room 1", // Room category name
+        item_category: "Reservation",
+        item_category2: "Kaer Trolde", // Property name
+        item_category3: "Prague", // Property city
+        item_brand: "Witcher", // Property chain
+        affiliation: "Kaer Trolde",
+        currency: "EUR",
+        price: 160, // Price of reservation
+        netPrice: 142.86, // Price of reservation without taxes
+        grossPrice: 160, // Price of reservation with taxes
+        pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
+        quantity: 1, // Count of rooms of room category
+        reservationGroupId: "f94a4f53-ab9c-4847-8e4e-b38700d31923",
+        reservationGroupName: "ff-31-10-C35D", // Reservation Group name – can be mapped to export from mews Operations for each reservation
+        tax: 17.14, // Tax of reservation
+        item_variant: "Non refundable", // Selected rate
+        confirmationNumber: "87", // Confirmation number of each reservation to be mapped with Mews operations
+        reservationRateName: "Non refundable",
+        checkInDate: "2025-10-31", // Check-in day of reservation
+        checkOutDate: "2025-11-02", // Check-out day of reservation
+        stayDuration: 2, // Count of days in reservation
+        adults: 2, // Count of adults in reservation
+        children: 0 // Count of children in reservation
+      }
+    ],
+    reservationOwnerEmail: "guest@example.com" // Email address of the reservation owner (when enabled in booking engine configuration)
+  },
+  affiliation: "Kaer Trolde",
+  transaction_id: "d4166ad6d39856ae206cf0f48738d63fbe864fb3",
   currency: "EUR",
-  value: 20, // Total price of reservation group
-  tax: 1.3, // Total tax of reservation group
-  reservationGroupId: "2cf7e37b-b1d1-4970-8aaf-af0000f580f2", // Reservation Group ID – will be added to export in Mews Operation to identify each reservation group
-  reservationGroupName: "Name-29-8-8617", // Reservation Group name – can be mapped to export from mews Operations for each reservation
-  reservationIds: "244e472a-4e47-4445-8677-af0000f58111", // Comma separated list of all reservation (item) IDs
-  chainName: "Jan's Hotel Chain", // Chain name
-  netValue: 18.7, // Price without taxes
-  grossValue: 20, // Price with taxes
+  value: 160, // Total price of reservation group
+  tax: 17.14, // Total tax of reservation group
+  reservationGroupId: "f94a4f53-ab9c-4847-8e4e-b38700d31923", // Reservation Group ID – will be added to export in Mews Operation to identify each reservation group
+  reservationGroupName: "ff-31-10-C35D", // Reservation Group name – can be mapped to export from mews Operations for each reservation
+  reservationIds: "d089a328-2876-47a8-9dca-b38700d3193a", // Comma separated list of all reservation (item) IDs
+  chainName: "Witcher", // Chain name
+  netValue: 142.86, // Price without taxes
+  grossValue: 160, // Price with taxes
   pricingMode: "Gross", // Pricing mode (Gross mainly Europe = tax is included in price, Net mainly US = tax non included in price)
   roomCount: 1, // Count of rooms
   adults: 2, // Count of adults
-  children: 0 // Count of children
+  children: 0, // Count of children
+  mewsSource: "Mews Booking Engine", // Source identifier
+  mewsAppVersion: "5238.0.0", // Booking Engine version
+  trackingConsents: {
+    necessary: true,
+    performance: true,
+    functional: true,
+    advertising: true
+  }, // Tracking consent status
+  "gtm.uniqueEventId": 56, // GTM unique event identifier
+  items: [
+    // Duplicate of ecommerce.items for compatibility
+    {
+      item_id: "d089a328-2876-47a8-9dca-b38700d3193a",
+      item_name: "Room 1",
+      item_category: "Reservation",
+      item_category2: "Kaer Trolde",
+      item_category3: "Prague",
+      item_brand: "Witcher",
+      affiliation: "Kaer Trolde",
+      currency: "EUR",
+      price: 160,
+      netPrice: 142.86,
+      grossPrice: 160,
+      pricingMode: "Gross",
+      quantity: 1,
+      reservationGroupId: "f94a4f53-ab9c-4847-8e4e-b38700d31923",
+      reservationGroupName: "ff-31-10-C35D",
+      tax: 17.14,
+      item_variant: "Non refundable",
+      confirmationNumber: "87",
+      reservationRateName: "Non refundable",
+      checkInDate: "2025-10-31",
+      checkOutDate: "2025-11-02",
+      stayDuration: 2,
+      adults: 2,
+      children: 0
+    }
+  ]
 }
 ```
 
