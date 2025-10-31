@@ -306,9 +306,6 @@ The Purchase event is triggered on the booking confirmation screen under the fol
 | roomCount | Count of rooms in reservation |
 | adults | Count of Adults in reservations |
 | children | Count of children in reservations |
-| mewsSource | Source identifier (always "Mews Booking Engine") |
-| mewsAppVersion | Version of the Booking Engine application |
-| trackingConsents | Object containing tracking consent status for different categories |
 | ecommerce.reservationOwnerEmail | Email address of the reservation owner (requires booking engine configuration) |
 | items | Array of items (rooms / categories / products) added by user in reservation. See example for different types of items |
 
