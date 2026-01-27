@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repository was merged into [open-api-docs](https://github.com/MewsSystems/open-api-docs) repository.
+
 # Mews Booking Engine Guide
 
 Welcome to the online documentation for the __Mews Booking Engine__. We're here to guide you through the process of integrating the Mews Booking Engine into your website, so your guests can create reservations in your properties directly in __Mews Operations__.
